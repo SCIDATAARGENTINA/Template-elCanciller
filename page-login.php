@@ -15,7 +15,7 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<p>login</p>
+			<p>login 1</p>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
