@@ -10,6 +10,15 @@
  */
 
 ?>
+<div id="resultados"></div>
+<script>
+var d = new Date();
+var dia = d.getDate();
+if (dia > '26'){
+   jQuery('#resultados').append('<div class=\"ad-long\"><div id=\"resultado\" style=\"width: 100% !important;\"><a href=\"\"><img src=\"http://drive.google.com/uc?export=view&id=1x22iuanDrkjQ9dy39e3q7CTYPlJ6mBS5" class=\"onlydesktop\" style=\"\"><img src=\"http://drive.google.com/uc?export=view&id=1iz5t3ipmjBm4q3JDbsSbzKdv24BJZFvm" class=\"onlymobile\" style=\"width: 300px;\"></a></div></div>');
+   console.log(dia);
+}
+</script>
 
 <?php 
 $categories = get_the_terms( $post->ID , array( 'categoria_videos') );
