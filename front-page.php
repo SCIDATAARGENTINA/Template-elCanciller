@@ -72,6 +72,7 @@ $encuesta_grande = get_field('encuesta_grande');
 					?>
 				</div>
 				
+				
 				</div>
 				<?php //get_template_part('template-parts/sections/section', 'encuesta') ?> 
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
