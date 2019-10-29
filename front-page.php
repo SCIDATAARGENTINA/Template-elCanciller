@@ -71,7 +71,12 @@ $encuesta_grande = get_field('encuesta_grande');
 					}
 					?>
 				</div>
-				
+				<div id="resultados">
+					<div class="ad-long"><div id="resultado" style="width: 100% !important;">
+						<img src="https://elcanciller.com/wp-content/uploads/2019/10/desktop.jpg" class="onlydesktop">
+						<img src="https://elcanciller.com/wp-content/uploads/2019/10/mobile.jpg" class="onlymobile" style="width: 300px;">
+					</div>
+				</div>
 				
 				</div>
 				<?php //get_template_part('template-parts/sections/section', 'encuesta') ?> 
