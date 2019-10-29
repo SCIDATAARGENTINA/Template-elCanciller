@@ -71,15 +71,14 @@ $encuesta_grande = get_field('encuesta_grande');
 					}
 					?>
 				</div>
-				<div id="resultados"></div>
-				<script>
-				var d = new Date();
-				var dia = d.getDate();
-				if (dia > '26'){
-				jQuery('#resultados').append('<div class=\"ad-long\"><div id=\"resultado\" style=\"width: 100% !important;\"><a href=\"\"><img src=\"http://drive.google.com/uc?export=view&id=1x22iuanDrkjQ9dy39e3q7CTYPlJ6mBS5" class=\"onlydesktop\" style=\"\"><img src=\"http://drive.google.com/uc?export=view&id=1iz5t3ipmjBm4q3JDbsSbzKdv24BJZFvm" class=\"onlymobile\" style=\"width: 300px;\"></a></div></div>');
-				console.log(dia);
-				}
-				</script>
+				<div id="resultados">
+					<div class="ad-long"><div id="resultado" style="width: 100% !important;">
+						<img src="https://elcanciller.com/wp-content/uploads/2019/10/desktop.jpg" class="onlydesktop">
+						<img src="https://elcanciller.com/wp-content/uploads/2019/10/mobile.jpg" class="onlymobile" style="width: 300px;">
+					</div>
+				</div>
+				
+				</div>
 				<?php //get_template_part('template-parts/sections/section', 'encuesta') ?> 
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
 
