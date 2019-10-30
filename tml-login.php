@@ -16,8 +16,16 @@ get_header();
 		<main id="main" class="site-main">
 
 			<div class="theme-my-login container">
-				<h1>Ingresar</h1>
-				<?php echo do_shortcode('[theme-my-login]'); ?>
+				<div class="form-side">
+					<h1>Ingresar</h1>
+					<?php echo do_shortcode('[theme-my-login]'); ?>
+				</div>
+				<div class="action-side">
+					<h2>Accede a elCanciller para aprovechar todas las funcionalidades de nuestra web.</h2>
+					<p>Playlists de noticias</p>
+					<p>Favoritos</p>
+					<p>Resultados personalizados</p>
+				</div>
 			</div>
 
 		</main><!-- #main -->

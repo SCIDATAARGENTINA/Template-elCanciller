@@ -5095,12 +5095,11 @@ height: 200px !important;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
     background: #e7d117;
     font-family: "Lato";
-
+    padding: 20px;
 }
 
 .theme-my-login .tml{
     font-family: "Lato";
-    padding: 20px;
 }
 
 .tml .tml-field {
