@@ -16,7 +16,8 @@ get_header();
 		<main id="main" class="site-main">
 
 			<div class="theme-my-login container">
-				<?php echo do_shortcode('[theme-my-login]') ?>
+				<h1><?php tml_get_action(); ?></h1>
+				<?php theme_my_login(); ?>
 			</div>
 
 		</main><!-- #main -->
