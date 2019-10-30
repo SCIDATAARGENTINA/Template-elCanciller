@@ -5091,11 +5091,8 @@ height: 200px !important;
     margin: 50px auto;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 4px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
-    background: #e7d117;
+    align-items: center;
+    flex-direction: row;
     font-family: "Lato";
     padding: 20px;
 }
@@ -5119,7 +5116,7 @@ height: 200px !important;
     display: block;
     margin: 0;
     font-size: 18px;
-    color: #fff;
+    color: #111;
     font-weight: bold;
 }
 
@@ -5146,7 +5143,7 @@ height: 200px !important;
 }
 
 .tml-links li a{
-    color: #fff;
+    color: #111;
     padding: 20px;
     font-size: 18px;
 }
