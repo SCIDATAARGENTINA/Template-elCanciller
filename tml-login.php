@@ -25,6 +25,7 @@ get_header();
 					<p>Playlists de noticias</p>
 					<p>Favoritos</p>
 					<p>Resultados personalizados</p>
+					<a href="<?php bloginfo('url') ?>/registrarse">Registrate ahora</a>
 				</div>
 			</div>
 
