@@ -5089,7 +5089,7 @@ height: 200px !important;
 
 .theme-my-login.container{
     font-family: "Lato";
-    margin: 0 auto;
+    margin: 50px auto;
     max-width: 500px;
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
@@ -5102,4 +5102,45 @@ height: 200px !important;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.tml .tml-field {
+    width: 100%;
+    border: 0px;
+    border-radius: 4px;
+    height: 40px;
+    outline: 0 !important;
+    -webkit-appearance: none;
+    font-size: 18px;
+    font-family: "Lato";
+}
+
+.tml .tml-label {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tml-submit-wrap input{
+    background: #fff;
+    color: #e2cb13;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: 17px;
+    width: 100%;
+}
+
+.tml-links{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    list-style-type: none;
+}
+
+.tml-links li a{
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
 }
