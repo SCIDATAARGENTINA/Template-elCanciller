@@ -5087,21 +5087,12 @@ height: 200px !important;
 
 .theme-my-login.container{
     margin: 50px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     font-family: "Lato";
     padding: 20px;
 }
 
-.form-side{
-    width: 40%;
-}
-
-.action-side{
-    widows: 60%;
-}
 
 .theme-my-login .tml{
     font-family: "Lato";
