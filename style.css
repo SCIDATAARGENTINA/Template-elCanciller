@@ -5031,9 +5031,12 @@ height: 200px !important;
     
     }
 
+    
 /* AGREGADO LUCAS */ 
 
-.flBtn a{background: #b29f93 !important;}
+
+.flBtn a{background: #b29f93 !important;display:block !important;}
+
 
 .live-section{text-align: center;}
 
