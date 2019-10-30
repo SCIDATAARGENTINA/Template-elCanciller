@@ -5108,6 +5108,7 @@ height: 200px !important;
     -webkit-appearance: none;
     font-size: 18px;
     font-family: "Lato";
+    background: #ccc;
 }
 
 .tml .tml-label {
@@ -5119,7 +5120,7 @@ height: 200px !important;
 }
 
 .tml-submit-wrap input{
-    background: #fff;
+    background: #ccc;
     color: #e2cb13;
     text-transform: uppercase;
     padding: 10px 20px;
