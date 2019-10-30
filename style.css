@@ -5087,9 +5087,6 @@ height: 200px !important;
 
 .theme-my-login.container{
     margin: 50px auto;
-}
-
-.theme-my-login .tml{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -5097,8 +5094,13 @@ height: 200px !important;
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
     background: #e7d117;
-    padding: 20px;
     font-family: "Lato";
+
+}
+
+.theme-my-login .tml{
+    font-family: "Lato";
+    padding: 20px;
 }
 
 .tml .tml-field {
