@@ -16,7 +16,7 @@ get_header();
 		<main id="main" class="site-main">
 
 		<?php 
-		$action = $action = theme_my_login()->get_action();
+		$action = theme_my_login()->get_action();
 		?>
 
 			<div class="theme-my-login container">
