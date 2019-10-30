@@ -5084,3 +5084,17 @@ height: 200px !important;
 .tml-action #masthead{
     display: none;
 }
+
+.theme-my-login.container{
+    margin: 0 auto;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+    background: #e7d117;
+}
+
+.theme-my-login .tml{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
