@@ -10,7 +10,6 @@
  */
 
 ?>
-
 <?php 
 $categories = get_the_terms( $post->ID , array( 'categoria_videos') );
 $term_link = get_term_link( $categories[0], array( 'categoria_videos') );

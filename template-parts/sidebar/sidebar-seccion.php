@@ -48,7 +48,7 @@
 </div>
 <div class="widget ad-lateral-sidebar">
 
- <!-- <div id="publicidadPBABarrasSeccion">
+ <div id="publicidadPBABarrasSeccion">
     <a href="https://www.gba.gob.ar/seguridad?utm_source=medios&utm_medium=cpc&utm_campaign=seguridad">
       <img src="http://elcanciller.com/wp-content/uploads/2019/10/pbabarras1.gif">
     </a>
@@ -58,6 +58,6 @@
     <a href="https://www.gba.gob.ar/seguridad?utm_source=medios&utm_medium=cpc&utm_campaign=seguridad">
       <img src="http://elcanciller.com/wp-content/uploads/2019/10/pbajuego1.gif">
     </a>
-  </div>-->
+  </div>
 
 </div>

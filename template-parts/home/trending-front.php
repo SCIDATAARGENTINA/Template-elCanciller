@@ -10,15 +10,6 @@
  */
 
 ?>
-<div id="resultados"></div>
-<script>
-var d = new Date();
-var dia = d.getDate();
-if (dia > '26'){
-   jQuery('#resultados').append('<div class=\"ad-long\"><div id=\"resultado\" style=\"width: 100% !important;\"><a href=\"\"><img src=\"http://drive.google.com/uc?export=view&id=1x22iuanDrkjQ9dy39e3q7CTYPlJ6mBS5" class=\"onlydesktop\" style=\"\"><img src=\"http://drive.google.com/uc?export=view&id=1iz5t3ipmjBm4q3JDbsSbzKdv24BJZFvm" class=\"onlymobile\" style=\"width: 300px;\"></a></div></div>');
-   console.log(dia);
-}
-</script>
 <div class="trending-post">
    <?php
    $args = array(
@@ -47,7 +38,7 @@ if (dia > '26'){
 
    <?php endif ?>
 </div>
-<!--<div class="ad-long">
+<div class="ad-long">
  
    <div id="publicidadCABANota" style="width: 100% !important;">
        <a href="https://www.buenosaires.gob.ar/salud">
@@ -56,5 +47,5 @@ if (dia > '26'){
       </a>
    </div>
 
-</div>-->
+</div>
 <!-- <div class="ad-long"><div id="dondeVoto" style="width: 100% !important;"><a href="https://elcanciller.com/donde-voto-padron-para-las-elecciones-nacionales-del-27-de-octubre/"><img src="https://elcanciller.com/wp-content/uploads/2019/10/donde-voto.jpeg" class="onlydesktop" style="width: 728px;"><img src="https://elcanciller.com/wp-content/uploads/2019/10/donde-voto-mobile.jpeg" class="onlymobile" style="width: 300px;"></a></div></div>-->
