@@ -5083,6 +5083,6 @@ height: 200px !important;
 
 /*THEME MY LOGIN*/
 
-.tml-action .masthead{
+.tml-action #masthead{
     display: none;
 }

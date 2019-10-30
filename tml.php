@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: User Register
+ * Template Name: Theme My Login
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -15,9 +15,7 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<div class="login-form">
-				<?php echo do_shortcode('[theme-my-login]'); ?>
-			</div>
+			
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
