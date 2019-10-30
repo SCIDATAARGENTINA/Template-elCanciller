@@ -21,7 +21,7 @@ get_header();
 
 			<div class="theme-my-login container">
 				<h1><?php echo $action ?></h1>
-				<?php echo theme_my_login()->get_form( $action ); ?>
+				<?php echo do_shortcode('[theme-my-login]'); ?>
 			</div>
 
 		</main><!-- #main -->
