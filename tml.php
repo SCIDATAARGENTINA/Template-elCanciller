@@ -15,9 +15,13 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+		<?php 
+		$action = $action = theme_my_login()->get_action();
+		?>
+
 			<div class="theme-my-login container">
-				<h1><?php tml_get_action(); ?></h1>
-				<?php theme_my_login(); ?>
+				<h1><?php echo $action ?></h1>
+				<?php echo theme_my_login()->get_form( $action ); ?>
 			</div>
 
 		</main><!-- #main -->
