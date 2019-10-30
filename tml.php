@@ -15,7 +15,9 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			
+			<div class="theme-my-login form container">
+				<?php echo do_shortcode('[theme-my-login]') ?>
+			</div>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
