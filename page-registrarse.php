@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: User Logout
+ * Template Name: User Register
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
