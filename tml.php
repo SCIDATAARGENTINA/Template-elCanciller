@@ -15,12 +15,8 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php 
-		$action = theme_my_login()->get_action();
-		?>
-
 			<div class="theme-my-login container">
-				<h1><?php print_r($action)  ?></h1>
+				<h1></h1>
 				<?php echo do_shortcode('[theme-my-login]'); ?>
 			</div>
 
