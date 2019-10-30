@@ -20,7 +20,7 @@ get_header();
 		?>
 
 			<div class="theme-my-login container">
-				<h1><?php echo $action ?></h1>
+				<h1><?php print_r($action)  ?></h1>
 				<?php echo do_shortcode('[theme-my-login]'); ?>
 			</div>
 
