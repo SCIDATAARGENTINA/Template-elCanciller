@@ -5093,6 +5093,7 @@ height: 200px !important;
     grid-template-columns: 1fr 2fr;
     font-family: "Lato";
     padding: 20px;
+    grid-gap: 30px;
 }
 
 
