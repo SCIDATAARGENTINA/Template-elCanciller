@@ -5031,9 +5031,12 @@ height: 200px !important;
     
     }
 
+
 /* AGREGADO LUCAS */ 
 
-.flBtn a{background: #b29f93 !important;}
+
+.flBtn a{background: #b29f93 !important;display:block !important;}
+
 
 .live-section{text-align: center;}
 
@@ -5081,6 +5084,7 @@ height: 200px !important;
 
 }
 
+<<<<<<< HEAD
 /*THEME MY LOGIN*/
 
 .tml-action #masthead{
@@ -5148,3 +5152,10 @@ height: 200px !important;
     padding: 20px;
     font-size: 18px;
 }
+=======
+/* FIN AGREGADO LUCAS */ 
+
+/* FIN AGREGADO LUCAS */ 
+
+/* FIN AGREGADO LUCAS */ 
+>>>>>>> 6723ba284e87684859b6f467b0ce33b08f5cb3ff
