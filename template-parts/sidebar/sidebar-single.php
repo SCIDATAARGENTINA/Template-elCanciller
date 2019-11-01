@@ -56,6 +56,9 @@
 </div>
 
 <script>
+setTimeout(function(){ decidePublicidad() }, 3000);
+
+function decidePublicidad() {
 var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
 console.log(categoriaPosteo);
 var texto = "";
@@ -68,6 +71,8 @@ if (categoriaPosteo != 'Deportes')
     texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"https://elcanciller.com/wp-content/uploads/2019/11/300x600.gif\"></a>';
   }
   jQuery("#publicidadBcoProvinciaNota").append(texto);
+}
+
  </script> 
   
 </div>
