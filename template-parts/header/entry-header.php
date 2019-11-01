@@ -43,4 +43,7 @@ $discussion = ! is_page() && twentynineteen_can_show_post_thumbnail() ? twentyni
 		);
 	?>
 </div><!-- .meta-info -->
+<script>
+jQuery('#floatBtn').on('click',function(){window.location.href = URLdomain;});
+</script>
 <?php endif; ?>
