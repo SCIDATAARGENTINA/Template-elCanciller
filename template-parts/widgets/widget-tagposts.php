@@ -26,6 +26,7 @@ if($tag_principal){
                         'tag_id' => $tag_principal->term_id
                     );
                     $query = new WP_Query( $args );
+                    if($query->have_posts()){
                     while( $query->have_posts() ) {
                         $query->the_post(); ?>
 
@@ -34,6 +35,7 @@ if($tag_principal){
                     <?php }
                     // Restore original Post Data
                     wp_reset_postdata(); ?>
+                    <?php } ?>
     </ul><!-- tag-list -->
 </div><!-- end tagsrelated widget container -->
 <?php } ?>
