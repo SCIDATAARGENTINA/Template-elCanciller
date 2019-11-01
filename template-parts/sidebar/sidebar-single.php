@@ -52,10 +52,21 @@
   </a>
 </div>
 
+<script>
+var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
+var texto = "";
+if (categoriaPosteo != 'Deportes')
+  {
+    texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"http://elcanciller.com/wp-content/uploads/2019/10/PBAtasafija1.gif\"></a>';  
+  }
+  else
+  {
+    texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"https://elcanciller.com/wp-content/uploads/2019/11/300x600.gif\"></a>';
+  }
+  jQuery("#publicidadBcoProvinciaNota").append(texto);
+ </script> 
+
 <div id="publicidadBcoProvinciaNota">
-  <a href="https://www.bancoprovincia.com.ar/web">
-    <img src="http://elcanciller.com/wp-content/uploads/2019/10/PBAtasafija1.gif">
-  </a>
 </div>
   
 </div>
