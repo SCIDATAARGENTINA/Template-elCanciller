@@ -62,11 +62,11 @@ function decidePublicidad() {
 var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
 console.log(categoriaPosteo);
 var texto = "";
-if (categoriaPosteo != 'Deportes')
+if (categoriaPosteo == 'Está pasando')
   {
     texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"http://elcanciller.com/wp-content/uploads/2019/10/PBAtasafija1.gif\"></a>';  
   }
-  else
+if (categoriaPosteo == 'Deportes')
   {
     texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"https://elcanciller.com/wp-content/uploads/2019/11/300x600.gif\"></a>';
   }
