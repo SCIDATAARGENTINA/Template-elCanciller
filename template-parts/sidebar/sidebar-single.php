@@ -52,6 +52,9 @@
   </a>
 </div>
 
+<div id="publicidadBcoProvinciaNota">
+</div>
+
 <script>
 var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
 var texto = "";
@@ -65,8 +68,5 @@ if (categoriaPosteo != 'Deportes')
   }
   jQuery("#publicidadBcoProvinciaNota").append(texto);
  </script> 
-
-<div id="publicidadBcoProvinciaNota">
-</div>
   
 </div>
