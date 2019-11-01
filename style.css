@@ -4435,7 +4435,6 @@ SECCION AUTORES
 /* SECCIÓN CONTADOR */
 .widget-contador{
     padding: 0px !important;
-    border: 1px solid #e7d12d;
 }
 .contador-header{
     color: #fff !important;
