@@ -12,7 +12,9 @@
  */
 
 ?>
-
+	<div class="home-link">
+		<a href="<?php bloginfo('url') ?>"><i class="fas fa-home"></i></a>
+	</div>
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
