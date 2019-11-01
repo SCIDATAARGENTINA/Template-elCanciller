@@ -57,6 +57,7 @@
 
 <script>
 var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
+console.log(categoriaPosteo);
 var texto = "";
 if (categoriaPosteo != 'Deportes')
   {
