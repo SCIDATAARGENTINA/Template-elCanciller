@@ -76,6 +76,3 @@ if (categoriaPosteo == 'Deportes')
  </script> 
   
 </div>
-<script>
-jQuery('#floatBtn').on('click',function(){window.location.href = URLdomain;});
-</script>

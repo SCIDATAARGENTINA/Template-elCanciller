@@ -55,6 +55,3 @@
 <div class="widget widget-contador">
   <?php echo do_shortcode('[contador postid=48914]') ?> 
 </div>
-<script>
-jQuery('#floatBtn').on('click',function(){window.location.href = URLdomain;});
-</script>
