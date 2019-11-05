@@ -47,8 +47,8 @@
 <div class="widget ad-lateral-sidebar onlydesktop">
 
 <div id="publicidadCABANota">
-  <a href="https://www.buenosaires.gob.ar/salud">
-    <img src="http://elcanciller.com/wp-content/uploads/2019/10/CABAmobile1.jpeg">
+  <a href="https://www.buenosaires.gob.ar/">
+    <img src="https://elcanciller.com/wp-content/uploads/2019/11/mobile.jpg">
   </a>
 </div>
 
