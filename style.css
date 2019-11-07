@@ -5170,8 +5170,8 @@ height: 200px !important;
 }
 
 .tml-submit-wrap input{
-    background: #f4f4f4;
-    color: #111;
+    background: #e7d117;
+    color: #fff;
     font-weight: normal;
     padding: 10px 20px;
     font-size: 17px;
@@ -5180,7 +5180,7 @@ height: 200px !important;
 }
 
 .tml-submit-wrap input:hover{
-    background: #f4f4f4;
+    background: #e7d117;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
 }
 
@@ -5245,11 +5245,11 @@ height: 200px !important;
 
 .tml-links li a{
     padding: 5px 15px;
-    background: #e7d117;
+    background: #f4f4f4;
     text-align: center;
     display: inline-block;
     font-weight: bold;
-    color: #fff;
+    color: #111;
     margin-right: 10px;
     border-radius: 4px;
     font-size: 14px;
