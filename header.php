@@ -78,8 +78,8 @@
 								echo get_avatar( $current_user->ID, 26 );
 						}
 					}else{ ?>
-						<a class="button" href="<?php bloginfo('url') ?>/login">Ingresar</a>
-						<a class="button" href="<?php bloginfo('url') ?>/registrarse">Registrarse</a>
+						<a class="button login" href="<?php bloginfo('url') ?>/login">Ingresar</a>
+						<a class="button register" href="<?php bloginfo('url') ?>/registrarse">Registrarse</a>
 					<?php }
 
 					 ?>
