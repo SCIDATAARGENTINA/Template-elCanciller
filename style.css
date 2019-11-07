@@ -5091,10 +5091,13 @@ height: 200px !important;
 
 .theme-my-login.container{
     margin: 50px auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     font-family: "Lato";
     padding: 20px;
+}
+
+.tml-action-login .theme-my-login.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     grid-gap: 30px;
 }
 
