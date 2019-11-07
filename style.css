@@ -5101,6 +5101,12 @@ height: 200px !important;
     grid-gap: 30px;
 }
 
+@media (min-width: 768px){
+    .tml-action-register .theme-my-login.container{
+        max-width: 60%;
+    }
+}
+
 
 .theme-my-login .tml{
     font-family: "Lato";
