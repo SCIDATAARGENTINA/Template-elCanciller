@@ -41,9 +41,9 @@
 <div class="ad-long">
  
    <div id="publicidadCABANota" style="width: 100% !important;">
-       <a href="https://www.buenosaires.gob.ar/salud">
-         <img src="http://elcanciller.com/wp-content/uploads/2019/10/CABAdesktop1.jpeg" class="onlydesktop" style="width: 728px;">
-         <img src="http://elcanciller.com/wp-content/uploads/2019/10/CABAmobile1.jpeg" class="onlymobile" style="width: 300px;">
+       <a href="https://www.buenosaires.gob.ar/">
+         <img src="https://elcanciller.com/wp-content/uploads/2019/11/desktop.jpg" class="onlydesktop" style="width: 728px;">
+         <img src="https://elcanciller.com/wp-content/uploads/2019/11/mobile.jpg" class="onlymobile" style="width: 300px;">
       </a>
    </div>
 
