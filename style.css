@@ -5193,7 +5193,12 @@ height: 200px !important;
     display: none;
 }
 
-
+.tml-action #pass-strength-result{
+    display: none;
+}
+.tml-indicator_hint-wrap{
+    font-size: 20px;
+}
 /* Home Link */
 
 .home-link{
