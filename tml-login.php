@@ -22,9 +22,6 @@ get_header();
 				</div>
 				<div class="action-side">
 					<h2>Accede a elCanciller para aprovechar todas las funcionalidades de nuestra web.</h2>
-					<p>Playlists de noticias</p>
-					<p>Favoritos</p>
-					<p>Resultados personalizados</p>
 					<a class="button" href="<?php bloginfo('url') ?>/registrarse">Registrate ahora</a>
 				</div>
 			</div>
