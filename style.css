@@ -101,9 +101,8 @@ h2:before {
 
 .top-bar .current-user-avatar .button{
     font-size: 14px;
-    padding: 10px 15px;
+    padding: 8px 15px;
     margin-right: 10px;
-    font-size: 15px;
     line-height: 1;
     font-weight: 400;
     background: #f4f4f4;
