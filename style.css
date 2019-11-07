@@ -5151,6 +5151,14 @@ height: 200px !important;
     font-size: 18px;
 }
 
+.form-side h1{
+    font-size: 20px;
+}
+
+.action-side h2{
+    font-size: 20px;
+}
+
 /* Home Link */
 
 .home-link{
