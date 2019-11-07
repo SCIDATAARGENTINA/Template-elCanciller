@@ -5208,7 +5208,7 @@ height: 200px !important;
 .tml-action #pass-strength-result{
     display: none;
 }
-.tml-indicator_hint-wrap{
+.tml-indicator_hint-wrap .indicator-hint{
     font-size: 20px;
 }
 
