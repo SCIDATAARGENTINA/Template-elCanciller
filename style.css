@@ -99,6 +99,17 @@ h2:before {
     background: #b29f93;
 }
 
+.top-bar .current-user-avatar .button{
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+    background: #f4f4f4;
+    color: #111;
+}
+
 @media (max-width: 1100px){
     .top-bar{
         padding: 10px 20px;
