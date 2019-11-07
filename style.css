@@ -103,7 +103,7 @@ h2:before {
     font-size: 14px;
     padding: 10px 15px;
     margin-right: 10px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1;
     font-weight: 400;
     background: #f4f4f4;
@@ -113,6 +113,7 @@ h2:before {
 
 .top-bar .current-user-avatar .button.login{
     background: #e7d117;
+    color: #fff;
 }
 
 .top-bar .current-user-avatar .button:hover{
