@@ -76,6 +76,7 @@
 						$current_user = wp_get_current_user();
 						if ( ($current_user instanceof WP_User) ) {
 								echo get_avatar( $current_user->ID, 26 );
+								echo $current_user->name;
 						}
 					}else{ ?>
 						<a class="button login" href="<?php bloginfo('url') ?>/login">Ingresar</a>
