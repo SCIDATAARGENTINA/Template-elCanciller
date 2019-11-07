@@ -1418,3 +1418,12 @@ function only_show_author_posts_in_author_archive( $query ) {
 
 }
 add_action( 'pre_get_posts', 'only_show_author_posts_in_author_archive', 1 );
+
+add_action( 'init', 'blockusers_init' );
+    function blockusers_init() {
+    if ( is_admin() && ! current_user_can( 'administrator' ) &&
+    ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+    wp_redirect( bloginfo('url') );
+    exit;
+    }
+}
