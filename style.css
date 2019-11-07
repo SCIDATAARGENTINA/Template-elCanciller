@@ -5118,9 +5118,9 @@ height: 200px !important;
 .tml .tml-label {
     display: block;
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: #111;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .tml-submit-wrap input{
@@ -5152,11 +5152,11 @@ height: 200px !important;
 }
 
 .form-side h1{
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .action-side h2{
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /* Home Link */
