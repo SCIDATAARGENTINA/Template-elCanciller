@@ -5161,34 +5161,36 @@ height: 200px !important;
     justify-content: center;
     text-align: center;
 }
-.action-side h2{
-    font-size: 25px;
-}
-
-.action-side a{
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
-    margin-top: 30px;
-}
-
-.action-side a:hover{
-    color: #fff;
-    font-weight: normal;
-    padding: 10px 20px;
-    font-size: 17px;
-    transition: 300ms ease;
-}
-
-.tml-login .tml-register-link{
-    display: none;
-}
-
 .action-container{
     max-width: 400px;
     background: #f4f4f4;
     border-radius: 4px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
     margin: 0 auto;
+    padding: 20px;
 }
+.action-side h2{
+    font-size: 25px;
+}
+
+.action-side a{
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 17px;
+    transition: 300ms ease;
+}
+
+.action-side a:hover{
+    color: #fff;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
+}
+
+.tml-login .tml-register-link{
+    display: none;
+}
+
+
 /* Home Link */
 
 .home-link{

@@ -22,7 +22,7 @@ get_header();
 				</div>
 				<div class="action-side">
 					<div class="action-container">
-						<h2>Accede a elCanciller para aprovechar todas las funcionalidades de nuestra web.</h2>
+						<h2>Accede a elCanciller.com para aprovechar todas las funcionalidades de nuestra web.</h2>
 						<a class="button" href="<?php bloginfo('url') ?>/registrarse">Registrate ahora</a>
 					</div>
 				</div>
