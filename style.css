@@ -5109,6 +5109,7 @@ height: 200px !important;
 @media (min-width: 768px){
     .tml-action-register .theme-my-login.container{
         max-width: 40%;
+        margin: 50px 0;
     }
 }
 
