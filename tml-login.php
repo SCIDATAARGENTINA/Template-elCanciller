@@ -21,8 +21,10 @@ get_header();
 					<?php echo do_shortcode('[theme-my-login]'); ?>
 				</div>
 				<div class="action-side">
-					<h2>Accede a elCanciller para aprovechar todas las funcionalidades de nuestra web.</h2>
-					<a class="button" href="<?php bloginfo('url') ?>/registrarse">Registrate ahora</a>
+					<div class="action-container">
+						<h2>Accede a elCanciller para aprovechar todas las funcionalidades de nuestra web.</h2>
+						<a class="button" href="<?php bloginfo('url') ?>/registrarse">Registrate ahora</a>
+					</div>
 				</div>
 			</div>
 

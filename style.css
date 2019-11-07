@@ -5181,6 +5181,13 @@ height: 200px !important;
 .tml-login .tml-register-link{
     display: none;
 }
+
+.action-container{
+    max-width: 400px;
+    background: #f4f4f4;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
+}
 /* Home Link */
 
 .home-link{
