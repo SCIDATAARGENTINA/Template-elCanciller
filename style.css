@@ -5111,6 +5111,10 @@ height: 200px !important;
         max-width: 40%;
         margin: 50px 0;
     }
+
+    .tml-lostpassword{
+        max-width: 40%;
+    }
 }
 
 
