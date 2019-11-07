@@ -5154,7 +5154,7 @@ height: 200px !important;
     font-size: 18px;
 }
 
-.form-side h1{
+.form-side h1, .tml-action h1{
     font-size: 25px;
 }
 
