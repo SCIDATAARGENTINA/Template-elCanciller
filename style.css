@@ -115,6 +115,13 @@ h2:before {
     transition: 300ms ease;
 }
 
+@media (max-width: 768px){
+    .top-bar .current-user-avatar .button.register{
+        display: none;
+    }
+}
+
+
 .top-bar .current-user-avatar .button.login{
     background: #e7d117;
     color: #fff;
