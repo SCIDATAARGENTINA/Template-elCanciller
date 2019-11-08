@@ -5239,6 +5239,7 @@ height: 200px !important;
 
 .tml-links li{
     width: 50%;
+    margin: 0px 4px;
 }
 
 .tml-links li a{
