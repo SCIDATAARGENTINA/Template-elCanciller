@@ -4430,6 +4430,10 @@ SECCION AUTORES
     background-color: #ead637;
 }
 
+.ultimomomento-section .ultimo-momento a{
+    color: #111;
+}
+
 /* FIN DE LA SECCIÓN ÚLTIMO MOMENTO */
 
 /* SECCIÓN CONTADOR */
