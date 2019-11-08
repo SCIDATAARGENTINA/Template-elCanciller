@@ -38,16 +38,18 @@ get_header();
 
 			</div><!-- content -->
 
-			<div id="publicidadBcoProvinciaNotaMobile" class="onlymobile">
+		</div><!-- inner container -->
+		<div class="outer-container">
+			<div id="publicidadBcoProvinciaNotaMobile" class="onlymobile" style="margin-bottom: 40px">
 			</div>
 
 			<script>
 
 				if(jQuery(window).width() <= 991){
 					
-					setTimeout(function(){ decidePublicidad() }, 3000);
+					setTimeout(function(){ decidePublicidadMobile() }, 3000);
 
-					function decidePublicidad() {
+					function decidePublicidadMobile() {
 					var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
 					var texto = "";
 					if (categoriaPosteo == 'Está pasando')
@@ -63,9 +65,6 @@ get_header();
 				}
 
 			</script> 
-
-		</div><!-- inner container -->
-		<div class="outer-container">
 			<div class="related-posts">
 				<div class="grey-band"></div>
 				<div class="related-title">
