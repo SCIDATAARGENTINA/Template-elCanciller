@@ -40,7 +40,7 @@ get_header();
 
 		</div><!-- inner container -->
 		<div class="outer-container">
-			<div id="publicidadBcoProvinciaNotaMobile" class="onlymobile" style="margin-bottom: 40px">
+			<div id="publicidadBcoProvinciaNotaMobile" class="onlymobile" style="margin: 0 auto; margin-bottom: 40px;">
 			</div>
 
 			<script>
