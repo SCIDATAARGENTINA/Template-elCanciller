@@ -1433,8 +1433,8 @@ if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Ads',
-		'menu_title'	=> 'Ads',
-		'parent_slug'	=> 'ads-settings',
+    'menu_title'	=> 'Ads',
+		'parent_slug'	=> 'config-elcanciller',
 	));
 	
 }
