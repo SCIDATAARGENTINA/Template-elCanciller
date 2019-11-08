@@ -38,6 +38,30 @@ get_header();
 
 			</div><!-- content -->
 
+			<div id="publicidadBcoProvinciaNotaMobile" class="onlymobile">
+			</div>
+
+			<script>
+
+				if(jQuery(window).width() <= 991)
+				setTimeout(function(){ decidePublicidad() }, 3000);
+
+				function decidePublicidad() {
+				var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
+				var texto = "";
+				if (categoriaPosteo == 'Está pasando')
+				{
+					texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"http://elcanciller.com/wp-content/uploads/2019/10/PBAtasafija1.gif\"></a>';  
+				}
+				if (categoriaPosteo == 'Deportes')
+				{
+					texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"https://elcanciller.com/wp-content/uploads/2019/11/300x600.gif\"></a>';
+				}
+				jQuery("#publicidadBcoProvinciaNotaMobile").append(texto);
+				}
+
+			</script> 
+
 		</div><!-- inner container -->
 		<div class="outer-container">
 			<div class="related-posts">
