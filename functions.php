@@ -1419,6 +1419,8 @@ function only_show_author_posts_in_author_archive( $query ) {
 }
 add_action( 'pre_get_posts', 'only_show_author_posts_in_author_archive', 1 );
 
+
+// Redirect users after register/login
 add_action( 'init', 'blockusers_init' );
     function blockusers_init() {
     if ( is_admin() && ! current_user_can( 'administrator' ) &&
@@ -1426,4 +1428,13 @@ add_action( 'init', 'blockusers_init' );
     wp_redirect( bloginfo('url') );
     exit;
     }
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+//Hide admin bar for non admin
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
 }
