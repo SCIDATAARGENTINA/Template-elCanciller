@@ -1421,14 +1421,10 @@ add_action( 'pre_get_posts', 'only_show_author_posts_in_author_archive', 1 );
 
 
 // Redirect users after register/login
-add_action( 'init', 'blockusers_init' );
-    function blockusers_init() {
-    if ( is_admin() && ! current_user_can( 'administrator' ) &&
-    ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-    wp_redirect( bloginfo('url') );
-    exit;
-    }
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url();
 }
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
 
 add_action('after_setup_theme', 'remove_admin_bar');
  
