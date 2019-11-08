@@ -127,6 +127,12 @@ h2:before {
     color: #fff;
 }
 
+.top-bar .current-user-avatar .button.logout{
+    background: #e7d117;
+    color: #fff;
+    margin-left: 10px;
+}
+
 .top-bar .current-user-avatar .button:hover{
     opacity: 0.8;
 }
