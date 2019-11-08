@@ -5252,6 +5252,7 @@ height: 200px !important;
     border-radius: 4px;
     font-size: 14px;
     transition: 300ms ease;
+    width: 100%;
 }
 
 .tml-links li a:hover{
