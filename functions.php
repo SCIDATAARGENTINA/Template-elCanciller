@@ -1438,3 +1438,20 @@ if (!current_user_can('administrator') && !is_admin()) {
   show_admin_bar(false);
 }
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Config',
+		'menu_title'	=> 'Config',
+		'menu_slug' 	=> 'config-elcanciller',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Ads',
+    'menu_title'	=> 'Ads',
+		'parent_slug'	=> 'config-elcanciller',
+	));
+	
+}
