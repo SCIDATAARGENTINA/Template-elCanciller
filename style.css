@@ -5247,6 +5247,10 @@ height: 200px !important;
     margin: 0px 4px;
 }
 
+.tml-action-login .tml-links li{
+    width: 100%;
+}
+
 .tml-links li a{
     padding: 5px 15px;
     background: #f4f4f4;
