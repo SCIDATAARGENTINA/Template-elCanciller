@@ -36,6 +36,8 @@ get_header();
 			endwhile; // End of the loop.
 			?>
 
+			<p>asdasdasd</p>
+
 			</div><!-- content -->
 
 		</div><!-- inner container -->
