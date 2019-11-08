@@ -5138,6 +5138,16 @@ height: 200px !important;
     grid-gap: 30px;
 }
 
+@media (max-width: 768px){
+    .tml-action-login .theme-my-login.container{
+        display: block;
+    }
+
+    .tml-action-login .action-side{
+        margin-top: 50px;
+    }
+}
+
 @media (min-width: 768px){
     .tml-action-register .theme-my-login.container{
         max-width: 40%;
