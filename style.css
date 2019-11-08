@@ -5309,7 +5309,7 @@ height: 200px !important;
 }
 
 .tml-social-providers-divider span{
-    line-height: 1.7;
+    line-height: 1.7 !important;
 }
 /* Home Link */
 
