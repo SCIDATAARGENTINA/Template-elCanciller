@@ -5301,7 +5301,7 @@ height: 200px !important;
 }
 
 .tml-social-provider .tml-social-provider-icon{
-    border-right: 2px solid white;
+    border-right: 2px solid white !important;
 }
 
 .tml-social-provider .tml-social-provider-icon img{
