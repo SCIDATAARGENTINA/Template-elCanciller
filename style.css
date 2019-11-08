@@ -5308,7 +5308,7 @@ height: 200px !important;
     vertical-align: top;
 }
 
-..tml-social-providers-divider span{
+.tml-social-providers-divider span{
     line-height: 1.7;
 }
 /* Home Link */
