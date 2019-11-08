@@ -43,6 +43,11 @@ h6 {
 button,
 a {
     outline: 0 !important;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #111;
 }
 
 blockquote {
