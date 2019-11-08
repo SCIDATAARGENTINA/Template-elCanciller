@@ -5208,13 +5208,12 @@ height: 200px !important;
 
 .form-side h1, .tml-action h1{
     font-size: 25px;
+    margin-top: 0px;
 }
 
 .action-side{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
 }
 .action-container{
     max-width: 400px;
