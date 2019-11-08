@@ -5293,7 +5293,7 @@ height: 200px !important;
 /*Social providers */
 
 .tml-social-providers .tml-social-provider{
-    border: none;
+    border: none !important;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
     border-radius: 4px;
     font-size: 16px;
@@ -5306,6 +5306,10 @@ height: 200px !important;
 
 .tml-social-provider .tml-social-provider-icon img{
     vertical-align: top;
+}
+
+..tml-social-providers-divider span{
+    line-height: 1.7;
 }
 /* Home Link */
 
