@@ -5294,7 +5294,7 @@ height: 200px !important;
 
 .tml-social-providers .tml-social-provider{
     border: none !important;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.16);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.16) !important;
     border-radius: 4px;
     font-size: 16px;
     font-family: "Arial";
