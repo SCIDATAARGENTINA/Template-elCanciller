@@ -1423,12 +1423,6 @@ add_action( 'pre_get_posts', 'only_show_author_posts_in_author_archive', 1 );
 
 if( function_exists('acf_add_options_page') ) {
 	
-	acf_add_options_page();
-	
-}
-
-if( function_exists('acf_add_options_page') ) {
-	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Config',
 		'menu_title'	=> 'Config',
