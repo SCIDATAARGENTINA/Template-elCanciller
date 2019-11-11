@@ -103,7 +103,7 @@ let updateUserFavs = (post_id, url) => {
         url: url,
         type: 'POST',
         data: {
-            action: 'add_user_favoritos',
+            'action': 'add_user_favoritos',
             post_id
         },
         success: function (result) {

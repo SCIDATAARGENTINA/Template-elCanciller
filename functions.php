@@ -1495,9 +1495,6 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
  * 
 */
 
- add_action( 'wp_ajax_nopriv_add_user_favoritos', 'add_user_favoritos' );
- add_action( 'wp_ajax_add_user_favoritos', 'add_user_favoritos' );
-
  function add_user_favoritos(){
     $user = wp_get_current_user();
 
@@ -1518,6 +1515,9 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       add_user_meta($user_id, 'favoritos', $favoritos);
     }
 
-    return $_POST['post_id'];
+    return 'successss';
 
 }
+
+ add_action( 'wp_ajax_nopriv_add_user_favoritos', 'add_user_favoritos' );
+ add_action( 'wp_ajax_add_user_favoritos', 'add_user_favoritos' );
