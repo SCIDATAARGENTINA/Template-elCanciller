@@ -90,6 +90,7 @@ let updateLikeData = (likeCount, id, url, $) => {
             success: function (result) {
                 //console.log(result);
                 setCookie(cjs, id);
+                console.log('updated');
             },
             error: function (errorThrown) {
                 //console.log(errorThrown);
