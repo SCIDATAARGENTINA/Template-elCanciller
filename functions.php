@@ -1498,6 +1498,7 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
 
 function add_user_favoritos($post_id){
     $user = wp_get_current_user();
+    echo $post_id;
 
     if(!wp_get_current_user()){
       return;
