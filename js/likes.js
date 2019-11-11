@@ -104,6 +104,7 @@ let likePost = () => {
             let id = like.getAttribute('data-id');
             let postType = like.getAttribute('data-type');
             getPostData(id, postType).done(data => {
+                console.log(data);
                 updateLikeData(parseInt(data.acf.likes), id, content_data.ajax_url);
 
                 like.classList.add('liked');
