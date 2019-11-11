@@ -46,6 +46,9 @@
                         &.-accent{
                             background: $primary;
                             color: $white;
+                            &:hover{
+                                transform: translateX(0px);
+                            }
                         }
                     }
                 }
