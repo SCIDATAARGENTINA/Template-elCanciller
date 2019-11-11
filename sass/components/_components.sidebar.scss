@@ -23,4 +23,18 @@
             }
         }
     }
+    .sidebar__links{
+        nav{
+            li{
+                padding: 10px 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $secondary;
+                a{
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
