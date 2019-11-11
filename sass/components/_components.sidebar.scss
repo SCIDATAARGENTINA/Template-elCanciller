@@ -1,12 +1,17 @@
-
 .sidebarContent{
-    .sidebar__avatar{
+    .sidebar__profile{
         display: flex;
         justify-content: center;
         align-items: center;
         img{
             border-radius: 50%;
             vertical-align: top;
+        }
+        .profile__user{
+            margin-top: 20px;
+            background: $lightGray;
+            border-top: 1px solid $gray;
+            border-bottom: 1px solid $gray;
         }
     }
 }
