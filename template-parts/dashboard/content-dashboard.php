@@ -28,8 +28,8 @@ $user = wp_get_current_user();
       array_push($favoritos, '90240');
       add_user_meta($user->ID, 'favoritos', $favoritos);
     }
-
-    print_r($user->ID, get_user_meta($user->ID, 'favoritos'));
+    echo $user->ID;
+    print_r(get_user_meta($user->ID, 'favoritos'));
  ?>
 </pre>
 <p> Dashboard Content </p>
