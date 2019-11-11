@@ -9,6 +9,9 @@
  * @since 1.0.0
  */
 
+ $user = wp_get_current_user();
+
+ print_r(get_user_meta($user->ID, 'favoritos'));
 ?>
 
 <p> Dashboard Content </p>
