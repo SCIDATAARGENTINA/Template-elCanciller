@@ -94,7 +94,7 @@ let updateLikeData = (likeCount, id, url) => {
 
 let updateUserFavs = (post_id, url) => {
 
-    if (validateIfLiked(id)) {
+    if (validateIfLiked(post_id)) {
         console.log('Ya diste like a esa publicación');
         return;
     }
