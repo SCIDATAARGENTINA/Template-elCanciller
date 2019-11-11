@@ -26,6 +26,14 @@ $user = wp_get_current_user();
         </div>
     </div>
     <div class="sidebar__links">
-
+        <nav>
+            <ul>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/ver-mas-tarde">Ver más tarde</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/seguidos">Seguidos</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/favoritos">Favoritos</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/temas-ocultos">Temas Ocultos</a></li>
+                <li class="-accent"><a href="#">Cerrar sesión</a></li>
+            </ul>
+        </nav>
     </div>
 </div>
