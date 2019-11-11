@@ -84,7 +84,6 @@ let updateLikeData = (likeCount, id, url) => {
             success: function (result) {
                 //console.log(result);
                 setCookie(id);
-                console.log('updated');
             },
             error: function (errorThrown) {
                 //console.log(errorThrown);
@@ -93,10 +92,33 @@ let updateLikeData = (likeCount, id, url) => {
 
 };
 
+let updateUserFavs = (post_id, url) => {
+
+    if (validateIfLiked(id)) {
+        console.log('Ya diste like a esa publicación');
+        return;
+    }
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: {
+            action: 'add_user_favoritos',
+            post_id
+        },
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (errorThrown) {
+            console.log(errorThrown);
+        }
+    });
+
+}
+
 let likePost = () => {
 
         $('.like').click(function(){
-            console.log('clicked');
             // Don't follow the link
             event.preventDefault();
 
@@ -104,9 +126,9 @@ let likePost = () => {
             let id = like.getAttribute('data-id');
             let postType = like.getAttribute('data-type');
             getPostData(id, postType).done(data => {
-                console.log(data);
-                updateLikeData(parseInt(data.acf.likes), id, likes_params.ajaxurl);
 
+                updateLikeData(parseInt(data.acf.likes), id, likes_params.ajaxurl);
+                updateUserFavs(id, url);
                 like.classList.add('liked');
             });
         });
