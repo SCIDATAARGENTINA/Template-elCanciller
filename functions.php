@@ -1484,6 +1484,8 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
 
    }
 
+   add_user_favoritos($_POST['post_id']);
+
  	die();
  }
 
@@ -1494,9 +1496,13 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
  * 
 */
 
-function add_user_favoritos(){
+function add_user_favoritos($post_id){
+    $user = wp_get_current_user();
 
-    $user_id = $_POST['userId'];
+    if(!wp_get_current_user()){
+      return;
+    }
+
     $post_id = $_POST['postId'];
 
     // Check if user has favoritos
