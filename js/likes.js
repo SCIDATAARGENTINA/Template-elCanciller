@@ -64,7 +64,7 @@ let setAllLikes = () => {
 
 };
 
-let updateLikeData = (likeCount, id, url, $) => {
+let updateLikeData = (likeCount, id, url) => {
 
     if (validateIfLiked(id)) {
         console.log('Ya diste like a esa publicación');
@@ -106,7 +106,7 @@ let likePost = () => {
             let id = like.getAttribute('data-id');
             let postType = like.getAttribute('data-type');
             getPostData(id, postType).done(data => {
-                updateLikeData(parseInt(data.acf.likes), id, content_data.ajax_url, $);
+                updateLikeData(parseInt(data.acf.likes), id, content_data.ajax_url);
 
                 like.classList.add('liked');
             });
