@@ -18,7 +18,7 @@ $user = wp_get_current_user();
         <img src="<?php echo get_avatar_url( $user->ID ) ?>" alt="<?php echo $user->name?>">
         <div class="profile__user">
             <div class="user__name">
-                <p><?php echo $user->name?></p>
+                <p><?php echo $user->display_name?></p>
             </div>
             <div class="user__actions">
 
