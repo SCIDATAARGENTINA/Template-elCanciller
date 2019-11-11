@@ -1459,7 +1459,7 @@ if( function_exists('acf_add_options_page') ) {
 
 function likes_scripts() {
   
-	wp_register_script( 'likes-js', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
+	wp_register_script( 'likes-js', get_stylesheet_directory_uri() . '/js/likes.js', array('jquery') );
 
 	wp_localize_script( 'likes-js', 'likes_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
