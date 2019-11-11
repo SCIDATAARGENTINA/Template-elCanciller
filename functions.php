@@ -1502,10 +1502,6 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       return;
     }
 
-    echo $user->ID;
-    print_r(get_user_meta($user->ID, 'favoritos', true));
-
-
     // Check if user has favoritos
     if(get_user_meta($user->ID, 'favoritos', true)){
       //Update favoritos con el nuevo fav
@@ -1518,8 +1514,6 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       array_push($favoritos, $_POST['post_id']);
       add_user_meta($user->ID, 'favoritos', $favoritos);
     }
-
-    return 'successss';
 
 }
 
