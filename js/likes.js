@@ -1,3 +1,5 @@
+jQuery(document).ready(function ($) {
+
 let getPostData = (id, type) => {
 
     if (type == "post" || type == null) {
@@ -71,8 +73,6 @@ let updateLikeData = (likeCount, id, url) => {
         return;
     }
 
-    $(document).ready(function () {
-
         $.ajax({
             url: url,
             type: 'POST',
@@ -90,8 +90,6 @@ let updateLikeData = (likeCount, id, url) => {
                 //console.log(errorThrown);
             }
         });
-
-    });
 
 };
 
@@ -115,3 +113,5 @@ let likePost = () => {
 
 likePost();
 setAllLikes();
+
+});
