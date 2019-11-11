@@ -1,6 +1,7 @@
 .sidebarContent{
     .sidebar__profile{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         img{
@@ -12,6 +13,7 @@
             background: $lightGray;
             border-top: 1px solid $gray;
             border-bottom: 1px solid $gray;
+            width: 100%;
         }
     }
 }
