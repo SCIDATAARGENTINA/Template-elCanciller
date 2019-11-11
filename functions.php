@@ -26,7 +26,7 @@ function custom_scripts() {
   wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/slick/slick.css' );
   wp_enqueue_style( 'mf-css', get_stylesheet_directory_uri() . '/js/magnific/magnific-popup.css' );
   wp_enqueue_style( 'noty-css', get_stylesheet_directory_uri() . '/js/noty/noty.css' );
-
+  wp_enqueue_style( 'noty-css', get_stylesheet_directory_uri() . '/dashboard.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 

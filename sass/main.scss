@@ -1,0 +1,27 @@
+// ITCSS Structure
+
+
+// 1 - Settings
+@import 'settings/settings.variables';
+
+// 2 - Tools
+@import 'tools/tools.functions';
+@import 'tools/tools.mixins';
+
+
+// 3 - Generic
+@import 'generic/generic.normalize';
+
+
+// 4 - Elements
+
+// 5 - Objects
+@import 'objects/objects.animations';
+
+// 6 - Components
+@import 'components/components.containers';
+@import 'components/components.sidebar';
+
+// 7 - Utilities
+
+@import 'utilities/utilities'
