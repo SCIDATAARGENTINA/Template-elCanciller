@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Blank
+ * Template Name: Dashboard
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
