@@ -11,7 +11,10 @@
 
  $user = wp_get_current_user();
 
- print_r(get_user_meta($user->ID, 'favoritos'));
 ?>
+<pre>
 
+<?php  print_r(get_user_meta($user->ID, 'favoritos'));
+ ?>
+</pre>
 <p> Dashboard Content </p>
