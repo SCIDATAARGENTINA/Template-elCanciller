@@ -1502,17 +1502,21 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       return;
     }
 
+    echo $user->ID;
+    print_r(get_user_meta($user->ID, 'favoritos', true));
+
+
     // Check if user has favoritos
-    if(get_user_meta($user_id, 'favoritos', true)){
+    if(get_user_meta($user->ID, 'favoritos', true)){
       //Update favoritos con el nuevo fav
-      $favoritos = get_user_meta($user_id, 'favoritos', true);
+      $favoritos = get_user_meta($user->ID, 'favoritos', true);
       array_push($favoritos, $_POST['post_id']);
-      update_user_meta($user_id, 'favoritos', $favoritos);
+      update_user_meta($user->ID, 'favoritos', $favoritos);
     }else{
       // Crea el campo para el usuario en caso de no existir
       $favoritos = [];
       array_push($favoritos, $_POST['post_id']);
-      add_user_meta($user_id, 'favoritos', $favoritos);
+      add_user_meta($user->ID, 'favoritos', $favoritos);
     }
 
     return 'successss';
