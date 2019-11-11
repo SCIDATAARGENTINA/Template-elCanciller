@@ -18,6 +18,7 @@ function custom_scripts() {
   wp_enqueue_script('noty-js', get_stylesheet_directory_uri() . '/js/noty/noty.min.js', array('jquery'), '1.0.0', true);
   wp_enqueue_script( 'cookies-js', get_stylesheet_directory_uri() . '/js/cookies/js.cookie.js', array( 'jquery' ), '1.0.0', true );
   wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+  wp_enqueue_script( 'likes-js', get_stylesheet_directory_uri() . '/js/likes.js', array( 'jquery' ), '1.0.0', true );
   wp_enqueue_script( 'skycons-js', get_stylesheet_directory_uri() . '/js/skycons.js', array( 'jquery' ), '1.0.0', true );
   wp_enqueue_script('comments-js', get_stylesheet_directory_uri() . '/template-parts/comments/comments.js', array('jquery'), '1.0.0', true);
   wp_enqueue_script('nouislider-js', get_stylesheet_directory_uri() . '/js/emocion-slider/nouislider.min.js', array('jquery'), '1.0.0', true);
@@ -1453,4 +1454,48 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'config-elcanciller',
 	));
 	
+}
+
+
+ add_action( 'wp_ajax_nopriv_ajax_call_count_likes', 'ajax_call_count_likes' );
+ add_action( 'wp_ajax_ajax_call_count_likes', 'ajax_call_count_likes' );
+
+ function ajax_call_count_likes() {
+
+   $currentVal = $_POST['like_count'];
+   $currentVal++;
+   if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+
+   update_field( 'likes', $currentVal, $_POST['post_id'] );
+
+   }
+
+ 	die();
+ }
+
+/******
+ * 
+ * DASHBOARD USERS 
+ * Comienzo de las funciones de usuario del template
+ * 
+*/
+
+function add_user_favoritos(){
+
+    $user_id = $_POST['userId'];
+    $post_id = $_POST['postId'];
+
+    // Check if user has favoritos
+    if(get_user_meta($user_id, 'favoritos')){
+      //Update favoritos con el nuevo fav
+      $favoritos = get_user_meta($user_id, 'favoritos');
+      array_push($favoritos, $post_id);
+      update_user_meta($user_id, 'favoritos', $favoritos);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $favoritos = [];
+      array_push($favoritos, $post_id);
+      add_user_meta($user_id, 'favoritos', $favoritos);
+    }
+
 }
