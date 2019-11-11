@@ -9,12 +9,27 @@
  * @since 1.0.0
  */
 
- $user = wp_get_current_user();
+$user = wp_get_current_user();
 
 ?>
 <pre>
 
-<?php  print_r(get_user_meta($user->ID, 'favoritos'));
+<?php  
+
+    // Check if user has favoritos
+    if(get_user_meta($user->ID, 'favoritos')){
+      //Update favoritos con el nuevo fav
+      $favoritos = get_user_meta($user->ID, 'favoritos');
+      array_push($favoritos, '90240');
+      update_user_meta($user->ID, 'favoritos', $favoritos);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $favoritos = [];
+      array_push($favoritos, '90240');
+      add_user_meta($user->ID, 'favoritos', $favoritos);
+    }
+
+    print_r($user->ID, get_user_meta($user->ID, 'favoritos'));
  ?>
 </pre>
 <p> Dashboard Content </p>
