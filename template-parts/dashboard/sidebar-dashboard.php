@@ -32,7 +32,7 @@ $user = wp_get_current_user();
                 <li><a href="<?php bloginfo('url') ?>/dashboard/seguidos">Seguidos</a></li>
                 <li><a href="<?php bloginfo('url') ?>/dashboard/favoritos">Favoritos</a></li>
                 <li><a href="<?php bloginfo('url') ?>/dashboard/temas-ocultos">Temas Ocultos</a></li>
-                <li class="-accent"><a href="#">Cerrar sesión</a></li>
+                <li><a class="-accent" href="#">Cerrar sesión</a></li>
             </ul>
         </nav>
     </div>
