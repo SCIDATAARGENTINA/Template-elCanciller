@@ -1456,6 +1456,12 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+ function rest_js_enqueue_scripts() {
+
+  wp_localize_script( 'likes-js', 'content_data', array('ajax_url' => admin_url( 'admin-ajax.php' )));
+
+ }
+
 
  add_action( 'wp_ajax_nopriv_ajax_call_count_likes', 'ajax_call_count_likes' );
  add_action( 'wp_ajax_ajax_call_count_likes', 'ajax_call_count_likes' );
