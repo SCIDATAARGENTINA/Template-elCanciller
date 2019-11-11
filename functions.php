@@ -1506,9 +1506,9 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
     }
 
     // Check if user has favoritos
-    if(get_user_meta($user_id, 'favoritos')){
+    if(get_user_meta($user_id, 'favoritos', true)){
       //Update favoritos con el nuevo fav
-      $favoritos = get_user_meta($user_id, 'favoritos');
+      $favoritos = get_user_meta($user_id, 'favoritos', true);
       array_push($favoritos, $_POST['post_id']);
       update_user_meta($user_id, 'favoritos', $favoritos);
     }else{

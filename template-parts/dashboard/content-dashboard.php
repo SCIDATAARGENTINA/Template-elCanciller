@@ -16,7 +16,7 @@ $user = wp_get_current_user();
 
 <?php  
 
-    // Check if user has favoritos
+    /* Check if user has favoritos
     if(get_user_meta($user->ID, 'favoritos')){
       //Update favoritos con el nuevo fav
       $favoritos = get_user_meta($user->ID, 'favoritos', true);
@@ -27,9 +27,9 @@ $user = wp_get_current_user();
       $favoritos = [];
       array_push($favoritos, '90240');
       add_user_meta($user->ID, 'favoritos', $favoritos);
-    }
+    }*/
     echo $user->ID;
-    print_r(get_user_meta($user->ID, 'favoritos'));
+    print_r(get_user_meta($user->ID, 'favoritos', true));
 
     //delete_user_meta( $user->ID, 'favoritos')
  ?>
