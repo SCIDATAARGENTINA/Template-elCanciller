@@ -29,19 +29,22 @@
                 padding:0;
                 margin:0;
                 li{
-                    padding: 0px 15px;
+                    padding: 0px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     border-bottom: 1px solid $gray;
                     a{
-                        padding: 10px 0;
+                        padding: 10px 15px;
                         width: 100%;
                         color: $secondary;
                         font-size: 18px;
                         transition: 300ms ease;
                         &:hover{
                             transform: translateX(10px);
+                        }
+                        &.-accent{
+                            background: $primary;
                         }
                     }
                 }
