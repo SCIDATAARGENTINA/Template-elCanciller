@@ -1,5 +1,3 @@
-var cjs = require("cookies-js");
-
 let getPostData = (id, type) => {
 
     if (type == "post" || type == null) {
@@ -12,9 +10,9 @@ let getPostData = (id, type) => {
 
 };
 
-let setCookie = (cjs, id) => {
+let setCookie = (id) => {
 
-    let likedPosts = cjs.get('likedPosts');
+    let likedPosts = Cookies.get('likedPosts');
     let arrIds = [];
 
     if (likedPosts) {
@@ -22,13 +20,13 @@ let setCookie = (cjs, id) => {
         arrIds = JSON.parse(likedPosts);
         arrIds.push(id);
         likedPosts = JSON.stringify(arrIds);
-        cjs.set('likedPosts', likedPosts, { expires: Infinity });
+        Cookies.set('likedPosts', likedPosts, { expires: Infinity });
 
     } else {
 
         arrIds = [id];
         likedPosts = JSON.stringify(arrIds);
-        cjs.set('likedPosts', likedPosts, { expires: Infinity });
+        Cookies.set('likedPosts', likedPosts, { expires: Infinity });
 
     }
 
@@ -36,8 +34,8 @@ let setCookie = (cjs, id) => {
 
 let validateIfLiked = (id) => {
 
-    if (cjs.get('likedPosts')) {
-        let likedPosts = cjs.get('likedPosts');
+    if (Cookies.get('likedPosts')) {
+        let likedPosts = Cookies.get('likedPosts');
         let arrIds = JSON.parse(likedPosts);
 
         return arrIds.includes(id);
@@ -49,8 +47,8 @@ let validateIfLiked = (id) => {
 
 let setAllLikes = () => {
 
-    if (cjs.get('likedPosts')) {
-        let likedPosts = cjs.get('likedPosts');
+    if (Cookies.get('likedPosts')) {
+        let likedPosts = Cookies.get('likedPosts');
         let arrIds = JSON.parse(likedPosts);
 
         arrIds.forEach(function (value) {
@@ -85,7 +83,7 @@ let updateLikeData = (likeCount, id, url, $) => {
             },
             success: function (result) {
                 //console.log(result);
-                setCookie(cjs, id);
+                setCookie(id);
                 console.log('updated');
             },
             error: function (errorThrown) {
