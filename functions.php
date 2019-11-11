@@ -1498,7 +1498,7 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
  function add_user_favoritos(){
     $user = wp_get_current_user();
 
-    if(!wp_get_current_user()){
+    if(!is_user_logged_in()){
       return;
     }
 
