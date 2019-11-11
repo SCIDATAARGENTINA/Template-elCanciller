@@ -30,9 +30,10 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: $secondary;
                 a{
                     width: 100%;
+                    color: $secondary;
+                    font-size: 18px;
                 }
             }
         }
