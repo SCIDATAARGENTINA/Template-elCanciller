@@ -99,6 +99,8 @@ let updateUserFavs = (post_id, url) => {
         return;
     }
 
+    console.log(post_id);
+
     $.ajax({
         url: url,
         type: 'POST',
