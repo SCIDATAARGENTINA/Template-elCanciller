@@ -6,13 +6,9 @@ let getPostData = (id, type) => {
         type = "posts";
     }
 
-    const url = `https://elcanciller.com/wp-json/wp/v2/${type}/${id}`;
+    const url = `https://${window.location.host}/wp-json/wp/v2/${type}/${id}`;
 
-    const headers = {
-
-    };
-
-    return fetch(url, { headers }).then(data => data.json());
+    return $.get(url);
 
 };
 
@@ -103,25 +99,20 @@ let updateLikeData = (likeCount, id, url, $) => {
 
 let likePost = () => {
 
-    document.addEventListener('click', async function (event) {
+        $('.like').click(function(){
+            console.log('clicked');
+            // Don't follow the link
+            event.preventDefault();
 
-        // If the clicked element doesn't have the right selector, bail
-        if (!event.target.matches('.like')) return;
+            let like = event.target;
+            let id = like.getAttribute('data-id');
+            let postType = like.getAttribute('data-type');
+            getPostData(id, postType).done(data => {
+                updateLikeData(parseInt(data.acf.likes), id, content_data.ajax_url, $);
 
-        // Don't follow the link
-        event.preventDefault();
-
-        let like = event.target;
-        let id = like.getAttribute('data-id');
-        let postType = like.getAttribute('data-type');
-        let data = await getPostData(id, postType);
-
-        updateLikeData(parseInt(data.acf.likes), id, content_data.ajax_url, $);
-
-        like.classList.add('liked');
-
-    }, false);
-
+                like.classList.add('liked');
+            });
+        });
 };
 
 likePost();
