@@ -1518,4 +1518,6 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       add_user_meta($user_id, 'favoritos', $favoritos);
     }
 
+    return $_POST['post_id'];
+
 }
