@@ -128,7 +128,7 @@ let likePost = () => {
             getPostData(id, postType).done(data => {
 
                 updateLikeData(parseInt(data.acf.likes), id, likes_params.ajaxurl);
-                updateUserFavs(id, url);
+                updateUserFavs(id, likes_params.ajaxurl);
                 like.classList.add('liked');
             });
         });
