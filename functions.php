@@ -1457,6 +1457,31 @@ if( function_exists('acf_add_options_page') ) {
 
  // AJAX LIKES
 
+ function add_user_favoritos($post_id){
+    $user = wp_get_current_user();
+    echo 'holaaaaaaaaaaaaa' + $post_id;
+
+    if(!wp_get_current_user()){
+      return;
+    }
+
+    $post_id = $_POST['postId'];
+
+    // Check if user has favoritos
+    if(get_user_meta($user_id, 'favoritos')){
+      //Update favoritos con el nuevo fav
+      $favoritos = get_user_meta($user_id, 'favoritos');
+      array_push($favoritos, $post_id);
+      update_user_meta($user_id, 'favoritos', $favoritos);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $favoritos = [];
+      array_push($favoritos, $post_id);
+      add_user_meta($user_id, 'favoritos', $favoritos);
+    }
+
+}
+
 function likes_scripts() {
   
 	wp_register_script( 'likes-js', get_stylesheet_directory_uri() . '/js/likes.js', array('jquery') );
@@ -1496,27 +1521,3 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
  * 
 */
 
-function add_user_favoritos($post_id){
-    $user = wp_get_current_user();
-    echo 'holaaaaaaaaaaaaa' + $post_id;
-
-    if(!wp_get_current_user()){
-      return;
-    }
-
-    $post_id = $_POST['postId'];
-
-    // Check if user has favoritos
-    if(get_user_meta($user_id, 'favoritos')){
-      //Update favoritos con el nuevo fav
-      $favoritos = get_user_meta($user_id, 'favoritos');
-      array_push($favoritos, $post_id);
-      update_user_meta($user_id, 'favoritos', $favoritos);
-    }else{
-      // Crea el campo para el usuario en caso de no existir
-      $favoritos = [];
-      array_push($favoritos, $post_id);
-      add_user_meta($user_id, 'favoritos', $favoritos);
-    }
-
-}
