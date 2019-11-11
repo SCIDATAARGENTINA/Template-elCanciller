@@ -6,7 +6,7 @@ let getPostData = (id, type) => {
         type = "posts";
     }
 
-    const url = `http://${window.location.host}/wp-json/wp/v2/${type}/${id}`;
+    const url = `http://142.93.24.13/wp-json/wp/v2/${type}/${id}`;
 
     return $.get(url);
 
