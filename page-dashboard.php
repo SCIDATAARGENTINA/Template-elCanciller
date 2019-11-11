@@ -16,7 +16,9 @@ get_header();
 		<main id="main" class="site-main">
         <div class="dashboard">
             <div class="dashboard__sidebar">
-            <p>dashboard sidebar</p>
+
+                <?php get_template_part( 'template-parts/dashboard/sidebar', 'dashboard' ); ?>
+                
             </div>
             <div class="dashboard__content">
                 <?php
