@@ -9,6 +9,12 @@
  * @since 1.0.0
  */
 
+$user = wp_get_current_user();
+
 ?>
 
-<p> Dashboard Sidebar </p>
+<div class="sidebarContent">
+    <div class="sidebar__avatar">
+        <img src="<?php get_avatar_url( $user->ID ) ?>" alt="<?php echo $user->name?>">
+    </div>
+</div>

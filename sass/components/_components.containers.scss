@@ -1,1 +1,6 @@
-
+.dashboard{
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
