@@ -27,25 +27,6 @@ $user = wp_get_current_user();
       ?>
     </pre>
 
-      <?php 
-
-        $args = array(
-          'post__in' => $favorited_posts;
-        );
-
-        $fav_query = new WP_Query( $args );
-
-        if($fav_query->have_posts()){
-
-          while($fav_query->have_post()){
-            $fav_query->the_post();
-
-            the_title();
-
-          }
-        }
-      
-      ?>
     </div>
   </div>  
 </div>
