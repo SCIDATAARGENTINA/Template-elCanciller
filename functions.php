@@ -1509,7 +1509,7 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       $in_array = array_search($_POST['post_id'], $favoritos);
       if($in_array){
         echo $in_array;
-        array_slice($favoritos, $in_array, 1);
+        //array_slice($favoritos, $in_array, 1);
       }else{
         array_push($favoritos, $_POST['post_id']);
       }
