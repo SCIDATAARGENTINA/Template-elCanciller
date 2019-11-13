@@ -36,7 +36,7 @@ $user = wp_get_current_user();
       $my_secondary_loop = new WP_Query($args);
       if( $my_secondary_loop->have_posts() ):
           while( $my_secondary_loop->have_posts() ): $my_secondary_loop->the_post();
-            //The secondary loop
+            the_title();
           endwhile;
       endif;
       wp_reset_postdata();
