@@ -23,7 +23,7 @@ $user = wp_get_current_user();
 
       $args = array(
         'post__in' => $favorited_posts
-        'per_page' => '3'
+        'posts_per_page' => '3'
       );
 
       $favorites_loop = new WP_Query($args);
