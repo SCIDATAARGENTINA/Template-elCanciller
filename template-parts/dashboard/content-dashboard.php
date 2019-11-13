@@ -30,7 +30,7 @@ $user = wp_get_current_user();
       <?php 
 
         $args = array(
-          'post__in' => $favorited_posts;
+          'post__in' => $favorited_posts[0];
         );
 
         $postlist = get_post( $args );
