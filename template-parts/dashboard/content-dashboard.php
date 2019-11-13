@@ -15,7 +15,7 @@ $user = wp_get_current_user();
 <div class="content__container"> 
   <div class="favorited">
     <div class="favorited__header">
-      <h3>Favoritos</h3>
+      <h3>Las últimas notas que te gustaron</h3>
     </div>
     <div class="favorited__posts">
 
@@ -23,15 +23,16 @@ $user = wp_get_current_user();
 
       $args = array(
         'post__in' => $favorited_posts
+        'per_page' => '3'
       );
 
-        $my_secondary_loop = new WP_Query($args);
-        if( $my_secondary_loop->have_posts() ):
-            while( $my_secondary_loop->have_posts() ): $my_secondary_loop->the_post();
-              get_template_part('template-parts/content/content');
-            endwhile;
-        endif;
-        wp_reset_postdata();
+      $favorites_loop = new WP_Query($args);
+      if( $favorites_loop->have_posts() ):
+          while( $favorites_loop->have_posts() ): $favorites_loop->the_post();
+            get_template_part('template-parts/content/content');
+          endwhile;
+      endif;
+      wp_reset_postdata();
       
       ?>
 
