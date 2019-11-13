@@ -12,15 +12,6 @@
 $user = wp_get_current_user();
 
 ?>
-<pre>
-
-<?php  
-
-    //echo $user->ID;
-    //print_r(get_user_meta($user->ID, 'favoritos', true));
-
- ?>
-</pre>
 <div class="content__container"> 
   <div class="favorited">
     <div class="favorited__header">
@@ -28,8 +19,15 @@ $user = wp_get_current_user();
     </div>
     <div class="favorited__posts">
 
+    <pre>
+      <?php  
+          $favorited_posts = get_user_meta($user->ID, 'favoritos', true);
+          //echo $user->ID;
+          print_r($favorited_posts);
+      ?>
+    </pre>
+
       <?php 
-        $favorited_posts = get_user_meta($user->ID, 'favoritos', true);
 
         $args = array(
           'post__in' => $favorited_posts;
