@@ -27,6 +27,22 @@ $user = wp_get_current_user();
       ?>
     </pre>
 
+      <?php 
+
+        $args = array(
+          'post__in' => $favorited_posts;
+        );
+
+        $postlist = get_post( $args );
+
+        if($postlist){
+          foreach($postlist as $post){
+            $post->post_content;
+          }
+
+        }
+      
+      ?>
     </div>
   </div>  
 </div>
