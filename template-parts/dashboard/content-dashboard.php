@@ -23,26 +23,10 @@ $user = wp_get_current_user();
       <?php  
           $favorited_posts = get_user_meta($user->ID, 'favoritos', true);
           //echo $user->ID;
-          print_r($favorited_posts);
+          print_r($favorited_posts[0]);
       ?>
     </pre>
 
-      <?php 
-
-        $args = array(
-          'post__in' => $favorited_posts[0];
-        );
-
-        $postlist = get_post( $args );
-
-        if($postlist){
-          foreach($postlist as $post){
-            $post->post_content;
-          }
-
-        }
-      
-      ?>
     </div>
   </div>  
 </div>
