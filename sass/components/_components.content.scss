@@ -1,0 +1,16 @@
+.dashboard__content{
+    .content__container{
+        padding: 20px;
+        & .favorited{
+            &__header{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h3{
+                    color: $black;
+                    background: $primary;
+                }
+            }
+        }
+    }
+}
