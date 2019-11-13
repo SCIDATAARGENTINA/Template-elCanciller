@@ -1,5 +1,5 @@
-.sidebarContent{
-    .sidebar__profile{
+.sidebar__content{
+    .profile{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -8,19 +8,19 @@
             border-radius: 50%;
             vertical-align: top;
         }
-        .profile__user{
+        &__user{
             margin-top: 20px;
             background: $lightGray;
             border-top: 1px solid $gray;
             border-bottom: 1px solid $gray;
             width: 100%;
-            .user__name{
-                padding: 10px 15px;
+        }
+        &__name{
+            padding: 10px 15px;
                 p{
                     margin: 0px;
                     font-size: 18px;
                 }
-            }
         }
     }
     .sidebar__links{

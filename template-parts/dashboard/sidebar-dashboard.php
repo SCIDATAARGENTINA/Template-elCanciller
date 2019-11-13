@@ -13,14 +13,14 @@ $user = wp_get_current_user();
 
 ?>
 
-<div class="sidebarContent">
-    <div class="sidebar__profile">
+<div class="sidebar__content">
+    <div class="profile">
         <img src="<?php echo get_avatar_url( $user->ID ) ?>" alt="<?php echo $user->name?>">
         <div class="profile__user">
-            <div class="user__name">
+            <div class="profile__name">
                 <p><?php echo $user->display_name?></p>
             </div>
-            <div class="user__actions">
+            <div class="profile__actions">
 
             </div>
         </div>
