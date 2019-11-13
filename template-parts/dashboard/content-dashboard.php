@@ -40,7 +40,7 @@ $user = wp_get_current_user();
           while($fav_query->have_post()){
             $fav_query->the_post();
 
-            echo the_title();
+            the_title();
 
           }
         }
