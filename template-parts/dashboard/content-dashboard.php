@@ -27,6 +27,22 @@ $user = wp_get_current_user();
       ?>
     </pre>
 
+    <?php 
+
+    $args = array(
+      'post__in' => $favorited_posts
+    );
+
+      $my_secondary_loop = new WP_Query($args);
+      if( $my_secondary_loop->have_posts() ):
+          while( $my_secondary_loop->have_posts() ): $my_secondary_loop->the_post();
+            //The secondary loop
+          endwhile;
+      endif;
+      wp_reset_postdata();
+    
+    ?>
+
     </div>
   </div>  
 </div>
