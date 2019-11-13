@@ -29,8 +29,10 @@ $user = wp_get_current_user();
     <div class="favorited__posts">
 
       <?php 
+        $favorited_posts = get_user_meta($user->ID, 'favoritos', true);
+
         $args = array(
-          'post__in' => get_user_meta($user->ID, 'favoritos', true);
+          'post__in' => $favorited_posts;
         );
 
         $fav_query = new WP_Query( $args );
