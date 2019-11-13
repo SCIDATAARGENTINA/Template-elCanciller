@@ -1506,7 +1506,13 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
     if(get_user_meta($user->ID, 'favoritos', true)){
       //Update favoritos con el nuevo fav
       $favoritos = get_user_meta($user->ID, 'favoritos', true);
-      array_push($favoritos, $_POST['post_id']);
+      $in_array = array_search($_POST['post_id'], $favoritos);
+      if($in_array){
+        echo $in_array;
+        array_slice($favoritos, $in_array, 1);
+      }else{
+        array_push($favoritos, $_POST['post_id']);
+      }
       update_user_meta($user->ID, 'favoritos', $favoritos);
     }else{
       // Crea el campo para el usuario en caso de no existir
