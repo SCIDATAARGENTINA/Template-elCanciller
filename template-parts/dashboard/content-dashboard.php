@@ -23,7 +23,7 @@ $user = wp_get_current_user();
       <?php  
           $favorited_posts = get_user_meta($user->ID, 'favoritos', true);
           //echo $user->ID;
-          print_r($favorited_posts[0]);
+          print_r($favorited_posts);
       ?>
     </pre>
 
