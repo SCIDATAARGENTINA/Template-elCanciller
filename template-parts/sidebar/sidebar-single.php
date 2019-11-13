@@ -35,7 +35,7 @@
     <?php get_template_part('template-parts/widgets/widget', 'tagposts') ?>
 </div>
 <div class="widget">
-    <?php //get_template_part('template-parts/widgets/widget', 'tagsrelated') ?>
+    <?php get_template_part('template-parts/widgets/widget', 'tagsrelated') ?>
 </div>
 <div class="widget widget-contador">
   <?php echo do_shortcode('[contador postid=48914]') ?>
