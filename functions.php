@@ -1491,7 +1491,7 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
 /******
  * 
  * DASHBOARD USERS 
- * Comienzo de las funciones de usuario del template
+ * Comienzo de las funciones de usuario
  * 
 */
 
@@ -1509,7 +1509,7 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
       $in_array = array_search($_POST['post_id'], $favoritos);
       if($in_array){
         echo $in_array;
-        //array_slice($favoritos, $in_array, 1);
+        //array_slice($favoritos, $in_array, 1); // Remueve el favorito si ya estaba
       }else{
         array_push($favoritos, $_POST['post_id']);
       }
