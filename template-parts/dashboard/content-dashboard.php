@@ -9,14 +9,15 @@
  * @since 1.0.0
  */
 
+$user = wp_get_current_user();
 
 ?>
 <pre>
 
 <?php  
 
-    echo $user->ID;
-    print_r(get_user_meta($user->ID, 'favoritos', true));
+    //echo $user->ID;
+    //print_r(get_user_meta($user->ID, 'favoritos', true));
 
  ?>
 </pre>
