@@ -21,4 +21,31 @@ $user = wp_get_current_user();
 
  ?>
 </pre>
-<div class="content__container"> Dashboard Content </div>
+<div class="content__container"> 
+  <div class="favorited">
+    <div class="favorited__header">
+      <h3>Favoritos</h3>
+    </div>
+    <div class="favorited__posts">
+
+      <?php 
+        $args = array(
+          'post__in' => get_user_meta($user->ID, 'favoritos', true);
+        );
+
+        $fav_query = new WP_Query( $args );
+
+        if($fav_query->have_posts()){
+
+          while($fav_query->have_post()){
+            $fav_query->the_post();
+
+            echo the_title();
+
+          }
+        }
+      
+      ?>
+    </div>
+  </div>  
+</div>
