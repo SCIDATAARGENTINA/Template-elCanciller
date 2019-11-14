@@ -81,11 +81,6 @@ $encuesta_grande = get_field('encuesta_grande');
 		<div class="outer-container">
 			<div class="ad-long"><?php the_field('anuncio_2', $page_id) ?></div>
 			<?php get_template_part('template-parts/sections/section', 'placas') ?>
-			<div class="ad-long"><?php the_field('anuncio_3', $page_id) ?></div>
-			<?php get_template_part('template-parts/sections/section', 'instagram') ?>
-			<div class="ad-long"><?php the_field('anuncio_4', $page_id) ?></div>
-			<?php get_template_part('template-parts/sections/section', 'videos') ?>
-			<div class="ad-long"><?php the_field('anuncio_5', $page_id) ?></div>
 			<div class="col-3">
 				<!--<div id="publi2">
 					<?php// the_field('anuncio_6', $page_id) ?>
@@ -118,6 +113,11 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 			</div>
+			<div class="ad-long"><?php the_field('anuncio_3', $page_id) ?></div>
+			<?php get_template_part('template-parts/sections/section', 'instagram') ?>
+			<div class="ad-long"><?php the_field('anuncio_4', $page_id) ?></div>
+			<?php get_template_part('template-parts/sections/section', 'videos') ?>
+			<div class="ad-long"><?php the_field('anuncio_5', $page_id) ?></div>
 		</div><!-- outer-container -->
 
 	</main><!-- #main -->

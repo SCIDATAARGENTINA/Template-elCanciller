@@ -52,6 +52,13 @@
 <div class="widget">
   <?php get_template_part('template-parts/widgets/widget', 'twitter') ?>
 </div>
+
+<div class="onlydesktop">
+<div id="publicidadBcoProvincia"><a href="https://www.bancoprovincia.com.ar/web"><img src="https://elcanciller.com/wp-content/uploads/2019/10/bancoprovincia1.gif"></a></div>
+<div id="publicidadLegislatura"><a href="https://www.legislatura.gov.ar/"><img src="https://elcanciller.com/wp-content/uploads/2019/10/legislatura1.png"></a></div>
+<div id="publicidadPilar"><a href="https://www.pilar.gov.ar/inicio/gobierno-municipal/obras/"><img src="https://elcanciller.com/wp-content/uploads/2019/11/200x200-01.gif"></a></div>
+</div>
+
 <div class="widget widget-contador">
   <?php echo do_shortcode('[contador postid=48914]') ?> 
 </div>
