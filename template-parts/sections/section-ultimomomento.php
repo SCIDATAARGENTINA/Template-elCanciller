@@ -32,7 +32,7 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             <h2 style="color:#fff;margin-top: 0%;padding: 2% 0% 2% 0%;"></h2>
          </div>-->
 
-         <div class="trending-post">
+         <div class="ultimo-momento">
           <div class="titular" style="padding: 5px;">
               <a href='"<?php the_field('url_embebido') ?>"' style="text-align: center;clear: both;"><h2 style="font-size:1em;"><?php the_field('texto_embebido') ?></h2></a>
           </div>
