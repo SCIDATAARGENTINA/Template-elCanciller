@@ -37,5 +37,30 @@ $user = wp_get_current_user();
       ?>
 
     </div>
+  </div>
+  <div class="followed">
+    <div class="followed__header">
+      <h3>Tus seguidos</h3>
+    </div>
+    <div class="followed__posts">
+
+      <?php 
+
+      $args = array(
+        'post__in' => $followed_posts,
+        'posts_per_page' => 3
+      );
+
+      $favorites_loop = new WP_Query($args);
+      if( $favorites_loop->have_posts() ):
+          while( $favorites_loop->have_posts() ): $favorites_loop->the_post();
+            the_title();
+          endwhile;
+      endif;
+      wp_reset_postdata();
+      
+      ?>
+
+    </div>
   </div>  
 </div>
