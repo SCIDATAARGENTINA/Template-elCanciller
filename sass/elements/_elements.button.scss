@@ -9,8 +9,8 @@
     transition: 300ms ease;
     border-radius: 4px;
     &.-accent{
-        background: $primary;
-        color: $white;
+        background: $primary !important;
+        color: $white !important;
     }
     &:hover{
         opacity: 0.8;
