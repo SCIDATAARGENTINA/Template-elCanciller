@@ -72,10 +72,6 @@ $encuesta_grande = get_field('encuesta_grande');
 					?>
 				</div>
 				
-				<div class="widget onlymobile">
-					<?php get_template_part('template-parts/widgets/widget', 'cancilleram') ?>
-				</div>
-
 				<?php //get_template_part('template-parts/sections/section', 'encuesta') ?> 
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
 

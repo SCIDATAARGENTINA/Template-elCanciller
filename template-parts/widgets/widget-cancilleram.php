@@ -56,7 +56,7 @@
 
    <?php endif ?>
    </div>
-   <hr class="yellow-hr onlydesktop">
+   <hr class="yellow-hr">
    <!-- Begin Mailchimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -93,7 +93,7 @@
                 display: flex;
             }
     </style>
-    <div id="mc_embed_signup" class="onlydesktop">
+    <div id="mc_embed_signup">
     <form action="https://elcanciller.us15.list-manage.com/subscribe/post?u=5b406821a12a44b764db5c9db&amp;id=58158a7c5f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
         

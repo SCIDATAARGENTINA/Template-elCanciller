@@ -31,7 +31,6 @@ jQuery(document).ready(function($) {
         }) // end ajax
 
     /* SLICK CARROUSEL CANCILELR AM*/
-    if($(window).width() >= 768){
     $(".carrousel").slick({
         dots: true,
         infinite: true,
@@ -75,53 +74,7 @@ jQuery(document).ready(function($) {
             $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
         }
     });
-    }
-    else
-    {
-        $(".onlymobile .carrousel").slick({
-            dots: true,
-            infinite: true,
-            arrows: true,
-            adaptiveHeight: true,
-            prevArrow: '<div class="prev-arrow"></div>',
-            nextArrow: '<div class="next-arrow"></div>',
-            appendArrows: '.carr-nav',
-            appendDots: '.prev-arrow'
-        });
     
-        $('.prev-arrow').prepend('<img class="am-logo" src=\"'+URLdomain+'/wp-content/uploads/2019/06/cancilleramlogo.svg">');
-    
-        var dotsWidth = 16;
-    
-        var dotsWidthTotal = 0;
-    
-        $('.onlymobile .carrousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            var maxDots = 4;
-            if (nextSlide > currentSlide && nextSlide <= slick.slideCount - (maxDots - 2)) {
-                if (nextSlide >= maxDots - 1) {
-                    dotsWidthTotal = dotsWidthTotal + dotsWidth;
-                    $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
-                }
-            }
-            if (nextSlide < currentSlide) {
-                if (nextSlide >= maxDots - 1) {
-                    dotsWidthTotal = dotsWidthTotal - dotsWidth;
-                    $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
-                } else {
-                    $('.slick-dots li').css('transform', 'translateX(0px)');
-                    dotsWidthTotal = 0;
-                }
-            }
-            if (nextSlide == 0) {
-                $('.slick-dots li').css('transform', 'translateX(0px)');
-                dotsWidthTotal = 0;
-            }
-            if (nextSlide == 9) {
-                dotsWidthTotal = dotsWidth * (slick.slideCount - maxDots);
-                $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
-            }
-        });
-    }
     /* SLICK CARROUSEL CANCILELR AM END*/
 
     /*MAGINIFIC POPUP VIDEOS
