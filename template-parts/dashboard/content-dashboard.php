@@ -59,8 +59,7 @@ $user = wp_get_current_user();
       $followed_cats_loop = new WP_Query($args);
       if( $followed_cats_loop->have_posts() ):
           while( $followed_cats_loop->have_posts() ): $followed_cats_loop->the_post();
-            the_title();
-            the_category();
+            get_template_part('template-parts/content/content');
           endwhile;
       endif;
       wp_reset_postdata();
