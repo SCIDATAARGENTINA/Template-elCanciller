@@ -1604,7 +1604,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
 function checkIfFollowed($itemType, $itemId) {
   $user = wp_get_current_user();
 
-  /* Check for categories
+  // Check for categories
   if($itemType == 'category'){
 
     $categories = get_user_meta($user->ID, 'followed_cats', true);
@@ -1628,5 +1628,5 @@ function checkIfFollowed($itemType, $itemId) {
     }else{
       return false;
     }
-  }*/
+  }
 }
