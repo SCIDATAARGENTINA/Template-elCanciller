@@ -22,7 +22,7 @@
     border: 1px solid $white !important;
     color: $white !important;
     &:hover{
-        background: $white;
-        color: $black;
+        background: $white !important;
+        color: $black !important;
     }
 }
