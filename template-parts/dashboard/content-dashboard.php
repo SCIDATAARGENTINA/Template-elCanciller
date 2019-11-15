@@ -19,10 +19,9 @@ $user = wp_get_current_user();
     </div>
     <div class="favorited__posts">
 
-      <?php 
-      //delete_user_meta( $user->ID, 'favoritos' );
+      <?php
+
       $favorited_posts = get_user_meta( $user->ID, 'favoritos', true );
-      print_r($favorited_posts);
 
       $args = array(
         'post_type' => array('post', 'opinion'),
@@ -42,23 +41,26 @@ $user = wp_get_current_user();
 
     </div>
   </div>
-  <div class="followed">
-    <div class="followed__header">
-      <h3>Tus seguidos</h3>
+  <div class="followedCategories">
+    <div class="followedCategories__header">
+      <h3>Lo último de tus categorias preferidas</h3>
     </div>
-    <div class="followed__posts">
+    <div class="followedCategories__posts">
 
-      <?php 
+      <?php
+
+      $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
 
       $args = array(
-        'post__in' => $followed_posts,
+        'category__in' => $followed_cats,
         'posts_per_page' => 3
       );
 
-      $favorites_loop = new WP_Query($args);
-      if( $favorites_loop->have_posts() ):
-          while( $favorites_loop->have_posts() ): $favorites_loop->the_post();
+      $followed_cats_loop = new WP_Query($args);
+      if( $followed_cats_loop->have_posts() ):
+          while( $followed_cats_loop->have_posts() ): $followed_cats_loop->the_post();
             the_title();
+            the_category();
           endwhile;
       endif;
       wp_reset_postdata();
