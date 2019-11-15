@@ -52,7 +52,7 @@ $term = get_queried_object();
             <div class="archive-title" style="background: <?php echo $cat_color ?>">
                <div class="category">            
                   <h1><?php echo $categories[0]->name ?></h1>
-                  <button data-id="<?php echo $categories[0]->term_id ?>" class="button follow">Seguir</button>
+                  <button data-id="<?php echo $categories[0]->term_id ?>" class="btn follow">Seguir</button>
                </div>
                <div class="title">
                   <img src="<?php bloginfo('url') ?>/wp-content/uploads/2019/07/fire-blanco.svg" alt="">
