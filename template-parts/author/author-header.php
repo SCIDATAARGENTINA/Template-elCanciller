@@ -21,7 +21,7 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
          <h1>
             Por: <?php echo get_the_author_meta( 'display_name', $author_id ) ?>
          </h1>
-         <button data-id="<?php echo $categories[0]->term_id ?>" class="btn follow">Seguir</button>
+         <button data-id="<?php echo $author_id ?>" class="btn follow -accent">Seguir</button>
       </div>
       <img src="<?php echo $featured_img_url ?>" alt="<?php echo $alt?>">
    </header>
