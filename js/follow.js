@@ -12,19 +12,18 @@ jQuery(document).ready(function ($) {
                 itemType
             },
             success: function (result) {
-                //console.log(result);
+                console.log(result);
             },
             error: function (errorThrown) {
-                //console.log(errorThrown);
+                console.log(errorThrown);
             }
         });
 
     }
 
     $('.follow').click(function () {
-        console.log(hola);
         updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl);
     });
 
-    
+
 });
