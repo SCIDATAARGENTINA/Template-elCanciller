@@ -13,11 +13,11 @@ $user = wp_get_current_user();
 
 ?>
 <div class="content__container"> 
-  <div class="favorited">
-    <div class="favorited__header">
+  <div class="listItems">
+    <div class="listItems__header">
       <h3>Las últimas notas que te gustaron</h3>
     </div>
-    <div class="favorited__posts">
+    <div class="listItems__posts">
 
       <?php
 
@@ -41,11 +41,11 @@ $user = wp_get_current_user();
 
     </div>
   </div>
-  <div class="followedCategories">
-    <div class="followedCategories__header">
+  <div class="listItems">
+    <div class="listItems__header">
       <h3>Lo último de tus categorias preferidas</h3>
     </div>
-    <div class="followedCategories__posts">
+    <div class="listItems__posts">
 
       <?php
 
