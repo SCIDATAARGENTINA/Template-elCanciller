@@ -99,8 +99,6 @@ let updateUserFavs = (post_id, url) => {
         return;
     }
 
-    console.log(post_id);
-
     $.ajax({
         url: url,
         type: 'POST',
@@ -109,10 +107,10 @@ let updateUserFavs = (post_id, url) => {
             post_id
         },
         success: function (result) {
-            console.log(result);
+            //console.log(result);
         },
         error: function (errorThrown) {
-            console.log(errorThrown);
+            //console.log(errorThrown);
         }
     });
 

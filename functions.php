@@ -1525,3 +1525,108 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
 
  add_action( 'wp_ajax_nopriv_add_user_favoritos', 'add_user_favoritos' );
  add_action( 'wp_ajax_add_user_favoritos', 'add_user_favoritos' );
+
+// AJAX FOLLOW
+
+function follow_scripts() {
+
+  wp_register_script( 'follow-js', get_stylesheet_directory_uri() . '/js/follow.js', array('jquery') );
+
+  wp_localize_script( 'follow-js', 'follow', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+  ) );
+
+  wp_enqueue_script( 'follow-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'follow_scripts' );
+
+ // FOLLOW AUTHOR / CATEGORY ACTION
+ function follow_author_category(){
+   $user = wp_get_current_user();
+
+   $itemToFollow = $_POST['itemId'];
+   $itemType = $_POST['itemType'];
+
+   if($itemType == 'category'){
+
+    // Check if user has categories
+    if(get_user_meta($user->ID, 'followed_cats', true)){
+      //Update categories con el nuevo category
+      $categories = get_user_meta($user->ID, 'followed_cats', true);
+      $in_array = array_search($itemToFollow, $categories);
+      if($in_array){
+        echo $in_array;
+        //si ya esta cargado realizar esta accion
+        
+      }else{
+        array_push($categories, $itemToFollow);
+      }
+      update_user_meta($user->ID, 'followed_cats', $categories);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $categories = [];
+      array_push($categories, $itemToFollow);
+      add_user_meta($user->ID, 'followed_cats', $categories);
+    }
+
+   }
+
+   if( $itemType == 'author'){
+
+     // Check if user has authors
+    if(get_user_meta($user->ID, 'followed_authors', true)){
+      //Update categories con el nuevo category
+      $authors = get_user_meta($user->ID, 'followed_authors', true);
+      $in_array = array_search( $itemToFollow, $authors);
+      if($in_array){
+        echo $in_array;
+        //si ya esta cargado realizar esta accion
+        
+      }else{
+        array_push($authors,  $itemToFollow);
+      }
+      update_user_meta($user->ID, 'followed_authors', $authors);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $authors = [];
+      array_push($authors,  $itemToFollow);
+      add_user_meta($user->ID, 'followed_authors', $authors);
+    }
+
+   }
+ }
+
+ add_action( 'wp_ajax_nopriv_follow_author_category', 'follow_author_category' );
+ add_action( 'wp_ajax_follow_author_category', 'follow_author_category' );
+
+ // CHECK IF CATEGORY/AUTHOR FOLLOWED FUNCTION
+function checkIfFollowed($itemType, $itemId) {
+  $user = wp_get_current_user();
+
+  // Check for categories
+  if($itemType == 'category'){
+
+    $categories = get_user_meta($user->ID, 'followed_cats', true);
+    $in_array = array_search($itemId, $categories);
+
+    if($in_array){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  // Check for authors
+  if($itemType == 'author'){
+
+    $authors = get_user_meta($user->ID, 'followed_authors', true);
+    $in_array = array_search($itemId, $authors);
+
+    if($in_array){
+      return true;
+    }else{
+      return false;
+    }
+  }
+}
