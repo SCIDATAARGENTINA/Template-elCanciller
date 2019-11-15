@@ -1747,7 +1747,9 @@ ul.tagposts-list li {
     align-items: flex-end;
     margin: 10px 0px 20px 0px;
 }
-
+.follow-container{
+    margin-left: auto;
+}
 .archive-title .category .btn{
     margin-left: auto;
     margin-right: 10px;
