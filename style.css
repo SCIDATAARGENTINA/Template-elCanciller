@@ -859,6 +859,11 @@ input:-internal-autofill-selected {
     }
 }
 
+.trending-post .category .btn{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
 .trending-post .category a {
     color: #e7d117 !important;
 }
