@@ -859,10 +859,6 @@ input:-internal-autofill-selected {
     }
 }
 
-.trending-post .category .btn{
-    margin-left: auto;
-    margin-right: 10px;
-}
 
 .trending-post .category a {
     color: #e7d117 !important;
@@ -1751,6 +1747,12 @@ ul.tagposts-list li {
     align-items: flex-end;
     margin: 10px 0px 20px 0px;
 }
+
+.archive-title .category .btn{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
 .no-trending .archive-title .category{
     margin: 10px 0px 10px 0px;
 }
