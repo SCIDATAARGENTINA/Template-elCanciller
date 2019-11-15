@@ -25,4 +25,8 @@
         background: $white !important;
         color: $black !important;
     }
+    &.-accent{
+        background: $primary !important;
+        color: $white !important;
+    }
 }
