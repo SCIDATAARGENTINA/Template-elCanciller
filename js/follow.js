@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
                 itemType
             },
             success: function (result) {
-                console.log(result);
+                $('.follow_container').html('<button data-type="category" data-id="' + itemId + '" class="btn unfollow">Dejar de seguir</button>');
             },
             error: function (errorThrown) {
                 console.log(errorThrown);
