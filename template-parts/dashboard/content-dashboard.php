@@ -22,7 +22,7 @@ $user = wp_get_current_user();
       <?php 
 
       $favorited_posts = get_user_meta( $user->ID, 'favoritos' );
-      echo $favorited_posts;
+      print_r($favorited_posts);
 
       $args = array(
         'post_type' => array('post', 'opinion'),
