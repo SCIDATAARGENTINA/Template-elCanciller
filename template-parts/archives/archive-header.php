@@ -53,7 +53,7 @@ $term = get_queried_object();
                <div class="category">            
                   <h1><?php echo $categories[0]->name ?></h1>
                   <?php if(is_user_logged_in()){ ?>
-                     <?php if(checkIfFollowed($itemType, $itemId)){ ?>
+                     <?php if(checkIfFollowed('category', $categories[0]->term_id)){ ?>
                         <button data-type="category" data-id="<?php echo $categories[0]->term_id ?>" class="btn follow">Seguir</button>
                      <? }else{ ?>
                         <button data-type="category" data-id="<?php echo $categories[0]->term_id ?>" class="btn unfollow">Dejar de seguir</button>
