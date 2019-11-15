@@ -21,11 +21,12 @@ $user = wp_get_current_user();
 
       <?php 
 
-      $favorited_posts = get_user_meta( $user->ID, 'favoritos' )
+      $favorited_posts = get_user_meta( $user->ID, 'favoritos' );
+      echo $favorited_posts;
 
       $args = array(
         'post_type' => array('post', 'opinion'),
-        'post__in' => $favorited_posts[0],
+        //'post__in' => $favorited_posts[0],
         'posts_per_page' => 3
       );
 
