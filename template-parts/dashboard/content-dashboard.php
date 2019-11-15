@@ -25,7 +25,7 @@ $user = wp_get_current_user();
 
       $args = array(
         'post_type' => array('post', 'opinion'),
-        'post__in' => $favorited_posts,
+        'post__in' => $favorited_posts[0],
         'posts_per_page' => 3
       );
 
