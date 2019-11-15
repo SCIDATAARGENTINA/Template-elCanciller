@@ -21,7 +21,7 @@ $user = wp_get_current_user();
 
       <?php 
 
-      $favorited_posts = get_user_meta( $user->ID, 'favoritos', true )
+      $favorited_posts = get_user_meta( $user->ID, 'favoritos' )
 
       $args = array(
         'post_type' => array('post', 'opinion'),
