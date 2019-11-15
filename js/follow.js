@@ -19,5 +19,6 @@ let updateUserFollow = (itemId, itemType , url) => {
 }
 
 $('.follow').click(function(){
-    updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl )
+    console.log(hola);
+    updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl );
 });
