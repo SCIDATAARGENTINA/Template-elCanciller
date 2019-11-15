@@ -20,7 +20,7 @@ $user = wp_get_current_user();
     <div class="favorited__posts">
 
       <?php 
-      delete_user_meta( $user->ID, 'favoritos' );
+      //delete_user_meta( $user->ID, 'favoritos' );
       $favorited_posts = get_user_meta( $user->ID, 'favoritos' );
       print_r($favorited_posts);
 
