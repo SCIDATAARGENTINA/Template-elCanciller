@@ -42,32 +42,29 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 				</div>
+				<div class="col-3 order-2">
+					<?php 
+					if ($encuesta_pequena){
+						echo do_shortcode('[posts cantidad="2" offset="2"]'); // Con encuesta pequeña offset: 2 total: 4
+					}else { 
+						echo do_shortcode('[posts cantidad="2" offset="3"]'); // Sin encuesta pequeña - offset 3 total: 5 
+					}
+					?>
+				</div>
+
 				<?php 
 				if($encuesta_grande){
 					include( locate_template( 'template-parts/sections/section-encuesta.php', false, false ) ); 
 				}else if($encuesta_pequena){
 					?><div class="col-3"> <?php
-					echo do_shortcode('[posts cantidad="3" offset="2"]'); // Con encuesta pequeña sin encuesta grande - offset 2 total: 5
+					echo do_shortcode('[posts cantidad="3" offset="4"]'); // Con encuesta pequeña sin encuesta grande - offset 4 total: 7
 					?></div> <?php 
 				}else{
 					?><div class="col-3"> <?php
-					echo do_shortcode('[posts cantidad="3" offset="3"]'); // Sin encuestas offset 3 total: 6
+					echo do_shortcode('[posts cantidad="3" offset="5"]'); // Sin encuestas offset 5 total: 8
 					?></div> <?php 
 				}
 				?>
-				<div class="col-3 order-2" data-quantity="2" data-offset="3">
-					<?php 
-					if ($encuesta_pequena && $encuesta_grande){
-						echo do_shortcode('[posts cantidad="3" offset="2"]'); // Con encuesta grande y pequeña offset: 2 total: 5
-					}else if($encuesta_pequena && !$encuesta_grande){ 
-						echo do_shortcode('[posts cantidad="3" offset="5"]'); // Con encuesta pequeña sin encuesta grande - offset 5 total: 8 
-					}else if(!$encuesta_pequena && $encuesta_grande){
-						echo do_shortcode('[posts cantidad="3" offset="3"]'); // Sin encuesta pequeña con encuesta grande - offset 3 total: 6
-					}else {
-						echo do_shortcode('[posts cantidad="3" offset="6"]'); // Sin encuestas - offset 6 total: 9
-					}
-					?>
-				</div>
 				
 				<?php //get_template_part('template-parts/sections/section', 'encuesta') ?> 
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
