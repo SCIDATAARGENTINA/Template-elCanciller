@@ -69,7 +69,6 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 				
-				<?php //get_template_part('template-parts/sections/section', 'encuesta') ?> 
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
 
 			</div><!-- content -->
@@ -77,19 +76,19 @@ $encuesta_grande = get_field('encuesta_grande');
 		</div><!-- inner container -->
 		<div class="outer-container">
 			<?php get_template_part('template-parts/sections/section', 'placas') ?>
-			<div class="col-3">
-				<!--<div id="publi2">
-					<?php// the_field('anuncio_6', $page_id) ?>
-				</div> -->
+			<div class="col-3 order-2">
+				<div class="ad-grilla">
+					<?php echo get_field('grilla_home_2', 'option') ?>
+				</div>
 				<?php
 				if ($encuesta_pequena && $encuesta_grande){
-					echo do_shortcode('[posts cantidad="3" offset="5"]'); // Con encuesta grande y pequeña offset: 5 total: 8
+					echo do_shortcode('[posts cantidad="2" offset="4"]'); // Con encuesta grande y pequeña offset: 4 total: 6
 				}else if($encuesta_pequena && !$encuesta_grande){ 
-					echo do_shortcode('[posts cantidad="3" offset="8"]'); // Con encuesta pequeña sin encuesta grande - offset 8 total: 11
+					echo do_shortcode('[posts cantidad="2" offset="7"]'); // Con encuesta pequeña sin encuesta grande - offset 7 total: 9
 				}else if(!$encuesta_pequena && $encuesta_grande){
-					echo do_shortcode('[posts cantidad="3" offset="6"]'); // Sin encuesta pequeña con encuesta grande - offset 6 total: 9
+					echo do_shortcode('[posts cantidad="2" offset="5"]'); // Sin encuesta pequeña con encuesta grande - offset 5 total: 7
 				}else {
-					echo do_shortcode('[posts cantidad="3" offset="9"]'); // Sin encuestas - offset 9 total: 12
+					echo do_shortcode('[posts cantidad="2" offset="8"]'); // Sin encuestas - offset 8 total: 10
 				}
 				?>
 			</div>

@@ -5151,7 +5151,7 @@ ADS UPDATE 26/11/2019
 
 /*for inner container ads - en grilla*/
 
-.col-3.order-2 .ad-grilla{
+.inner .col-3.order-2 .ad-grilla{
     order: 1;
     display: flex;
     align-items: center;
