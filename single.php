@@ -72,7 +72,18 @@ get_header();
 					<h3>Lo que no te podés perder</h3>
 				</div><!-- related-title -->
 				<div class="col-3">
-					<?php echo do_shortcode('[posts cantidad="9" offset="0"]') ?>
+					<?php echo do_shortcode('[posts cantidad="3" offset="0"]') ?>
+				</div>
+				<div class="col-1-2">
+					<div class="ad-vertical">
+						<?php echo get_field('grilla_nota_1'); ?>
+					</div>
+					<div class="col-2-2">
+						<div class="ad-grilla">
+							<?php echo get_field('grilla_nota_2'); ?>
+						</div>
+						<?php echo do_shortcode('[posts cantidad="3" offset="0"]') ?>
+					</div>
 				</div>
 			</div>
 		</div><!-- outer-container -->
