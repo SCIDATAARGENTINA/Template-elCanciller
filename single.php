@@ -75,7 +75,7 @@ get_header();
 					<?php echo do_shortcode('[posts cantidad="3" offset="0"]') ?>
 				</div>
 				<div class="col-1-2">
-					<div class="ad-vertical">
+					<div class="advertical">
 						<?php echo get_field('grilla_nota_1', 'option'); ?>
 					</div>
 					<div class="col-2-2">
