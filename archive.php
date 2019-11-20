@@ -39,6 +39,7 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; }
 				$i = 0;
 				while ( have_posts() ) :
 					the_post();
+					
 					$i++;
 
 					if($i == 1){ // inserta un anuncio en la posición 1 ?>
@@ -53,11 +54,10 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; }
 							<?php echo get_field('grilla_seccion_2', 'option') ?>
 						</div>
 
-					<?php }else{ // muestra un post
+					<?php }
 
-						get_template_part( 'template-parts/content/content' );
+					get_template_part( 'template-parts/content/content' );
 
-					}
 
 
 
