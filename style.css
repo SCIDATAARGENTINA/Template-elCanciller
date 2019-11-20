@@ -5148,3 +5148,21 @@ ADS UPDATE 26/11/2019
 .sidebar .widget.ads .ads__container img{
     vertical-align: top;
 }
+
+/*for inner container ads - en grilla*/
+
+.col-3.order-2 .ad-grilla{
+    order: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ad-grilla p{
+    margin: 0 auto;
+}
+
+.ad-grilla img{
+    vertical-align: top;
+}
