@@ -95,16 +95,32 @@ $encuesta_grande = get_field('encuesta_grande');
 			<div class="col-3">
 				<!-- <div class="advertical">
 					<?php // the_field('anuncio_7', $page_id) ?>
-				</div>  -->
+				</div>   TAMO ACA-->
 				<?php
 				if ($encuesta_pequena && $encuesta_grande){
-					echo do_shortcode('[posts cantidad="6" offset="8"]'); // Con encuesta grande y pequeña offset: 8 total: 14
+					echo do_shortcode('[posts cantidad="3" offset="6"]'); // Con encuesta grande y pequeña offset: 6 total: 9
 				}else if($encuesta_pequena && !$encuesta_grande){ 
-					echo do_shortcode('[posts cantidad="6" offset="11"]'); // Con encuesta pequeña sin encuesta grande - offset 11 total: 17 
+					echo do_shortcode('[posts cantidad="3" offset="9"]'); // Con encuesta pequeña sin encuesta grande - offset 9 total: 12 
 				}else if(!$encuesta_pequena && $encuesta_grande){
-					echo do_shortcode('[posts cantidad="6" offset="9"]'); // Sin encuesta pequeña con encuesta grande - offset 9 total: 15
+					echo do_shortcode('[posts cantidad="3" offset="7"]'); // Sin encuesta pequeña con encuesta grande - offset 7 total: 10
 				}else {
-					echo do_shortcode('[posts cantidad="6" offset="12"]'); // Sin encuestas - offset 12 total: 18
+					echo do_shortcode('[posts cantidad="3" offset="10"]'); // Sin encuestas - offset 10 total: 13
+				}
+				?>
+			</div>
+			<div class="col-3 order-1">
+				<div class="ad-grilla">
+					<?php echo get_field('grilla_home_3', 'option') ?>
+				</div>
+				<?php
+				if ($encuesta_pequena && $encuesta_grande){
+					echo do_shortcode('[posts cantidad="2" offset="9"]'); // Con encuesta grande y pequeña offset: 9 total: 11
+				}else if($encuesta_pequena && !$encuesta_grande){ 
+					echo do_shortcode('[posts cantidad="2" offset="12"]'); // Con encuesta pequeña sin encuesta grande - offset 12 total: 14 
+				}else if(!$encuesta_pequena && $encuesta_grande){
+					echo do_shortcode('[posts cantidad="2" offset="10"]'); // Sin encuesta pequeña con encuesta grande - offset 10 total: 12
+				}else {
+					echo do_shortcode('[posts cantidad="2" offset="13"]'); // Sin encuestas - offset 13 total: 15
 				}
 				?>
 			</div>
