@@ -1438,3 +1438,16 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 }
+
+//Intercept category loop 
+
+add_action( 'pre_get_posts', function ( $q ) 
+{
+    if ( !is_admin() // VERY important, targets only front end queries
+         && $q->is_main_query() // VERY important, targets only main query
+         && $q->is_post_type_archive( 'post' )
+         && $q->is_category() 
+    ) {
+        $q->set( 'posts_per_page', '7' ); 
+    }
+});

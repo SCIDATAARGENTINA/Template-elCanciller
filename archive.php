@@ -39,7 +39,7 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; }
 				$i = 0;
 				while ( have_posts() ) :
 					the_post();
-					
+
 					$i++;
 
 					if($i == 1){ // inserta un anuncio en la posición 1 ?>
@@ -48,7 +48,7 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; }
 							<?php echo get_field('grilla_seccion_1', 'option') ?>
 						</div>
 
-					<?php }else if($i == 8){// inserta un anuncio en la posición 8 ?>
+					<?php }else if($i == 7){// inserta un anuncio en la posición 8 ?>
 
 						<div class="ad-grilla">
 							<?php echo get_field('grilla_seccion_2', 'option') ?>
