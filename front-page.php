@@ -43,6 +43,9 @@ $encuesta_grande = get_field('encuesta_grande');
 				?>
 				</div>
 				<div class="col-3 order-2">
+					<div class="ad-grilla">
+						<?php echo get_field('grilla_home_1', 'option') ?>
+					</div>
 					<?php 
 					if ($encuesta_pequena){
 						echo do_shortcode('[posts cantidad="2" offset="2"]'); // Con encuesta pequeña offset: 2 total: 4
