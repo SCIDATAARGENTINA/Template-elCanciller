@@ -5149,9 +5149,9 @@ ADS UPDATE 26/11/2019
     vertical-align: top;
 }
 
-/*for inner container ads - en grilla*/
+/*ads - en grilla*/
 
-.inner .col-3.order-2 .ad-grilla{
+.col-3.order-2 .ad-grilla{
     order: 1;
     display: flex;
     align-items: center;
