@@ -5125,3 +5125,29 @@ height: 200px !important;
     color: #fff;
     line-height: 0px;
 }
+
+/*
+
+ADS UPDATE 26/11/2019
+
+*/
+
+/*for sidebar*/
+.sidebar .widget.ads{
+    
+}
+
+.sidebar .widget.ads .ads__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .widget.ads .ads__container p{
+    margin: 0 auto;
+}
+
+.sidebar .widget.ads .ads__container img{
+    vertical-align: top;
+}
