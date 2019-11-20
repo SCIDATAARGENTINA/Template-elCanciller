@@ -5166,3 +5166,31 @@ ADS UPDATE 26/11/2019
 .ad-grilla img{
     vertical-align: top;
 }
+
+.col-3.order-1 .ad-grilla{
+    order: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-3.order-1 .post-rendered{
+    order: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-3.order-1 .post-rendered:nth-child(2){
+    order: 2;
+}
+
+.ad-grilla p{
+    margin: 0 auto;
+}
+
+.ad-grilla img{
+    vertical-align: top;
+}
