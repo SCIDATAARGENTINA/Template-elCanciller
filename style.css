@@ -5161,6 +5161,13 @@ ADS UPDATE 26/11/2019
 
 /*ads - en grilla*/
 
+.col-3 .ad-grilla{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .col-2-2 .ad-grilla{
     display: flex;
     align-items: center;
@@ -5170,10 +5177,6 @@ ADS UPDATE 26/11/2019
 
 .col-3.order-2 .ad-grilla{
     order: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .ad-grilla p{
@@ -5186,10 +5189,6 @@ ADS UPDATE 26/11/2019
 
 .col-3.order-1 .ad-grilla{
     order: 2;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .col-3.order-1 .post-rendered{
