@@ -5142,6 +5142,7 @@ ADS UPDATE 26/11/2019
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
 }
 
 .sidebar .widget.ads .ads__container p{
