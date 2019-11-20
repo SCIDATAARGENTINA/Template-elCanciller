@@ -5151,6 +5151,9 @@ ADS UPDATE 26/11/2019
 
 /*for sidebar - nota*/
 
+.contain-widgets{
+    position: relative;
+}
 .sidebar .widget.ads.-extended{
     position: absolute;
     right: calc(50% - 175px);

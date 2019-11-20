@@ -75,12 +75,13 @@ if (categoriaPosteo == 'Deportes')
  </script> 
   
 </div>
-
-<div class="widget ads -extended">
-  <div class="ads__container">
-    <?php echo get_field('sidebar_nota_1', 'option'); ?>
-  </div>
-  <div class="ads__container">
-    <?php echo get_field('sidebar_nota_2', 'option'); ?>
-  </div>
-</div><!-- end widget ads -->
+<div class="contain-widgets">
+  <div class="widget ads -extended">
+    <div class="ads__container">
+      <?php echo get_field('sidebar_nota_1', 'option'); ?>
+    </div>
+    <div class="ads__container">
+      <?php echo get_field('sidebar_nota_2', 'option'); ?>
+    </div>
+  </div><!-- end widget ads -->
+</div>
