@@ -5179,7 +5179,7 @@ ADS UPDATE 26/11/2019
     order: 1;
 }
 
-.col-3.order-1 .post-rendered:nth-child(1){
+.col-3.order-1 article:nth-child(2){
     order: 3;
 }
 
