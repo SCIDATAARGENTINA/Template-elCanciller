@@ -55,13 +55,13 @@
 
 <div class="widget ads">
   <div class="ads__container">
-    <?php the_field('sidebar_home_1', 'option'); ?>
+    <?php echo get_field('sidebar_home_1', 'option'); ?>
   </div>
   <div class="ads__container">
-    <?php the_field('sidebar_home_2', 'option'); ?>
+    <?php echo get_field('sidebar_home_2', 'option'); ?>
   </div>
   <div class="ads__container">
-    <?php the_field('sidebar_home_3', 'option'); ?>
+    <?php echo get_field('sidebar_home_3', 'option'); ?>
   </div>
 </div><!-- end widget ads -->
 

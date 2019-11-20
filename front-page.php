@@ -56,9 +56,6 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 				<div class="col-3 order-2" data-quantity="2" data-offset="3">
-					<!-- <div id="publi1">
-						<?php //the_field('anuncio_1', $page_id) ?>
-					</div>-->
 					<?php 
 					if ($encuesta_pequena && $encuesta_grande){
 						echo do_shortcode('[posts cantidad="3" offset="2"]'); // Con encuesta grande y pequeña offset: 2 total: 5
@@ -79,7 +76,6 @@ $encuesta_grande = get_field('encuesta_grande');
 
 		</div><!-- inner container -->
 		<div class="outer-container">
-			<div class="ad-long"><?php the_field('anuncio_2', $page_id) ?></div>
 			<?php get_template_part('template-parts/sections/section', 'placas') ?>
 			<div class="col-3">
 				<!--<div id="publi2">
