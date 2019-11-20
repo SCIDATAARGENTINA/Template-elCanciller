@@ -60,7 +60,6 @@ setTimeout(function(){ decidePublicidad() }, 3000);
 
 function decidePublicidad() {
 var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
-console.log(categoriaPosteo);
 var texto = "";
 if (categoriaPosteo == 'Está pasando')
   {
@@ -76,3 +75,12 @@ if (categoriaPosteo == 'Deportes')
  </script> 
   
 </div>
+
+<div class="widget ads">
+  <div class="ads__container">
+    <?php echo get_field('sidebar_nota_1', 'option'); ?>
+  </div>
+  <div class="ads__container">
+    <?php echo get_field('sidebar_nota_2', 'option'); ?>
+  </div>
+</div><!-- end widget ads -->
