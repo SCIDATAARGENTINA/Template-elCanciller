@@ -5177,13 +5177,9 @@ ADS UPDATE 26/11/2019
 
 .col-3.order-1 .post-rendered{
     order: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.col-3.order-1 .post-rendered:nth-child(2){
+.col-3.order-1 .post-rendered:nth-child(1){
     order: 2;
 }
 
