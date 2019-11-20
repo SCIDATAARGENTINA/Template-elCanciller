@@ -76,13 +76,13 @@ get_header();
 				</div>
 				<div class="col-1-2">
 					<div class="ad-vertical">
-						<?php echo get_field('grilla_nota_1'); ?>
+						<?php echo get_field('grilla_nota_1', 'option'); ?>
 					</div>
 					<div class="col-2-2">
 						<div class="ad-grilla">
-							<?php echo get_field('grilla_nota_2'); ?>
+							<?php echo get_field('grilla_nota_2', 'option'); ?>
 						</div>
-						<?php echo do_shortcode('[posts cantidad="3" offset="0"]') ?>
+						<?php echo do_shortcode('[posts cantidad="3" offset="3"]') ?>
 					</div>
 				</div>
 			</div>
