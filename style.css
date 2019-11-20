@@ -5132,11 +5132,7 @@ ADS UPDATE 26/11/2019
 
 */
 
-/*for sidebar*/
-.sidebar .widget.ads{
-    
-}
-
+/*for sidebar - home*/
 .sidebar .widget.ads .ads__container{
     display: flex;
     flex-direction: column;
