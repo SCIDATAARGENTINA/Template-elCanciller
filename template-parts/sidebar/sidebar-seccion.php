@@ -34,30 +34,3 @@
 <div class="widget">
   <?php get_template_part('template-parts/widgets/widget', 'cancilleram') ?>
 </div>
-<div class="widget" style="margin-top: 9% !important;">
-<?php get_template_part('template-parts/widgets/widget', 'autores') ?>
-</div>
-<div class="widget">
-  <?php get_template_part('template-parts/widgets/widget', 'instagram') ?>
-</div>
-<div class="widget">
-  <?php get_template_part('template-parts/widgets/widget', 'twitter') ?>
-</div>
-<div class="widget widget-contador">
-  <?php echo do_shortcode('[contador postid=48914]') ?>
-</div>
-<div class="widget ad-lateral-sidebar">
-
- <!-- <div id="publicidadPBABarrasSeccion">
-    <a href="https://www.gba.gob.ar/seguridad?utm_source=medios&utm_medium=cpc&utm_campaign=seguridad">
-      <img src="http://elcanciller.com/wp-content/uploads/2019/10/pbabarras1.gif">
-    </a>
-  </div>
-
-  <div id="publicidadPBAJuegoSeccion">
-    <a href="https://www.gba.gob.ar/seguridad?utm_source=medios&utm_medium=cpc&utm_campaign=seguridad">
-      <img src="http://elcanciller.com/wp-content/uploads/2019/10/pbajuego1.gif">
-    </a>
-  </div>-->
-
-</div>
