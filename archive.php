@@ -35,24 +35,34 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; }
 			<div class="outer-container">			
 				<div class="seccion-posts col-3">
 				<?php
-				// Start the Loop.
+				// $i valida el momento del loop para insertar un anuncio
+				$i = 0;
 				while ( have_posts() ) :
 					the_post();
+					$i++;
 
-					/*
-					* Include the Post-Format-specific template for the content.
-					* If you want to override this in a child theme, then include a file
-					* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					*/
-					get_template_part( 'template-parts/content/content' );
+					if($i == 1){ // inserta un anuncio en la posición 1 ?>
 
-					// End the loop.
+						<div class="ad-grilla">
+							<?php echo get_field('grilla_seccion_1', 'option') ?>
+						</div>
+
+					<?php }else if($i == 8){// inserta un anuncio en la posición 8 ?>
+
+						<div class="ad-grilla">
+							<?php echo get_field('grilla_seccion_2', 'option') ?>
+						</div>
+
+					<?php }else{ // muestra un post
+
+						get_template_part( 'template-parts/content/content' );
+
+					}
+
+
+
 				endwhile;
 
-				// Previous/next page navigation.
-				//twentynineteen_the_posts_navigation();
-
-				// If no content, include the "No posts found" template.
 			else :
 				get_template_part( 'template-parts/content/content', 'none' );
 
