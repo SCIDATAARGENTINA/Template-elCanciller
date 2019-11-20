@@ -1447,10 +1447,6 @@ add_action( 'pre_get_posts', function ( $q )
          && $q->is_main_query() // VERY important, targets only main query
          && $q->is_category() 
     ) {
-      if ( $q->is_paged ) {
-        $q->set( 'posts_per_page', '9' ); 
-      }else{
         $q->set( 'posts_per_page', '7' ); 
-      }
     }
 });
