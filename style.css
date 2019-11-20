@@ -1623,8 +1623,6 @@ ul.tagposts-list li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* justify-content: space-between; */
-    white-space: pre-line;
 }
 
 
@@ -5162,6 +5160,13 @@ ADS UPDATE 26/11/2019
 }
 
 /*ads - en grilla*/
+
+.col-2-2 .ad-grilla{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .col-3.order-2 .ad-grilla{
     order: 1;
