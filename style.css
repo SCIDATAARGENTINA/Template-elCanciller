@@ -5179,8 +5179,8 @@ ADS UPDATE 26/11/2019
     order: 1;
 }
 
-.col-3.order-1 article:nth-child(2){
-    order: 3;
+.col-3.order-1 .post-rendered:last-of-type {
+    order: 3 !important;
 }
 
 .ad-grilla p{
