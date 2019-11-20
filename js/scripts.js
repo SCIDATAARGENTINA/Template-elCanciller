@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
             $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
         }
     });
-
+    
     /* SLICK CARROUSEL CANCILELR AM END*/
 
     /*MAGINIFIC POPUP VIDEOS
