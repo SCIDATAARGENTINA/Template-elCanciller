@@ -5149,6 +5149,19 @@ ADS UPDATE 26/11/2019
     vertical-align: top;
 }
 
+/*for sidebar - nota*/
+
+.sidebar{
+    position: relative;
+}
+
+.sidebar .widget.ads.-extended{
+    position: absolute;
+    right: calc(50% - 175px);
+    width: 100%;
+    min-width: 350px;
+}
+
 /*ads - en grilla*/
 
 .col-3.order-2 .ad-grilla{

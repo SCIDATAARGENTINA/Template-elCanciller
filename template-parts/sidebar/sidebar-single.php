@@ -76,7 +76,7 @@ if (categoriaPosteo == 'Deportes')
   
 </div>
 
-<div class="widget ads">
+<div class="widget ads -extended">
   <div class="ads__container">
     <?php echo get_field('sidebar_nota_1', 'option'); ?>
   </div>
