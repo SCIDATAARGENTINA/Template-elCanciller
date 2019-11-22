@@ -70,7 +70,7 @@ $encuesta_grande = get_field('encuesta_grande');
 				?>
 				
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
-
+				<?php echo get_field('grilla_home_4', 'option') ?>
 			</div><!-- content -->
 
 		</div><!-- inner container -->
@@ -93,9 +93,6 @@ $encuesta_grande = get_field('encuesta_grande');
 				?>
 			</div>
 			<div class="col-3">
-				<!-- <div class="advertical">
-					<?php // the_field('anuncio_7', $page_id) ?>
-				</div>   TAMO ACA-->
 				<?php
 				if ($encuesta_pequena && $encuesta_grande){
 					echo do_shortcode('[posts cantidad="3" offset="6"]'); // Con encuesta grande y pequeña offset: 6 total: 9
@@ -124,11 +121,8 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 			</div>
-			<div class="ad-long"><?php the_field('anuncio_3', $page_id) ?></div>
 			<?php get_template_part('template-parts/sections/section', 'instagram') ?>
-			<div class="ad-long"><?php the_field('anuncio_4', $page_id) ?></div>
 			<?php get_template_part('template-parts/sections/section', 'videos') ?>
-			<div class="ad-long"><?php the_field('anuncio_5', $page_id) ?></div>
 		</div><!-- outer-container -->
 
 	</main><!-- #main -->
