@@ -70,11 +70,11 @@ $encuesta_grande = get_field('encuesta_grande');
 				?>
 				
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
-				<?php echo get_field('grilla_home_4', 'option') ?>
 			</div><!-- content -->
 
 		</div><!-- inner container -->
 		<div class="outer-container">
+			<?php echo get_field('grilla_home_4', 'option') ?>
 			<?php get_template_part('template-parts/sections/section', 'placas') ?>
 			<div class="col-3 order-2">
 				<div class="ad-grilla">
