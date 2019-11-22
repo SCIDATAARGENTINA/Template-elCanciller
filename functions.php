@@ -855,9 +855,7 @@ function loadmore_ajax_handler(){
     $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
   }
   $args['post_status'] = 'publish';
-  if($_POST['page'] >= 1){
-    $args['posts_per_page'] = '9';
-  }
+  $args['posts_per_page'] = '9';
   $search = $_POST['search'];
  
 	// it is always better to use WP_Query but not here
