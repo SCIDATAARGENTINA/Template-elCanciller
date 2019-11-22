@@ -847,8 +847,13 @@ add_action( 'wp_enqueue_scripts', 'load_more_scripts' );
 function loadmore_ajax_handler(){
  
 	// prepare our arguments for the query
-	$args = json_decode( stripslashes( $_POST['query'] ), true );
-	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+  $args = json_decode( stripslashes( $_POST['query'] ), true );
+  if($_POST['page'] == 0){
+    $args['paged'] = $_POST['page'];
+    $args['offset'] = 7;
+  }else{
+    $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+  }
   $args['post_status'] = 'publish';
   if($_POST['page'] >= 1){
     $args['posts_per_page'] = '9';
