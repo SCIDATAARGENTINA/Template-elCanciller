@@ -848,8 +848,7 @@ function loadmore_ajax_handler(){
  
 	// prepare our arguments for the query
   $args = json_decode( stripslashes( $_POST['query'] ), true );
-  echo $_POST['page'];
-  if($_POST['page'] == 0 || !$_POST['page']){
+  if($_POST['page'] == 1){
     $args['paged'] = $_POST['page'];
     $args['offset'] = 7;
   }else{
