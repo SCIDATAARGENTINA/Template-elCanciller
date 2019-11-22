@@ -850,7 +850,7 @@ function loadmore_ajax_handler(){
 	$args = json_decode( stripslashes( $_POST['query'] ), true );
 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
   $args['post_status'] = 'publish';
-  if($_POST['page'] > 1){
+  if($_POST['page'] >= 1){
     $args['posts_per_page'] = '9';
   }
   $search = $_POST['search'];
