@@ -830,9 +830,6 @@ function load_more_scripts() {
 	// register our main script but do not enqueue it yet
 	wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
  
-	// now the most interesting part
-	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
-	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
 	wp_localize_script( 'loadmore', 'loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
@@ -853,6 +850,9 @@ function loadmore_ajax_handler(){
 	$args = json_decode( stripslashes( $_POST['query'] ), true );
 	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
   $args['post_status'] = 'publish';
+  if($_POST['page'] > 1){
+    $args['posts_per_page'] = '9';
+  }
   $search = $_POST['search'];
  
 	// it is always better to use WP_Query but not here
