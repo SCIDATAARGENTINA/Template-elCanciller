@@ -31,7 +31,9 @@ $encuesta_grande = get_field('encuesta_grande');
 			<div class="content">
 				<?php get_template_part('template-parts/sections/section', 'live') ?>
 				<?php get_template_part('template-parts/sections/section', 'ultimomomento') ?>
+				<?php echo get_field('vertical_home_1', 'option') ?>
 				<?php get_template_part('template-parts/home/trending', 'front') ?>
+				<?php echo get_field('vertical_home_2', 'option') ?>
 				<div class="col-3" data-quantity="3" data-offset="0">
 				
 				<?php // Cambia el Layout si no hay encuesta pequeña
@@ -74,7 +76,7 @@ $encuesta_grande = get_field('encuesta_grande');
 
 		</div><!-- inner container -->
 		<div class="outer-container">
-			<?php echo get_field('grilla_home_4', 'option') ?>
+			<?php echo get_field('vertical_home_3', 'option') ?>
 			<?php get_template_part('template-parts/sections/section', 'placas') ?>
 			<div class="col-3 order-2">
 				<div class="ad-grilla">
@@ -122,6 +124,7 @@ $encuesta_grande = get_field('encuesta_grande');
 				?>
 			</div>
 			<?php get_template_part('template-parts/sections/section', 'instagram') ?>
+			<?php echo get_field('vertical_home_4', 'option') ?>
 			<?php get_template_part('template-parts/sections/section', 'videos') ?>
 		</div><!-- outer-container -->
 
