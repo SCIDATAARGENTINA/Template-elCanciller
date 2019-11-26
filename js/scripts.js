@@ -38,13 +38,13 @@ jQuery(document).ready(function($) {
             infinite: true,
             arrows: true,
             adaptiveHeight: true,
-            prevArrow: '<div class="prev-arrow-desktop"></div>',
-            nextArrow: '<div class="next-arrow-desktop"></div>',
-            appendArrows: '.carr-nav-desktop',
-            appendDots: '.prev-arrow-desktop'
+            prevArrow: '<div class="prev-arrow desktop"></div>',
+            nextArrow: '<div class="next-arrow desktop"></div>',
+            appendArrows: '.carr-nav.desktop',
+            appendDots: '.prev-arrow.desktop'
         });
 
-        $('.cancilleram.desktop prev-arrow-desktop').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
+        $('.cancilleram.desktop prev-arrow.desktop').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
 
         var dotsWidth = 16;
 
@@ -84,13 +84,13 @@ jQuery(document).ready(function($) {
             infinite: true,
             arrows: true,
             adaptiveHeight: true,
-            prevArrow: '<div class="prev-arrow-mobile"></div>',
-            nextArrow: '<div class="next-arrow-mobile"></div>',
-            appendArrows: '.carr-nav-mobile',
-            appendDots: '.prev-arrow-mobile'
+            prevArrow: '<div class="prev-arrow mobile"></div>',
+            nextArrow: '<div class="next-arrow mobile"></div>',
+            appendArrows: '.carr-nav.mobile',
+            appendDots: '.prev-arrow.mobile'
         });
 
-        $('.cancilleram.mobile .prev-arrow-mobile').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
+        $('.cancilleram.mobile .prev-arrow.mobile').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
 
         var dotsWidth = 16;
 
