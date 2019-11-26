@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
             appendDots: '.prev-arrow.desktop'
         });
 
-        $('.cancilleram.desktop prev-arrow.desktop').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
+        $('.cancilleram.desktop .prev-arrow').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
 
         var dotsWidth = 16;
 
@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
             appendDots: '.prev-arrow.mobile'
         });
 
-        $('.cancilleram.mobile .prev-arrow.mobile').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
+        $('.cancilleram.mobile .prev-arrow').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
 
         var dotsWidth = 16;
 
