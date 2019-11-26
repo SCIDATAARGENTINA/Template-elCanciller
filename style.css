@@ -1595,6 +1595,7 @@ ul.tagposts-list li {
 .col-1-2 {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    width: 100%;
 }
 
 @media (max-width: 950px){
