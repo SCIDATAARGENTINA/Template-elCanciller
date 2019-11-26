@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
             adaptiveHeight: true,
             prevArrow: '<div class="prev-arrow-desktop"></div>',
             nextArrow: '<div class="next-arrow-desktop"></div>',
-            appendArrows: '.desktop .carr-nav',
+            appendArrows: '.carr-nav-desktop',
             appendDots: '.prev-arrow-desktop'
         });
 
@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
             adaptiveHeight: true,
             prevArrow: '<div class="prev-arrow-mobile"></div>',
             nextArrow: '<div class="next-arrow-mobile"></div>',
-            appendArrows: '.mobile .carr-nav',
+            appendArrows: '.carr-nav-mobile',
             appendDots: '.prev-arrow-mobile'
         });
 

@@ -126,7 +126,7 @@ $encuesta_grande = get_field('encuesta_grande');
 			<?php get_template_part('template-parts/sections/section', 'instagram') ?>
 			<?php echo get_field('vertical_home_4', 'option') ?>
 			<div class="cancilleram mobile container onlymobile">
-				<div class="carr-nav"></div>
+				<div class="carr-nav-mobile"></div>
 				<div class="carrousel">
 				<?php
 			$args = array(
