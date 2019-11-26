@@ -5132,7 +5132,7 @@ ADS UPDATE 26/11/2019
 */
 
 /*for sidebar - home*/
-.sidebar .widget.ads .ads__container{
+.widget.ads .ads__container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -5140,11 +5140,11 @@ ADS UPDATE 26/11/2019
     margin: 10px 0;
 }
 
-.sidebar .widget.ads .ads__container p{
+.widget.ads .ads__container p{
     margin: 0 auto;
 }
 
-.sidebar .widget.ads .ads__container img{
+.widget.ads .ads__container img{
     vertical-align: top;
 }
 
