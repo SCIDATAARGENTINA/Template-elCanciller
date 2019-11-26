@@ -9,7 +9,7 @@ jQuery(function($) { // use jQuery code inside this to avoid "$ is not defined" 
                 'search': loadmore_params.search
             };
 
-
+            console.log(data);
         $.ajax({ // you can also use $.post here
             url: loadmore_params.ajaxurl, // AJAX handler
             data: data,
@@ -22,10 +22,8 @@ jQuery(function($) { // use jQuery code inside this to avoid "$ is not defined" 
                 if (data) {
                     button.find('img').removeClass('spin');
                     if ($('.search-posts').length) {
-                        console.log('search');
                         $('.search-posts').append(data);
                     } else {
-                        console.log('seccion');
                         $('.seccion-posts').append(data); // insert new posts
                     }
                     loadmore_params.current_page++;
@@ -33,8 +31,6 @@ jQuery(function($) { // use jQuery code inside this to avoid "$ is not defined" 
                     if (loadmore_params.current_page == loadmore_params.max_page)
                         button.remove(); // if last page, remove the button
 
-                    // you can also fire the "post-load" event here if you use a plugin that requires it
-                    // $( document.body ).trigger( 'post-load' );
                 } else {
                     button.remove(); // if no data, remove the button as well
                 }
