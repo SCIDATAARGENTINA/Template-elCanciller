@@ -5184,8 +5184,14 @@ ADS UPDATE 26/11/2019
     margin: 0 auto;
 }
 
+.ad-grilla a{
+    display: block;
+}
+
 .ad-grilla img{
     vertical-align: top;
+    display: block;
+    margin: 0 auto;
 }
 
 .col-3.order-1 .ad-grilla{

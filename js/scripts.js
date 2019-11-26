@@ -31,49 +31,100 @@ jQuery(document).ready(function($) {
         }) // end ajax
 
     /* SLICK CARROUSEL CANCILELR AM*/
-    $(".carrousel").slick({
-        dots: true,
-        infinite: true,
-        arrows: true,
-        adaptiveHeight: true,
-        prevArrow: '<div class="prev-arrow"></div>',
-        nextArrow: '<div class="next-arrow"></div>',
-        appendArrows: '.carr-nav',
-        appendDots: '.prev-arrow'
-    });
+    if($(window).width() >= 768) {
 
-    $('.prev-arrow').prepend('<img class="am-logo" src=\"'+URLdomain+'/wp-content/uploads/2019/06/cancilleramlogo.svg">');
+        $(".cancilleram.desktop .carrousel").slick({
+            dots: true,
+            infinite: true,
+            arrows: true,
+            adaptiveHeight: true,
+            prevArrow: '<div class="prev-arrow"></div>',
+            nextArrow: '<div class="next-arrow"></div>',
+            appendArrows: '.carr-nav',
+            appendDots: '.prev-arrow'
+        });
 
-    var dotsWidth = 16;
+        $('.prev-arrow').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
 
-    var dotsWidthTotal = 0;
+        var dotsWidth = 16;
 
-    $('.carrousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        var maxDots = 4;
-        if (nextSlide > currentSlide && nextSlide <= slick.slideCount - (maxDots - 2)) {
-            if (nextSlide >= maxDots - 1) {
-                dotsWidthTotal = dotsWidthTotal + dotsWidth;
-                $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+        var dotsWidthTotal = 0;
+
+        $('.carrousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            var maxDots = 4;
+            if (nextSlide > currentSlide && nextSlide <= slick.slideCount - (maxDots - 2)) {
+                if (nextSlide >= maxDots - 1) {
+                    dotsWidthTotal = dotsWidthTotal + dotsWidth;
+                    $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+                }
             }
-        }
-        if (nextSlide < currentSlide) {
-            if (nextSlide >= maxDots - 1) {
-                dotsWidthTotal = dotsWidthTotal - dotsWidth;
-                $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
-            } else {
+            if (nextSlide < currentSlide) {
+                if (nextSlide >= maxDots - 1) {
+                    dotsWidthTotal = dotsWidthTotal - dotsWidth;
+                    $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+                } else {
+                    $('.slick-dots li').css('transform', 'translateX(0px)');
+                    dotsWidthTotal = 0;
+                }
+            }
+            if (nextSlide == 0) {
                 $('.slick-dots li').css('transform', 'translateX(0px)');
                 dotsWidthTotal = 0;
             }
-        }
-        if (nextSlide == 0) {
-            $('.slick-dots li').css('transform', 'translateX(0px)');
-            dotsWidthTotal = 0;
-        }
-        if (nextSlide == 9) {
-            dotsWidthTotal = dotsWidth * (slick.slideCount - maxDots);
-            $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
-        }
-    });
+            if (nextSlide == 9) {
+                dotsWidthTotal = dotsWidth * (slick.slideCount - maxDots);
+                $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+            }
+        });
+
+    }else{
+
+        $(".cancilleram.mobile .carrousel").slick({
+            dots: true,
+            infinite: true,
+            arrows: true,
+            adaptiveHeight: true,
+            prevArrow: '<div class="prev-arrow"></div>',
+            nextArrow: '<div class="next-arrow"></div>',
+            appendArrows: '.carr-nav',
+            appendDots: '.prev-arrow'
+        });
+
+        $('.prev-arrow').prepend('<img class="am-logo" src=\"' + URLdomain + '/wp-content/uploads/2019/06/cancilleramlogo.svg">');
+
+        var dotsWidth = 16;
+
+        var dotsWidthTotal = 0;
+
+        $('.carrousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+            var maxDots = 4;
+            if (nextSlide > currentSlide && nextSlide <= slick.slideCount - (maxDots - 2)) {
+                if (nextSlide >= maxDots - 1) {
+                    dotsWidthTotal = dotsWidthTotal + dotsWidth;
+                    $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+                }
+            }
+            if (nextSlide < currentSlide) {
+                if (nextSlide >= maxDots - 1) {
+                    dotsWidthTotal = dotsWidthTotal - dotsWidth;
+                    $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+                } else {
+                    $('.slick-dots li').css('transform', 'translateX(0px)');
+                    dotsWidthTotal = 0;
+                }
+            }
+            if (nextSlide == 0) {
+                $('.slick-dots li').css('transform', 'translateX(0px)');
+                dotsWidthTotal = 0;
+            }
+            if (nextSlide == 9) {
+                dotsWidthTotal = dotsWidth * (slick.slideCount - maxDots);
+                $('.slick-dots li').css('transform', 'translateX(-' + dotsWidthTotal + 'px)');
+            }
+        });
+
+    }
+    
     
     /* SLICK CARROUSEL CANCILELR AM END*/
 
