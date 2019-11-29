@@ -966,6 +966,10 @@ input:-internal-autofill-selected {
     border: 2px solid #e7d117;
 }
 
+.cancilleram.mobile{
+    margin-bottom: 50px;
+}
+
 .prev-arrow,
 .next-arrow {
     display: inline-block;
