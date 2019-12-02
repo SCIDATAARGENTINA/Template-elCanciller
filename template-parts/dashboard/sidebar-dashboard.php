@@ -16,10 +16,10 @@ $user = wp_get_current_user();
 <div class="sidebar__content">
     <div class="profile">
         <img src="<?php echo get_avatar_url( $user->ID ) ?>" alt="<?php echo $user->name?>">
+        <a href="<?php bloginfo('url') ?>/editar-perfil" class="btn -accent">Editar información</a>
         <div class="profile__user">
             <div class="profile__name">
                 <p><?php echo $user->display_name?></p>
-                <a href="<?php bloginfo('url') ?>/editar-perfil" class="btn -accent">Editar información</a>
             </div>
             <div class="profile__actions">
 
