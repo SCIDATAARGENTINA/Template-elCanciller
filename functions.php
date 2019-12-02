@@ -1498,6 +1498,22 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
  * 
 */
 
+//Redirect on login
+
+// add the code to your theme function.php
+//for logout redirection
+add_action('wp_logout','auto_redirect_after_logout');
+function auto_redirect_after_logout(){
+wp_redirect( home_url() );
+exit();
+}
+//for login redirection
+add_action('wp_login','auto_redirect_after_login');
+function auto_redirect_after_login(){
+wp_redirect( bloginfo('url') . '/dashboard' );
+exit();
+}
+
  function add_user_favoritos(){
     $user = wp_get_current_user();
 
