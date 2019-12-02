@@ -832,9 +832,6 @@ function load_more_scripts() {
 	// register our main script but do not enqueue it yet
 	wp_register_script( 'loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
  
-	// now the most interesting part
-	// we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
-	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
 	wp_localize_script( 'loadmore', 'loadmore_params', array(
 		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
 		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
@@ -852,9 +849,15 @@ add_action( 'wp_enqueue_scripts', 'load_more_scripts' );
 function loadmore_ajax_handler(){
  
 	// prepare our arguments for the query
-	$args = json_decode( stripslashes( $_POST['query'] ), true );
-	$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+  $args = json_decode( stripslashes( $_POST['query'] ), true );
+  if($_POST['page'] == 1){
+    $args['paged'] = $_POST['page'];
+    $args['offset'] = 7;
+  }else{
+    $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+  }
   $args['post_status'] = 'publish';
+  $args['posts_per_page'] = '9';
   $search = $_POST['search'];
  
 	// it is always better to use WP_Query but not here
@@ -1630,3 +1633,16 @@ function checkIfFollowed($itemType, $itemId) {
     }
   }
 }
+
+
+//Intercept category loop 
+
+add_action( 'pre_get_posts', function ( $q ) 
+{
+    if ( !is_admin() // VERY important, targets only front end queries
+         && $q->is_main_query() // VERY important, targets only main query
+         && $q->is_category() 
+    ) {
+        $q->set( 'posts_per_page', '7' ); 
+    }
+});

@@ -1018,6 +1018,10 @@ input:-internal-autofill-selected {
     border: 2px solid #e7d117;
 }
 
+.cancilleram.mobile{
+    margin-bottom: 50px;
+}
+
 .prev-arrow,
 .next-arrow {
     display: inline-block;
@@ -1647,6 +1651,7 @@ ul.tagposts-list li {
 .col-1-2 {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    width: 100%;
 }
 
 @media (max-width: 950px){
@@ -1675,8 +1680,6 @@ ul.tagposts-list li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* justify-content: space-between; */
-    white-space: pre-line;
 }
 
 
@@ -5385,4 +5388,93 @@ height: 200px !important;
     color: #fff;
     line-height: 0px;
 
+}
+
+/*
+
+ADS UPDATE 26/11/2019
+
+*/
+
+/*for sidebar - home*/
+.widget.ads .ads__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.widget.ads .ads__container p{
+    margin: 0 auto;
+}
+
+.widget.ads .ads__container img{
+    vertical-align: top;
+}
+
+/*for sidebar - nota*/
+
+.contain-widgets{
+    position: relative;
+}
+.sidebar .widget.ads.-extended{
+    position: absolute;
+    right: calc(50% - 175px);
+    width: 100%;
+    min-width: 350px;
+}
+
+/*ads - en grilla*/
+
+.col-3 .ad-grilla{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-2-2 .ad-grilla{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-3.order-2 .ad-grilla{
+    order: 1;
+}
+
+.ad-grilla p{
+    margin: 0 auto;
+}
+
+.ad-grilla a{
+    display: block;
+}
+
+.ad-grilla img{
+    vertical-align: top;
+    display: block;
+    margin: 0 auto;
+}
+
+.col-3.order-1 .ad-grilla{
+    order: 2;
+}
+
+.col-3.order-1 .post-rendered{
+    order: 1;
+}
+
+.col-3.order-1 .post-rendered:last-of-type {
+    order: 3 !important;
+}
+
+.ad-grilla p{
+    margin: 0 auto;
+}
+
+.ad-grilla img{
+    vertical-align: top;
 }

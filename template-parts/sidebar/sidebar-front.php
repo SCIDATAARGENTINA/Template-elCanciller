@@ -53,11 +53,17 @@
   <?php get_template_part('template-parts/widgets/widget', 'twitter') ?>
 </div>
 
-<div class="onlydesktop">
-<div id="publicidadBcoProvincia" style="display: flex;justify-content: center;align-items: center;"><a href="https://www.bancoprovincia.com.ar/web"><img src="https://elcanciller.com/wp-content/uploads/2019/10/bancoprovincia1.gif"></a></div>
-<div id="publicidadLegislatura" style="display: flex;justify-content: center;align-items: center;"><a href="https://www.legislatura.gov.ar/"><img src="https://elcanciller.com/wp-content/uploads/2019/10/legislatura1.png"></a></div>
-<div id="publicidadPilar" style="display: flex;justify-content: center;align-items: center;"><a href="https://www.pilar.gov.ar/inicio/gobierno-municipal/obras/"><img src="https://elcanciller.com/wp-content/uploads/2019/11/200x200-01.gif"></a></div>
-</div>
+<div class="widget ads">
+  <div class="ads__container">
+    <?php echo get_field('sidebar_home_1', 'option'); ?>
+  </div>
+  <div class="ads__container">
+    <?php echo get_field('sidebar_home_2', 'option'); ?>
+  </div>
+  <div class="ads__container">
+    <?php echo get_field('sidebar_home_3', 'option'); ?>
+  </div>
+</div><!-- end widget ads -->
 
 <div class="widget widget-contador">
   <?php echo do_shortcode('[contador postid=48914]') ?> 
