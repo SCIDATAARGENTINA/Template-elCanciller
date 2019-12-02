@@ -19,7 +19,7 @@ $user = wp_get_current_user();
         <div class="profile__user">
             <div class="profile__name">
                 <p><?php echo $user->display_name?></p>
-                <a href="<?php bloginfo('url') ?>/editar-perfil" class="button logout">Editar información</a>
+                <a href="<?php bloginfo('url') ?>/editar-perfil" class="btn -accent">Editar información</a>
             </div>
             <div class="profile__actions">
 
