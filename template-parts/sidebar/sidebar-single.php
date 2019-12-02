@@ -35,7 +35,7 @@
     <?php get_template_part('template-parts/widgets/widget', 'tagposts') ?>
 </div>
 <div class="widget">
-    <?php get_template_part('template-parts/widgets/widget', 'tagsrelated') ?>
+    <?php //get_template_part('template-parts/widgets/widget', 'tagsrelated') ?>
 </div>
 <div class="widget widget-contador">
   <?php echo do_shortcode('[contador postid=48914]') ?>
@@ -44,35 +44,13 @@
 <?php get_template_part('template-parts/widgets/widget', 'autores') ?>
 </div>
 
-<div class="widget ad-lateral-sidebar onlydesktop">
-
-<div id="publicidadCABANota">
-  <a href="https://www.buenosaires.gob.ar/">
-    <img src="https://elcanciller.com/wp-content/uploads/2019/11/mobile.jpg">
-  </a>
-</div>
-
-<div id="publicidadBcoProvinciaNota">
-</div>
-
-<script>
-setTimeout(function(){ decidePublicidad() }, 3000);
-
-function decidePublicidad() {
-var categoriaPosteo = jQuery('.post-imagen > .post-category > a > h4').text();
-console.log(categoriaPosteo);
-var texto = "";
-if (categoriaPosteo == 'Está pasando')
-  {
-    texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"http://elcanciller.com/wp-content/uploads/2019/10/PBAtasafija1.gif\"></a>';  
-  }
-if (categoriaPosteo == 'Deportes')
-  {
-    texto = texto + '<a href=\"https://www.bancoprovincia.com.ar/web\"><img src=\"https://elcanciller.com/wp-content/uploads/2019/11/300x600.gif\"></a>';
-  }
-  jQuery("#publicidadBcoProvinciaNota").append(texto);
-}
-
- </script> 
-  
+<div class="contain-widgets">
+  <div class="widget ads -extended">
+    <div class="ads__container">
+      <?php echo get_field('sidebar_nota_1', 'option'); ?>
+    </div>
+    <div class="ads__container">
+      <?php echo get_field('sidebar_nota_2', 'option'); ?>
+    </div>
+  </div><!-- end widget ads -->
 </div>

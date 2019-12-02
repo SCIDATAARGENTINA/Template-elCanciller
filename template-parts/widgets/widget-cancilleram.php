@@ -11,8 +11,8 @@
 
 ?>
 
-<div class="cancilleram container">
-    <div class="carr-nav"></div>
+<div class="cancilleram desktop container">
+    <div class="carr-nav desktop"></div>
     <div class="carrousel">
      <?php
    $args = array(

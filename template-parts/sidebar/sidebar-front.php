@@ -52,6 +52,19 @@
 <div class="widget">
   <?php get_template_part('template-parts/widgets/widget', 'twitter') ?>
 </div>
+
+<div class="widget ads">
+  <div class="ads__container">
+    <?php echo get_field('sidebar_home_1', 'option'); ?>
+  </div>
+  <div class="ads__container">
+    <?php echo get_field('sidebar_home_2', 'option'); ?>
+  </div>
+  <div class="ads__container">
+    <?php echo get_field('sidebar_home_3', 'option'); ?>
+  </div>
+</div><!-- end widget ads -->
+
 <div class="widget widget-contador">
   <?php echo do_shortcode('[contador postid=48914]') ?> 
 </div>
