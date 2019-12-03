@@ -17,7 +17,7 @@ $args = array(
       'order' => 'DESC',
       'tax_query' => array(
         array(
-            'taxonomy' => 'category',
+            'taxonomy' => $term->taxonomy,
             'field'    => 'term_id',
             'terms'    => $term->term_id,
             ),
