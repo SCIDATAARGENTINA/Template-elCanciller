@@ -32,9 +32,24 @@ $args = array(
    );
 $count_query = new WP_Query($args);
 $count = $count_query->found_posts;
-echo $count;
+if ($count == 0){
+
+   $args = array(
+      'post_type' => array('post', 'opinion'),
+      'posts_per_page' => 1,
+      'orderby' => 'date',
+      'order' => 'DESC',
+      'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field'    => 'term_id',
+            'terms'    => $term->term_id,
+            ),
+        )
+   );
+
+}
 ?>
-<p>test</p>
    <?php
    
    $cat_color = get_field('color', $term->taxonomy . '_' . $term->term_id);
