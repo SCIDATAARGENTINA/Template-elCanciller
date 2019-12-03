@@ -9,7 +9,6 @@
  * @since 1.0.0
  */
 $term = get_queried_object();
-print_r($term);
 $args = array(
       'post_type' => array('post', 'opinion'),
       'posts_per_page' => 1,
@@ -33,7 +32,6 @@ $args = array(
 $count_query = new WP_Query($args);
 $count = $count_query->found_posts;
 if ($count <= 0){
-echo $count;
    $args = array(
       'post_type' => array('post', 'opinion'),
       'posts_per_page' => 1,
@@ -53,7 +51,9 @@ echo $count;
    <?php
    
    $cat_color = get_field('color', $term->taxonomy . '_' . $term->term_id);
-   echo $cat_color;
+   if($cat_color == ''){
+      $cat_color = '#e7d117';
+   }
    $trending_post = new WP_Query($args);
    ?>
 
