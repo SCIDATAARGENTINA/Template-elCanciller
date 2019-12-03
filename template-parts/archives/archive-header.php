@@ -9,10 +9,8 @@
  * @since 1.0.0
  */
 $term = get_queried_object();
-?>
 
-   <?php
-   $args = array(
+$args = array(
       'post_type' => array('post', 'opinion'),
       'posts_per_page' => 1,
       'orderby' => 'date',
@@ -32,6 +30,13 @@ $term = get_queried_object();
          )
       )
    );
+$count_query = new WP_Query($args);
+$count = $count_query->found_posts;
+echo $count;
+?>
+<p>test</p>
+   <?php
+   
    $cat_color = get_field('color', $term->taxonomy . '_' . $term->term_id);
    $trending_post = new WP_Query($args);
    ?>
