@@ -33,7 +33,7 @@ $args = array(
 $count_query = new WP_Query($args);
 $count = $count_query->found_posts;
 echo $count;
-if ($count == 0){
+if ($count <= 0){
 
    $args = array(
       'post_type' => array('post', 'opinion'),
