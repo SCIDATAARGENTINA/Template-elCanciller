@@ -53,6 +53,7 @@ echo $count;
    <?php
    
    $cat_color = get_field('color', $term->taxonomy . '_' . $term->term_id);
+   echo $cat_color;
    $trending_post = new WP_Query($args);
    ?>
 
