@@ -9,7 +9,7 @@
  * @since 1.0.0
  */
 $term = get_queried_object();
-
+print_r($term);
 $args = array(
       'post_type' => array('post', 'opinion'),
       'posts_per_page' => 1,
@@ -45,8 +45,7 @@ echo $count;
             'field'    => 'term_id',
             'terms'    => $term->term_id,
             ),
-        ),
-      'meta_query' => array()
+        )
    );
 
 }
