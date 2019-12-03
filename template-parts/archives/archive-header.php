@@ -32,6 +32,7 @@ $args = array(
    );
 $count_query = new WP_Query($args);
 $count = $count_query->found_posts;
+echo $count;
 if ($count == 0){
 
    $args = array(
@@ -45,7 +46,8 @@ if ($count == 0){
             'field'    => 'term_id',
             'terms'    => $term->term_id,
             ),
-        )
+        ),
+      'meta_query' => array()
    );
 
 }
