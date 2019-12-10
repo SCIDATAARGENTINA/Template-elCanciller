@@ -1701,8 +1701,8 @@ function hidecategory(){
     array_push($categories, $itemToHide);
     add_user_meta($user->ID, 'hidden_cats', $categories);
   }
-
-  return get_user_meta($user->ID, 'hidden_cats', true);
+  
+  print_f(get_user_meta($user->ID, 'hidden_cats', true);
 }
 
  add_action( 'wp_ajax_nopriv_hidecategory', 'hidecategory' );
