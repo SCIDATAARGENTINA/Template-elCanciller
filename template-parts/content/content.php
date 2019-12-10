@@ -44,6 +44,9 @@ echo '<style>' . '.post-rendered.' . $term->slug . '::before{ background-color:'
 			</div><!-- actions-container -->
 			<div class="post-data">
 				<div class="post-title">
+					<div class="user-actions">
+						<span class="hide-category" ><i class="fas fa-eye-slash"></i></span>
+					</div>
 					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 					<span class="time-ago"><?php echo time_ago() ?></span>
 				</div>
