@@ -40,6 +40,9 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             </a>
         </div>
         <div class="titulo">
+            <div class="user-actions">
+                <span class="hide-category" ><i class="fas fa-eye-slash"></i></span>
+            </div>
             <a href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
             </a>
