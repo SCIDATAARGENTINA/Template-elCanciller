@@ -2556,7 +2556,8 @@ ul.tagposts-list li {
     padding: 15px 10px;
     height: 100px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     font-family: 'Bree Serif', serif;
 }
 
