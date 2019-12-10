@@ -1678,3 +1678,32 @@ function hidecategory_scripts() {
 }
  
 add_action( 'wp_enqueue_scripts', 'hidecategory_scripts' );
+
+function hidecategory(){
+  $user = wp_get_current_user();
+
+  $itemToHide = $_POST['categoryId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'hidden_cats', true)){
+    //Update categories con el nuevo category
+    $categories = get_user_meta($user->ID, 'hidden_cats', true);
+    $in_array = array_search($itemToHide, $categories);
+    if($in_array){
+      return;
+    }else{
+      array_push($categories, $itemToHide);
+    }
+    update_user_meta($user->ID, 'hidden_cats', $categories);
+  }else{
+    // Crea el campo para el usuario en caso de no existir
+    $categories = [];
+    array_push($categories, $itemToHide);
+    add_user_meta($user->ID, 'hidden_cats', $categories);
+  }
+
+  return get_user_meta($user->ID, 'hidden_cats', true);
+}
+
+ add_action( 'wp_ajax_nopriv_hidecategory', 'hidecategory' );
+ add_action( 'wp_ajax_hidecategory', 'hidecategory' );
