@@ -2088,7 +2088,9 @@ ul.tagposts-list li {
 }
 
 .post-data .post-title .user-actions i{
-    color: #999;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .post-data .post-title .user-actions i:hover{
@@ -2567,6 +2569,10 @@ ul.tagposts-list li {
     color: #fff !important;
     display: inline-block;
     line-height: 0px;
+}
+
+.opinion .titulo .user-actions i{
+    color: #999;
 }
 
 .opinion .titulo a {
