@@ -2082,9 +2082,22 @@ ul.tagposts-list li {
     margin-left: 30px;
 }
 
+
+.post-data .post-title .user-actions{
+    display: flex;
+}
+
+.post-data .post-title .user-actions i{
+    color: #999;
+}
+
+.post-data .post-title .user-actions i:hover{
+    color: #e7d117;
+}
+
 .post-data .post-title h3 {
     color: #fff;
-    margin-bottom: 0px;
+    margin: 0px;
     font-size: 16px;
 }
 
