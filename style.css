@@ -2553,8 +2553,8 @@ ul.tagposts-list li {
 }
 
 .opinion .titulo {
-    padding: 15px 10px;
-    height: 120px;
+    padding: 10px 10px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
