@@ -3,6 +3,7 @@ jQuery(function ($) {
     $('.hide-category').click(function(){
         
         let button = $(this);
+        let url = hidecategory.ajaxurl;
 
         let categoryId = button.attr('data-categoryid');
         let categoryName = button.attr('data-categoryname');
