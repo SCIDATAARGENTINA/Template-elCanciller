@@ -2573,9 +2573,10 @@ ul.tagposts-list li {
 }
 
 .opinion .autor .user-actions i{
-    color: #999;
+    color: #fff;
     font-size: 18px;
     cursor: pointer;
+    transition: 300ms ease;
 }
 
 .opinion .autor .user-actions i:hover{
