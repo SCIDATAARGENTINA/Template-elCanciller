@@ -37,13 +37,13 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             <a href="<?php echo $author_link ?>">
             <p><?php the_author(); ?></p>
             </a>
-        </div>
-        <div class="titulo">
             <?php if ( is_user_logged_in() ){ ?>
             <div class="user-actions">
                 <span class="hide-category" data-category="<?php echo $categories[0]->term_id ?>" ><i class="fas fa-eye-slash"></i></span>
             </div>
             <?php } ?>
+        </div>
+        <div class="titulo">
             <a href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
             </a>
