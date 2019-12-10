@@ -1662,3 +1662,19 @@ add_action( 'pre_get_posts', function ( $q )
         $q->set( 'posts_per_page', '7' ); 
     }
 });
+
+
+// HIDE CATEGORY
+
+function hidecategory_scripts() {
+
+  wp_register_script( 'hidecategory-js', get_stylesheet_directory_uri() . '/js/hidecategory.js', array('jquery') );
+
+  wp_localize_script( 'hidecategory-js', 'hidecategory', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+  ) );
+
+  wp_enqueue_script( 'hidecategory-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'hidecategory_scripts' );
