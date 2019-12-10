@@ -9,17 +9,14 @@
  * @since 1.0.0
  */
 $term = get_queried_object();
-?>
-
-   <?php
-   $args = array(
+$args = array(
       'post_type' => array('post', 'opinion'),
       'posts_per_page' => 1,
       'orderby' => 'date',
       'order' => 'DESC',
       'tax_query' => array(
         array(
-            'taxonomy' => 'category',
+            'taxonomy' => $term->taxonomy,
             'field'    => 'term_id',
             'terms'    => $term->term_id,
             ),
@@ -32,7 +29,31 @@ $term = get_queried_object();
          )
       )
    );
+$count_query = new WP_Query($args);
+$count = $count_query->found_posts;
+if ($count <= 0){
+   $args = array(
+      'post_type' => array('post', 'opinion'),
+      'posts_per_page' => 1,
+      'orderby' => 'date',
+      'order' => 'DESC',
+      'tax_query' => array(
+        array(
+            'taxonomy' => $term->taxonomy,
+            'field'    => 'term_id',
+            'terms'    => $term->term_id,
+            ),
+        )
+   );
+
+}
+?>
+   <?php
+   
    $cat_color = get_field('color', $term->taxonomy . '_' . $term->term_id);
+   if($cat_color == ''){
+      $cat_color = '#e7d117';
+   }
    $trending_post = new WP_Query($args);
    ?>
 
@@ -51,9 +72,9 @@ $term = get_queried_object();
          <header class="archive-header">
             <div class="archive-title" style="background: <?php echo $cat_color ?>">
                <div class="category">            
-                  <h1><?php echo $categories[0]->name ?></h1>
+                  <h1><?php echo $term->name ?></h1>
                   <div class="follow-container">
-                     <?php if( is_user_logged_in() ){ ?>
+                     <?php if( is_user_logged_in() && is_category() ){ ?>
                         <?php if( checkIfFollowed('category', $categories[0]->term_id)){  // Si es true es que sigue la categoria?>
                            <button data-type="category" data-id="<?php echo $categories[0]->term_id ?>" class="btn unfollow">Dejar de seguir</button>
                         <?php }else{ //Si es false no sigue la categoria?>
