@@ -11,8 +11,7 @@
 
 ?>
 <?php 
-$categories = get_the_terms( $post->ID , array( 'categoria_videos') );
-$term_link = get_term_link( $categories[0], array( 'categoria_videos') );
+$categories = get_the_terms( $post->ID , array( 'category' ));
 $author_link = get_author_posts_url( get_the_author_meta('ID') );
 $author_id = get_the_author_meta('ID');
 $thumbnail_id = get_field('imagen_portada','user_'.$author_id);
@@ -40,9 +39,11 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             </a>
         </div>
         <div class="titulo">
+            <?php if ( is_user_logged_in() ){ ?>
             <div class="user-actions">
-                <span class="hide-category" ><i class="fas fa-eye-slash"></i></span>
+                <span class="hide-category" data-category="<?php echo $categories[0]->term_id ?>" ><i class="fas fa-eye-slash"></i></span>
             </div>
+            <?php } ?>
             <a href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
             </a>
