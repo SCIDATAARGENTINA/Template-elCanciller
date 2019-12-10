@@ -46,16 +46,16 @@
                 </div>
             </div>
             <div class="autores-pic">
-                <a href="<?php bloginfo('url') ?>/author/nanothompson/"><img src="<?php bloginfo('url') ?>/wp-content/uploads/2019/09/nano-thompson-autor.png" alt="Nano Thompson"></a>
+                <a href="<?php bloginfo('url') ?>/author/juan-jose-dominguez/"><img src="<?php bloginfo('url') ?>/wp-content/uploads/2019/11/Juan-Jose-Dominguez-Autor.png" alt="Juan José Dominguez"></a>
                 <div class="autores-data">
-                    <h4><a href="<?php bloginfo('url') ?>/author/nanothompson/">Nano Thompson</a></h4>
+                    <h4><a href="<?php bloginfo('url') ?>/author/juan-jose-dominguez/">J. José Dominguez</a></h4>
                     
                 </div>
             </div>
             <div class="autores-pic">
-                <a href="<?php bloginfo('url') ?>/author/brunocostanzo/"><img src="<?php bloginfo('url') ?>/wp-content/uploads/2019/09/Bruno-Costanzo-Autor.png" alt="Bruno Costanzo"></a>
+                <a href="<?php bloginfo('url') ?>/author/ayelenoliva/"><img src="<?php bloginfo('url') ?>/wp-content/uploads/2019/11/Ayelen-Oliva.png" alt="Ayelén Oliva"></a>
                 <div class="autores-data">
-                    <h4><a href="<?php bloginfo('url') ?>/author/brunocostanzo/">Bruno Costanzo</a></h4>
+                    <h4><a href="<?php bloginfo('url') ?>/author/ayelenoliva/">Ayelén Oliva</a></h4>
                     
                 </div>
             </div>
