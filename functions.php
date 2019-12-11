@@ -1723,7 +1723,7 @@ function hidecategory(){
     echo '<pre> ' . print_r($in_array) . ' </pre>';
     echo '<pre> ' . print_r($categories) . ' </pre>';
     if($in_array || $in_array == 0){
-      array_splice($categories, $itemToUnhide, 1);
+      array_splice($categories, $in_array, 1);
       //echo $categories;
       echo ' borrado';
     }else{
