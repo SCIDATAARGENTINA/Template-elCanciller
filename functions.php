@@ -1744,6 +1744,10 @@ function hidecategory(){
   $categories = get_user_meta($user->ID, 'hidden_cats', true);
   $in_array = in_array($itemId, $categories);
 
-  return $in_array;
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
 
 }
