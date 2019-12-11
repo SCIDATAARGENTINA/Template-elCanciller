@@ -39,7 +39,7 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             </a>
             <?php if ( is_user_logged_in() ){ ?>
             <div class="user-actions">
-                <span class="hide-category <?php echo checkIfHidden($term->term_id) ? '-isHidden' : '' ?>" data-categoryid="<?php echo $categories[0]->term_id ?>" data-categoryname="<?php echo $categories[0]->name ?>"><i class="fas fa-eye-slash"></i></span>
+                <span class="hide-category <?php echo checkIfHidden($categories[0]->term_id) ? '-isHidden' : '' ?>" data-categoryid="<?php echo $categories[0]->term_id ?>" data-categoryname="<?php echo $categories[0]->name ?>"><i class="fas fa-eye-slash"></i></span>
             </div>
             <?php } ?>
         </div>
