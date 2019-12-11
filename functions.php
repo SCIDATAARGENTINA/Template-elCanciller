@@ -1725,7 +1725,7 @@ function hidecategory(){
     if($in_array){
       //array_pop($categories, $itemToUnhide);
       //echo $categories;
-      echo ' holaaaa'
+      echo ' holaaaa';
     }else{
       return;
     }
