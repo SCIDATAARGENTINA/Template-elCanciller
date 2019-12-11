@@ -50,7 +50,7 @@ jQuery(function ($) {
             },
             success: function (result) {
                 console.log('ok:', result);
-                //button.parent().fadeOut();
+                button.parent().fadeOut();
             },
             error: function (errorThrown) {
                 console.log('error: ', errorThrown);
