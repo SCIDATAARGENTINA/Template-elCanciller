@@ -9,6 +9,7 @@
     transition: 300ms ease;
     border-radius: 4px;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
     &.-accent{
         background: $primary !important;
         color: $white !important;
