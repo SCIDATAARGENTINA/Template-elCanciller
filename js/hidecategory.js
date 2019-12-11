@@ -14,7 +14,7 @@ jQuery(function ($) {
                 new Noty({
                     theme: 'mint',
                     text: 'La categoría <strong>' + categoryName + '</strong> esta oculta, para mostrarla nuevamente dirigirse al panel de usuarios en la pestaña "Temas Ocultos"',
-                    timeout: '3000'
+                    timeout: '4000'
                 }).show();
 
                 return;
