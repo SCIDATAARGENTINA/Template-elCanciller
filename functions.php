@@ -1687,7 +1687,7 @@ function hidecategory(){
   echo print_r(get_user_meta($user->ID, 'hidden_cats', true));
 
   // Check if user has categories
-  if(get_user_meta($user->ID, 'hidden_cats', true)){
+  if(get_user_meta($user->ID, 'hidden_cats', true) || get_user_meta($user->ID, 'hidden_cats', true) == array()){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToHide, $categories);
