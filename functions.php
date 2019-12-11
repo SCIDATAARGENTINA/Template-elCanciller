@@ -1708,3 +1708,27 @@ function hidecategory(){
 
  add_action( 'wp_ajax_nopriv_hidecategory', 'hidecategory' );
  add_action( 'wp_ajax_hidecategory', 'hidecategory' );
+
+
+ function unhidecategory(){
+  $user = wp_get_current_user();
+
+  $itemToUnhide = $_POST['categoryId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'hidden_cats', true)){
+    //Update categories con el nuevo category
+    $categories = get_user_meta($user->ID, 'hidden_cats', true);
+    $in_array = array_search($itemToUnhide, $categories);
+    if($in_array){
+      array_pop($categories, $itemToUnhide);
+    }else{
+      return;
+    }
+    update_user_meta($user->ID, 'hidden_cats', $categories);
+  }
+  
+}
+
+ add_action( 'wp_ajax_nopriv_unhidecategory', 'unhidecategory' );
+ add_action( 'wp_ajax_unhidecategory', 'unhidecategory' );

@@ -28,4 +28,32 @@ jQuery(function ($) {
 
     });
 
+    $('.unhide-category').click(function () {
+
+        let button = $(this);
+        let url = hidecategory.ajaxurl;
+
+        let categoryId = button.attr('data-categoryid');
+        let categoryName = button.attr('data-categoryname');
+
+        console.log(categoryId, ' ', categoryName);
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                'action': 'unhidecategory',
+                categoryId
+            },
+            success: function (result) {
+                console.log('ok:', result);
+            },
+            error: function (errorThrown) {
+                console.log('error: ', errorThrown);
+            }
+        });
+
+
+    });
+
 });
