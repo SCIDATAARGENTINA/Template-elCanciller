@@ -1526,7 +1526,7 @@ exit();
       //Update favoritos con el nuevo fav
       $favoritos = get_user_meta($user->ID, 'favoritos', true);
       $in_array = array_search($_POST['post_id'], $favoritos);
-      if($in_array){
+      if($in_array || $in_array == 0){
         echo $in_array;
         //array_slice($favoritos, $in_array, 1); // Remueve el favorito si ya estaba
       }else{
@@ -1574,7 +1574,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       //Update categories con el nuevo category
       $categories = get_user_meta($user->ID, 'followed_cats', true);
       $in_array = array_search($itemToFollow, $categories);
-      if($in_array){
+      if($in_array || $in_array == 0){
         echo $in_array;
         //si ya esta cargado realizar esta accion
         
@@ -1598,7 +1598,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       //Update categories con el nuevo category
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
-      if($in_array){
+      if($in_array || $in_array == 0){
         echo $in_array;
         //si ya esta cargado realizar esta accion
         
@@ -1689,7 +1689,7 @@ function hidecategory(){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToHide, $categories);
-    if($in_array){
+    if($in_array || $in_array == 0){
       return;
       //print_r(get_user_meta($user->ID, 'hidden_cats', true);
     }else{
@@ -1720,12 +1720,8 @@ function hidecategory(){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToUnhide, $categories);
-    echo '<pre> ' . print_r($in_array) . ' </pre>';
-    echo '<pre> ' . print_r($categories) . ' </pre>';
     if($in_array || $in_array == 0){
       array_splice($categories, $in_array, 1);
-      //echo $categories;
-      echo ' borrado';
     }else{
       return;
     }

@@ -47,6 +47,7 @@ jQuery(function ($) {
             },
             success: function (result) {
                 console.log('ok:', result);
+                button.parent().hide();
             },
             error: function (errorThrown) {
                 console.log('error: ', errorThrown);
