@@ -4342,7 +4342,9 @@ article .post-content .has-content-area {
 }
 
 /*noty*/
-
+.noty_bar{
+    margin-bottom: 10px;
+}
 .noty_body{
     padding: 10px;
     background: #f2f2f2;
@@ -4354,7 +4356,6 @@ article .post-content .has-content-area {
     line-height: 27px;
     font-family: Arial;
     box-shadow: 0px 3px 20px rgba(0,0,0,0.10);
-    margin-bottom: 10px;
 }
 
 
