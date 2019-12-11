@@ -35,7 +35,7 @@ jQuery(function ($) {
                 button.addClass('-isHidden');
                 new Noty({
                     theme: 'mint',
-                    text: 'La categoría ' + categoryName + ' esta oculta, recarga la página para ver los cambios.',
+                    text: 'Has ocultado la categoría ' + categoryName + ', recarga la página para ver los cambios.',
                     timeout: '3000'
                 }).show();
             },
@@ -68,7 +68,6 @@ jQuery(function ($) {
                 button.addClass('-loading');
             },
             success: function (result) {
-                console.log('ok:', result);
                 button.parent().fadeOut();
             },
             error: function (errorThrown) {
