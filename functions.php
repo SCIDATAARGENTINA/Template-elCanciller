@@ -1720,8 +1720,8 @@ function hidecategory(){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToUnhide, $categories);
-    echo '<pre> ' . $in_array . ' </pre>';
-    echo '<pre> ' . $categories . ' </pre>';
+    echo '<pre> ' . print_r($in_array) . ' </pre>';
+    echo '<pre> ' . print_r($categories) . ' </pre>';
     if($in_array){
       //array_pop($categories, $itemToUnhide);
       //echo $categories;
