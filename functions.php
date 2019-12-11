@@ -1689,8 +1689,11 @@ function hidecategory(){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToHide, $categories);
+    echo print_r($categories);
+    echo $in_array
     if($in_array || $in_array == 0){
       return;
+      echo 'hola si falle'
       //print_r(get_user_meta($user->ID, 'hidden_cats', true);
     }else{
       array_push($categories, $itemToHide);
