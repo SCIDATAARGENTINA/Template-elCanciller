@@ -1041,6 +1041,24 @@ function mostrar_posts($atts){
       'offset' => $a['offset'],
       'post__not_in' => array($excluded)
   );
+
+  if(is_user_logged_in()){
+    $args = array(
+      'post_type' => array('post', 'opinion'),
+      'posts_per_page' => $a['cantidad'],
+      'offset' => $a['offset'],
+      'post__not_in' => array($excluded),
+      'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field'    => 'term_id',
+            'terms'    => get_user_meta($user->ID, 'hidden_cats', true),
+            'operator' => 'NOT IN',
+        ),
+    ),
+  );
+    
+  }
   
   $base_query = new WP_Query( $args ); 
 
