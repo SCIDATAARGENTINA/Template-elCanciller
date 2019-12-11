@@ -16,6 +16,14 @@
     &:hover{
         opacity: 0.8;
     }
+    &.-loading{
+        border: 5px solid $white; /* Light grey */
+        border-top: 5px solid $white; /* Blue */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+    }
 }
 
 .btn.follow{
@@ -35,4 +43,9 @@
 // fix author name
 .author-name .btn{
     margin-left: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
