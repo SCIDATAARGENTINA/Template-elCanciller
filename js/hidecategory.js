@@ -17,7 +17,12 @@ jQuery(function ($) {
                 'action': 'hidecategory',
                 categoryId
             },
+            beforeSend: function () {
+                button.addClass('-loading');
+            },
             success: function (result) {
+                button.removeClass('-loading');
+                button.addClass('-isHidden');
                 console.log('ok:', result);
             },
             error: function (errorThrown) {
