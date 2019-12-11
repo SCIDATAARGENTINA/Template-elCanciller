@@ -1691,6 +1691,7 @@ function hidecategory(){
     $in_array = array_search($itemToHide, $categories);
     if($in_array || $in_array == 0){
       return;
+      echo 'hola si falle'
       //print_r(get_user_meta($user->ID, 'hidden_cats', true);
     }else{
       array_push($categories, $itemToHide);
