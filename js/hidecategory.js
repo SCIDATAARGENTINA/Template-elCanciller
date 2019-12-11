@@ -45,6 +45,9 @@ jQuery(function ($) {
                 'action': 'unhidecategory',
                 categoryId
             },
+            beforeSend: function () {
+                button.addClass('-loading');
+            },
             success: function (result) {
                 console.log('ok:', result);
                 button.parent().hide();
