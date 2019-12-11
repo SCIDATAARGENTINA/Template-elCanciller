@@ -1627,7 +1627,7 @@ function checkIfFollowed($itemType, $itemId) {
   if($itemType == 'category'){
 
     $categories = get_user_meta($user->ID, 'followed_cats', true);
-    $in_array = array_search($itemId, $categories);
+    $in_array = in_array($itemId, $categories);
 
     if($in_array){
       return true;
@@ -1736,3 +1736,14 @@ function hidecategory(){
 
  add_action( 'wp_ajax_nopriv_unhidecategory', 'unhidecategory' );
  add_action( 'wp_ajax_unhidecategory', 'unhidecategory' );
+
+ // check if hidden
+ function checkIfHidden($itemId) {
+  $user = wp_get_current_user();
+
+  $categories = get_user_meta($user->ID, 'hidden_cats', true);
+  $in_array = in_array($itemId, $categories);
+
+  return $in_array;
+
+}
