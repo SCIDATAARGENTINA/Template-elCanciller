@@ -13,7 +13,7 @@ jQuery(function ($) {
         if(button.hasClass('-isHidden')){
                 new Noty({
                     theme: 'mint',
-                    text: 'La categoria ' + categoryName + ' esta oculta, para mostrarla nuevamente dirigirse al panel de usuarios en la pestaña "Temas Ocultos"',
+                    text: 'La categoría ' + categoryName + ' esta oculta, para mostrarla nuevamente dirigirse al panel de usuarios en la pestaña "Temas Ocultos"',
                     timeout: '3000'
                 }).show();
 
@@ -35,7 +35,7 @@ jQuery(function ($) {
                 button.addClass('-isHidden');
                 new Noty({
                     theme: 'mint',
-                    text: 'La categoria ' + categoryName + ' esta oculta, recarga la página para ver los cambios.',
+                    text: 'La categoría ' + categoryName + ' esta oculta, recarga la página para ver los cambios.',
                     timeout: '3000'
                 }).show();
             },
