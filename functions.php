@@ -1684,6 +1684,8 @@ function hidecategory(){
 
   $itemToHide = $_POST['categoryId'];
 
+  echo print_r(get_user_meta($user->ID, 'hidden_cats', true));
+
   // Check if user has categories
   if(get_user_meta($user->ID, 'hidden_cats', true)){
     //Update categories con el nuevo category
