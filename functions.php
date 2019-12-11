@@ -1692,7 +1692,7 @@ function hidecategory(){
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToHide, $categories);
     echo print_r($categories);
-    echo $in_array;
+    echo 'in_array: ' . $in_array;
     if($in_array || $in_array == 0){
       return;
       echo 'hola si falle';
