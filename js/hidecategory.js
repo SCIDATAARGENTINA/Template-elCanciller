@@ -68,7 +68,6 @@ jQuery(function ($) {
                 button.addClass('-loading');
             },
             success: function (result) {
-                console.log('ok:', result);
                 button.parent().fadeOut();
             },
             error: function (errorThrown) {
