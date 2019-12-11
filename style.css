@@ -4348,6 +4348,9 @@ article .post-content .has-content-area {
     background: #e7d117;
     color: #111;
     border-radius: 4px;
+    font-size: 16px;
+    line-height: 32px;
+    font-family: Arial;
     box-shadow: 0px 3px 20px rgba(0,0,0,0.10);
 }
 
