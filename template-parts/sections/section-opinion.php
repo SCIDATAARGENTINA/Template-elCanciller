@@ -19,9 +19,27 @@
 
     <div class="opiniones">
         <?php $args = array(
-                        'posts_per_page' => 2,
-                        'post_type' => 'opinion'
-                    );
+                'posts_per_page' => 2,
+                'post_type' => 'opinion',
+                
+                );
+
+                    if(is_user_logged_in()){
+                        $user = wp_get_current_user();
+                        $args = array(
+                            'posts_per_page' => 2,
+                            'post_type' => 'opinion',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'category',
+                                    'field'    => 'term_id',
+                                    'terms'    => get_user_meta($user->ID, 'hidden_cats', true),
+                                    'operator' => 'NOT IN',
+                                ),
+                            ),
+                        );
+                        
+                    }
                     $query = new WP_Query( $args );
                     while( $query->have_posts() ) {
                         $query->the_post(); 
