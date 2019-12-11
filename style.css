@@ -4346,12 +4346,12 @@ article .post-content .has-content-area {
 .noty_body{
     padding: 10px;
     background: #f2f2f2;
-    border-top: 4px solid #e7d117;
-    border-bottom: 4px solid #e7d117;
+    border-top: 3px solid #e7d117;
+    border-bottom: 3px solid #e7d117;
     color: #111;
     border-radius: 4px;
     font-size: 14px;
-    line-height: 32px;
+    line-height: 27px;
     font-family: Arial;
     box-shadow: 0px 3px 20px rgba(0,0,0,0.10);
     margin-bottom: 10px;
