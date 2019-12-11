@@ -5512,3 +5512,9 @@ ADS UPDATE 26/11/2019
     border-radius: 50%;
     content: url("https://elcanciller.com/wp-content/uploads/2019/12/logo-elcanciller.jpg");
 }
+
+/* HIDE CATEGORY*/
+
+.hide-category.isHidden{
+    color: #e7d117;
+}
