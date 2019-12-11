@@ -5516,5 +5516,5 @@ ADS UPDATE 26/11/2019
 /* HIDE CATEGORY*/
 
 .hide-category.-isHidden{
-    color: #e7d117;
+    color: #e7d117 !important;
 }
