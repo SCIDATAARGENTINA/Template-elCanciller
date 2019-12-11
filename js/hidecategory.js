@@ -33,7 +33,11 @@ jQuery(function ($) {
             success: function (result) {
                 button.removeClass('-loading');
                 button.addClass('-isHidden');
-                console.log('ok:', result);
+                new Noty({
+                    theme: 'mint',
+                    text: 'La categoria ' + categoryName + ' esta oculta, recarga la página para ver los cambios.',
+                    timeout: '1000'
+                }).show();
             },
             error: function (errorThrown) {
                 console.log('error: ',errorThrown);
