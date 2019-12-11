@@ -10,6 +10,16 @@ jQuery(function ($) {
 
         console.log(categoryId, ' ', categoryName);
 
+        if(button.hasClass('-isHidden')){
+                new Noty({
+                    theme: 'mint',
+                    text: 'La categoria ' + categoryName + ' esta oculta, para mostrarla nuevamente dirigirse al panel de usuarios en la pestaña "Temas Ocultos"',
+                    timeout: '1000'
+                }).show();
+
+                return;
+            }
+
         $.ajax({
             url: url,
             type: 'POST',
