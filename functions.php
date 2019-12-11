@@ -1722,10 +1722,10 @@ function hidecategory(){
     $in_array = array_search($itemToUnhide, $categories);
     echo '<pre> ' . print_r($in_array) . ' </pre>';
     echo '<pre> ' . print_r($categories) . ' </pre>';
-    if($in_array){
-      //array_pop($categories, $itemToUnhide);
+    if($in_array || $in_array == 0){
+      array_splice($categories, $itemToUnhide, 1);
       //echo $categories;
-      echo ' holaaaa';
+      echo ' borrado';
     }else{
       return;
     }
