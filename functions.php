@@ -1640,6 +1640,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
 
  function unfollow_author_category(){
    $user = wp_get_current_user();
+   echo 'hola';
 
    $itemToFollow = $_POST['itemId'];
    $itemType = $_POST['itemType'];
