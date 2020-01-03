@@ -19,6 +19,7 @@ jQuery(document).ready(function ($) {
                     button.text('Seguir');
                     button.removeClass('-loading');
                     button.removeClass('-isFollowed');
+                    console.log(result);
                 },
                 error: function (errorThrown) {
                     console.log(errorThrown);
@@ -42,6 +43,7 @@ jQuery(document).ready(function ($) {
                 button.text('Dejar de seguir');
                 button.removeClass('-loading');
                 button.addClass('-isFollowed');
+                console.log(result);
             },
             error: function (errorThrown) {
                 console.log(errorThrown);
