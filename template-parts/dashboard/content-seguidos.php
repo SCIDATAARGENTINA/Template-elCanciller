@@ -45,6 +45,8 @@ $user = wp_get_current_user();
 
         $author = get_userdata( $author_id );?>
 
+        <?php print_r($author) ?>
+
           <div class="hiddenTopic">
 
             <h3><?php echo $category->name ?></h3>
