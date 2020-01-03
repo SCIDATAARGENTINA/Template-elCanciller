@@ -21,7 +21,15 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
          <h1>
             Por: <?php echo get_the_author_meta( 'display_name', $author_id ) ?>
          </h1>
-         <button data-type="author" data-id="<?php echo $author_id ?>" class="btn follow -accent">Seguir</button>
+         <div class="follow-container">
+            <?php if( is_user_logged_in() && is_category() ){ ?>
+               <?php if( checkIfFollowed('author', $author_id)){  // Si es true es que sigue la categoria?>
+                  <button data-type="category" data-id="<?php echo $author_id ?>" class="btn -isFollowed -accent">Dejar de seguir</button>
+               <?php }else{ //Si es false no sigue la categoria?>
+                  <button data-type="category" data-id="<?php echo $author_id ?>" class="btn follow -accent">Seguir</button>
+               <?php } ?>
+            <?php } ?> 
+         </div>
       </div>
       <img src="<?php echo $featured_img_url ?>" alt="<?php echo $alt?>">
    </header>
