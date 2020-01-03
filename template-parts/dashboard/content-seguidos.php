@@ -32,7 +32,7 @@ $user = wp_get_current_user();
 
           <div class="hiddenTopic">
 
-            <h3><?php echo $category->name ?></h3>
+            <h3><a href="<?php echo get_term_link( $category ); ?>"><?php echo $category->name ?></a></h3>
 
             <button class="btn -accent -isFollowed unfollow" data-id="<?php echo $category->term_id ?>" data-type="category">Dejar de seguir</button>
 
@@ -60,7 +60,7 @@ $user = wp_get_current_user();
 
           <div class="hiddenTopic">
 
-            <h3><?php echo $author->display_name ?></h3>
+            <h3><a href="<?php echo get_author_posts_url($author_id); ?>"><?php echo $author->display_name ?></a></h3>
 
             <button class="btn -accent -isFollowed unfollow" data-id="<?php echo $author->ID ?>" data-type="author">Dejar de seguir</button>
 
