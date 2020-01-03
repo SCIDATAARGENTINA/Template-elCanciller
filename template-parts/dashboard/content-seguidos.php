@@ -32,7 +32,7 @@ $user = wp_get_current_user();
 
             <h3><?php echo $category->name ?></h3>
 
-            <button class="btn -accent unhide-category" data-categoryid="<?php echo $category->term_id ?>" data-categoryname="<?php echo $category->name ?>">Dejar de ocultar</button>
+            <button class="btn -accent unfollow-category" data-categoryid="<?php echo $category->term_id ?>" data-categoryname="<?php echo $category->name ?>">Dejar de ocultar</button>
 
           </div><!-- hiddenTopic -->
       <?php }
@@ -52,7 +52,7 @@ $user = wp_get_current_user();
 
             <h3><?php echo $category->name ?></h3>
 
-            <button class="btn -accent unhide-category" data-categoryid="<?php echo $category->term_id ?>" data-categoryname="<?php echo $category->name ?>">Dejar de ocultar</button>
+            <button class="btn -accent unfollow-author" data-categoryid="<?php echo $category->term_id ?>" data-categoryname="<?php echo $category->name ?>">Dejar de seguir</button>
 
           </div><!-- hiddenTopic -->
       <?php }
