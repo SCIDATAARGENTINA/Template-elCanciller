@@ -39,8 +39,8 @@ $user = wp_get_current_user();
       
       ?>
 
-    </div>
-  </div>
+    </div><!-- listItems__posts -->
+  </div><!-- listItems -->
 
       <?php
 
@@ -65,7 +65,7 @@ $user = wp_get_current_user();
 
         $args = array(
         'category__in' => $cat,
-        'posts_per_page' => 3
+        'posts_per_page' => 6
       );
 
       $followed_cats_loop = new WP_Query($args);
@@ -77,8 +77,47 @@ $user = wp_get_current_user();
       wp_reset_postdata();
       ?>
 
+      </div><!-- listItems__posts -->
+        </div> <!-- listItems -->
+
+      <?php
+      }
+      
+      ?> 
+
+      <?php
+
+      $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
+
+      foreach($followed_authors as $author_id){
+        $author = get_userdata( $author_id );
+      ?>
+      
+
+    <div class="listItems">
+      <div class="listItems__header">
+        <h3><?php echo $author->display_name; ?></h3>
       </div>
-        </div> 
+    <div class="listItems__posts">
+
+      <?php
+
+        $args = array(
+        'author__in' => $author_id,
+        'posts_per_page' => 6
+      );
+
+      $followed_authors_loop = new WP_Query($args);
+      if( $followed_authors_loop->have_posts() ):
+          while( $followed_authors_loop->have_posts() ): $followed_authors_loop->the_post();
+            get_template_part('template-parts/content/content');
+          endwhile;
+      endif;
+      wp_reset_postdata();
+      ?>
+
+      </div><!-- listItems__posts -->
+        </div> <!-- listItems -->
 
       <?php
       }
