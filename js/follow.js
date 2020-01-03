@@ -1,7 +1,8 @@
 jQuery(document).ready(function ($) {
 
 
-    let updateUserFollow = (itemId, itemType, url) => {
+    let updateUserFollow = (itemId, itemType, url, button) => {
+        console.log(button);
 
         $.ajax({
             url: url,
@@ -11,8 +12,13 @@ jQuery(document).ready(function ($) {
                 itemId,
                 itemType
             },
+            beforeSend: function () {
+                button.addClass('-loading');
+            },
             success: function (result) {
-                $('.follow-container').html('<button data-type="category" data-id="' + itemId + '" class="btn unfollow">Dejar de seguir</button>');
+                button.removeClass('-loading');
+                button.addClass('-isFollowed');
+                //$('.follow-container').html('<button data-type="category" data-id="' + itemId + '" class="btn unfollow">Dejar de seguir</button>');
             },
             error: function (errorThrown) {
                 console.log(errorThrown);
@@ -22,7 +28,7 @@ jQuery(document).ready(function ($) {
     }
 
     $('.follow').click(function () {
-        updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl);
+        updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl, $(this));
     });
 
 
