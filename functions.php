@@ -1702,11 +1702,11 @@ function checkIfFollowed($itemType, $itemId) {
 
   // Check for authors
   if($itemType == 'author'){
-    echo 'hola author';
+    echo '$in_array';
     $authors = get_user_meta($user->ID, 'followed_authors', true);
-    $in_array = array_search($itemId, $authors);
+    $in_array = in_array($itemId, $authors);
     echo $in_array;
-    if($in_array || $in_array == 0){
+    if($in_array){
       return true;
     }else{
       return false;
