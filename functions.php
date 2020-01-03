@@ -1592,9 +1592,8 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
     if(get_user_meta($user->ID, 'followed_cats', true) || get_user_meta($user->ID, 'followed_cats', true) == array()){
       //Update categories con el nuevo category
       $categories = get_user_meta($user->ID, 'followed_cats', true);
-      $in_array = array_search($itemToFollow, $categories);
-      if($in_array || $in_array == 0){
-        echo $in_array;
+      $in_array = $in_array($itemToFollow, $categories);
+      if($in_array){
         //si ya esta cargado realizar esta accion
         
       }else{
@@ -1616,9 +1615,9 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
     if(get_user_meta($user->ID, 'followed_authors', true) || get_user_meta($user->ID, 'followed_authors', true) == array()){
       //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
-      $in_array = array_search( $itemToFollow, $authors);
+      $in_array = in_array( $itemToFollow, $authors);
       echo 'la puta' . $in_array;
-      if($in_array || $in_array == 0){
+      if($in_array){
         //si ya esta cargado realizar esta accion
       }else{
         array_push($authors,  $itemToFollow);
