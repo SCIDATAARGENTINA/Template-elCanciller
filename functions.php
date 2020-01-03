@@ -1589,7 +1589,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
    if($itemType == 'category'){
 
     // Check if user has categories
-    if(get_user_meta($user->ID, 'followed_cats', true)){
+    if(get_user_meta($user->ID, 'followed_cats', true) || get_user_meta($user->ID, 'followed_cats', true) == array()){
       //Update categories con el nuevo category
       $categories = get_user_meta($user->ID, 'followed_cats', true);
       $in_array = array_search($itemToFollow, $categories);
@@ -1613,7 +1613,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
    if( $itemType == 'author'){
 
      // Check if user has authors
-    if(get_user_meta($user->ID, 'followed_authors', false) !== []){
+    if(get_user_meta($user->ID, 'followed_authors', true) || get_user_meta($user->ID, 'followed_authors', true) == array()){
       //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
@@ -1782,7 +1782,7 @@ function hidecategory(){
   $itemToUnhide = $_POST['categoryId'];
 
   // Check if user has categories
-  if(get_user_meta($user->ID, 'hidden_cats', true)){
+  if(get_user_meta($user->ID, 'hidden_cats', true) || get_user_meta($user->ID, 'hidden_cats', true) == array()){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = array_search($itemToUnhide, $categories);
