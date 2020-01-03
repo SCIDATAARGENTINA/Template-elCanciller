@@ -1618,11 +1618,10 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
       if($in_array || $in_array == 0){
-        echo $in_array;
-        //si ya esta cargado realizar esta accion
         
       }else{
         array_push($authors,  $itemToFollow);
+        print_r($authors);
       }
       update_user_meta($user->ID, 'followed_authors', $authors);
     }else{
