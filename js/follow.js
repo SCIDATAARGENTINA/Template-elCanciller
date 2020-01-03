@@ -2,9 +2,28 @@ jQuery(document).ready(function ($) {
 
 
     let updateUserFollow = (itemId, itemType, url, button) => {
-        console.log(button);
 
         if(button.hasClass('-isFollowed')){
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    'action': 'unfollow_author_category',
+                    itemId,
+                    itemType
+                },
+                beforeSend: function () {
+                    button.addClass('-loading');
+                },
+                success: function (result) {
+                    button.text('Seguir');
+                    button.removeClass('-loading');
+                    button.removeClass('-isFollowed');
+                },
+                error: function (errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
             return;
         }
 
