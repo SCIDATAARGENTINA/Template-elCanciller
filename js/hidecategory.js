@@ -8,8 +8,6 @@ jQuery(function ($) {
         let categoryId = button.attr('data-categoryid');
         let categoryName = button.attr('data-categoryname');
 
-        console.log(categoryId, ' ', categoryName);
-
         if(button.hasClass('-isHidden')){
                 new Noty({
                     theme: 'mint',
@@ -54,8 +52,6 @@ jQuery(function ($) {
 
         let categoryId = button.attr('data-categoryid');
         let categoryName = button.attr('data-categoryname');
-
-        console.log(categoryId, ' ', categoryName);
 
         $.ajax({
             url: url,

@@ -19,7 +19,9 @@ jQuery(document).ready(function ($) {
                     button.text('Seguir');
                     button.removeClass('-loading');
                     button.removeClass('-isFollowed');
-                    console.log(result);
+                    if(button.hasClass('unfollow')){
+                        button.parent().fadeOut();
+                    }
                 },
                 error: function (errorThrown) {
                     console.log(errorThrown);
@@ -43,7 +45,6 @@ jQuery(document).ready(function ($) {
                 button.text('Dejar de seguir');
                 button.removeClass('-loading');
                 button.addClass('-isFollowed');
-                console.log(result);
             },
             error: function (errorThrown) {
                 console.log(errorThrown);
@@ -53,6 +54,10 @@ jQuery(document).ready(function ($) {
     }
 
     $('.follow').click(function () {
+        updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl, $(this));
+    });
+
+    $('.unfollow').click(function () {
         updateUserFollow($(this).attr('data-id'), $(this).attr('data-type'), follow.ajaxurl, $(this));
     });
 
