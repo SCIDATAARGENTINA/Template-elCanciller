@@ -97,7 +97,7 @@ $user = wp_get_current_user();
       
 
     <div class="listItems">
-      <div class="listItems__header" style="background-image: url('<?php echo $featured_img ?>')">
+      <div class="listItems__header" style="background-image: url('<?php echo $featured_img[0] ?>')">
         <h3><?php echo $author->display_name; ?></h3>
       </div>
     <div class="listItems__posts">
