@@ -15,18 +15,38 @@ $user = wp_get_current_user();
 <div class="content__container"> 
   <div class="listItems">
     <div class="listItems__header -left">
-      <h3>Temas Ocultos</h3>
-      <p>Los temas que decidiste ocultar se muestran acá, si querés que se vuelvan a mostrar, selecciona "Dejar de ocultar"</p>
+      <h3>Seguidos</h3>
+      <p>Aquí se muestran las categorias y autores que estas siguiendo.</p>
     </div>
     <div class="listItems__hiddenTopics">
 
       <?php
 
-      $hidden_cats = get_user_meta( $user->ID, 'hidden_cats', true );
+      $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
 
-      foreach($hidden_cats as $cat_id){
+      foreach($followed_cats as $cat_id){
 
         $category = get_category( $cat_id );?>
+
+          <div class="hiddenTopic">
+
+            <h3><?php echo $category->name ?></h3>
+
+            <button class="btn -accent unhide-category" data-categoryid="<?php echo $category->term_id ?>" data-categoryname="<?php echo $category->name ?>">Dejar de ocultar</button>
+
+          </div><!-- hiddenTopic -->
+      <?php }
+
+        $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
+
+
+       foreach($followed_authors as $author_id){
+
+        $author = get_userdata( $author_id );?>
+
+        <pre>
+          <?php print_r($author) ?>
+        </pre>
 
           <div class="hiddenTopic">
 
