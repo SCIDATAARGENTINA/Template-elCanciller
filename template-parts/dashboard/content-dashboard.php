@@ -41,17 +41,21 @@ $user = wp_get_current_user();
 
     </div>
   </div>
-  <div class="listItems">
-    <div class="listItems__header">
-      <h3>Lo último de tus categorias preferidas</h3>
-    </div>
-    <div class="listItems__posts">
 
       <?php
 
       $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
 
       foreach($followed_cats as $cat){
+      ?>
+
+    <div class="listItems">
+      <div class="listItems__header">
+        <h3>Lo último de tus categorias preferidas</h3>
+      </div>
+    <div class="listItems__posts">
+
+      <?php
 
         $args = array(
         'category__in' => $cat,
@@ -65,11 +69,13 @@ $user = wp_get_current_user();
           endwhile;
       endif;
       wp_reset_postdata();
-
-      }
-      
       ?>
 
-    </div>
-  </div>  
+      </div>
+        </div> 
+
+      <?php
+      }
+      
+      ?> 
 </div>
