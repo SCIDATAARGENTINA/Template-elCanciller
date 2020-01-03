@@ -2,6 +2,7 @@ jQuery(document).ready(function ($) {
 
 
     let updateUserFollow = (itemId, itemType, url, button) => {
+        console.log(button);
 
         $.ajax({
             url: url,
