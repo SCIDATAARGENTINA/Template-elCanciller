@@ -4,6 +4,10 @@ jQuery(document).ready(function ($) {
     let updateUserFollow = (itemId, itemType, url, button) => {
         console.log(button);
 
+        if(button.hasClass('-isFollowed')){
+            return;
+        }
+
         $.ajax({
             url: url,
             type: 'POST',
@@ -16,9 +20,9 @@ jQuery(document).ready(function ($) {
                 button.addClass('-loading');
             },
             success: function (result) {
+                button.text('Dejar de seguir');
                 button.removeClass('-loading');
                 button.addClass('-isFollowed');
-                //$('.follow-container').html('<button data-type="category" data-id="' + itemId + '" class="btn unfollow">Dejar de seguir</button>');
             },
             error: function (errorThrown) {
                 console.log(errorThrown);
