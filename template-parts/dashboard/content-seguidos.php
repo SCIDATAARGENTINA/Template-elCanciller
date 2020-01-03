@@ -49,7 +49,7 @@ $user = wp_get_current_user();
 
           <div class="hiddenTopic">
 
-            <h3><?php echo $category->name ?></h3>
+            <h3><?php echo $author->display_name ?></h3>
 
             <button class="btn -accent unfollow-author" data-categoryid="<?php echo $category->term_id ?>" data-categoryname="<?php echo $category->name ?>">Dejar de seguir</button>
 
