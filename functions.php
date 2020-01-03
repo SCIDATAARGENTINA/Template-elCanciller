@@ -1691,7 +1691,7 @@ function checkIfFollowed($itemType, $itemId) {
     $categories = get_user_meta($user->ID, 'followed_cats', true);
     $in_array = in_array($itemId, $categories);
 
-    if($in_array){
+    if($in_array || $in_array == 0){
       return true;
     }else{
       return false;
@@ -1703,10 +1703,8 @@ function checkIfFollowed($itemType, $itemId) {
 
     $authors = get_user_meta($user->ID, 'followed_authors', true);
     $in_array = array_search($itemId, $authors);
-    print_r($authors);
-    print_r($in_array);
     
-    if($in_array){
+    if($in_array || $in_array == 0){
       return true;
     }else{
       return false;
