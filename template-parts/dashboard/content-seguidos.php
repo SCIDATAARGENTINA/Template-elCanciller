@@ -26,7 +26,6 @@ $user = wp_get_current_user();
       foreach($followed_cats as $cat_id){
 
         $category = get_category( $cat_id );
-        print_r($category);
         ?>
         
 
@@ -59,6 +58,11 @@ $user = wp_get_current_user();
         $author = get_userdata( $author_id );?>
 
           <div class="hiddenTopic">
+
+          <picture>
+            <source srcset="<?php print get_avatar_url($author_id, ['size' => '51']); ?>" media="(min-width: 992px)"/>
+            <img src="<?php print get_avatar_url($author_id, ['size' => '40']); ?>"/>
+          </picture>
 
             <h3><a href="<?php echo get_author_posts_url($author_id); ?>"><?php echo $author->display_name ?></a></h3>
 
