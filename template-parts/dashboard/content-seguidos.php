@@ -59,11 +59,6 @@ $user = wp_get_current_user();
 
           <div class="hiddenTopic">
 
-          <picture>
-            <source srcset="<?php print get_avatar_url($author_id, ['size' => '51']); ?>" media="(min-width: 992px)"/>
-            <img src="<?php print get_avatar_url($author_id, ['size' => '40']); ?>"/>
-          </picture>
-
             <h3><a href="<?php echo get_author_posts_url($author_id); ?>"><?php echo $author->display_name ?></a></h3>
 
             <button class="btn -accent -isFollowed unfollow" data-id="<?php echo $author->ID ?>" data-type="author">Dejar de seguir</button>
