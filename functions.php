@@ -1618,7 +1618,8 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
       if($in_array || $in_array == 0){
-        return;
+        echo $in_array;
+        //si ya esta cargado realizar esta accion
       }else{
         array_push($authors,  $itemToFollow);
       }
@@ -1693,7 +1694,7 @@ function checkIfFollowed($itemType, $itemId) {
     $categories = get_user_meta($user->ID, 'followed_cats', true);
     $in_array = in_array($itemId, $categories);
 
-    if($in_array || $in_array == 0){
+    if($in_array){
       return true;
     }else{
       return false;
