@@ -91,11 +91,13 @@ $user = wp_get_current_user();
 
       foreach($followed_authors as $author_id){
         $author = get_userdata( $author_id );
+        $thumbnail_id = get_field('imagen_portada','user_'.$author_id);
+        $featured_img = wp_get_attachment_image_src($thumbnail_id, 'full');
       ?>
       
 
     <div class="listItems">
-      <div class="listItems__header">
+      <div class="listItems__header" style="background-image: url('<?php echo $featured_img ?>')">
         <h3><?php echo $author->display_name; ?></h3>
       </div>
     <div class="listItems__posts">
