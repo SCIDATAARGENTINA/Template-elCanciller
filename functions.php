@@ -1652,9 +1652,8 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $categories = get_user_meta($user->ID, 'followed_cats', true);
       $in_array = array_search($itemToFollow, $categories);
       if($in_array || $in_array == 0){
-        echo $in_array;
-        //si ya esta cargado realizar esta accion
-        
+        echo 'existe';
+        array_splice($categories, $in_array, 1);
       }
 
       update_user_meta($user->ID, 'followed_cats', $categories);
@@ -1669,20 +1668,12 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
       if($in_array || $in_array == 0){
-        echo $in_array;
-        //si ya esta cargado realizar esta accion
+        array_splice($authors, $in_array, 1);
         
-      }else{
-        array_push($authors,  $itemToFollow);
       }
+      
       update_user_meta($user->ID, 'followed_authors', $authors);
-    }else{
-      // Crea el campo para el usuario en caso de no existir
-      $authors = [];
-      array_push($authors,  $itemToFollow);
-      add_user_meta($user->ID, 'followed_authors', $authors);
     }
-
    }
  }
 
