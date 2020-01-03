@@ -1684,6 +1684,9 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
 function checkIfFollowed($itemType, $itemId) {
   $user = wp_get_current_user();
 
+  echo $itemType;
+  echo $itemId;
+
   // Check for categories
   if($itemType == 'category'){
 
