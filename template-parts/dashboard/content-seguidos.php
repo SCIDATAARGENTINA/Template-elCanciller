@@ -43,7 +43,7 @@ $user = wp_get_current_user();
     </div><!-- listItems__hiddenTopics -->
   </div><!-- listItems -->
 
-  <div class="listItems">
+  <div class="listItems -marginTop">
     <div class="listItems__header -left">
       <h3>Autores que sigues</h3>
       <p>Aquí se muestran los autores que estas siguiendo.</p>
