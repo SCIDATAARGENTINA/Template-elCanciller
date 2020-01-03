@@ -1663,16 +1663,18 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
    if( $itemType == 'author'){
      // Check if user has authors
     if(get_user_meta($user->ID, 'followed_authors', true)){
-      //Update categories con el nuevo category
+      //Update categories con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
       if($in_array || $in_array == 0){
         array_splice($authors, $in_array, 1);
       }
-      print_r($authors);
+
       update_user_meta($user->ID, 'followed_authors', $authors);
+
     }
    }
+
 }
 
  add_action( 'wp_ajax_nopriv_unfollow_author_category', 'unfollow_author_category' );
