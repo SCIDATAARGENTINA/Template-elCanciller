@@ -1614,17 +1614,17 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
 
      // Check if user has authors
     if(get_user_meta($user->ID, 'followed_authors', true)){
-      //Update categories con el nuevo category
+      //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
+      print_r($authors)
       $in_array = array_search( $itemToFollow, $authors);
+      echo $in_array;
       if($in_array || $in_array == 0){
-        echo $in_array;
         //si ya esta cargado realizar esta accion
       }else{
         array_push($authors,  $itemToFollow);
       }
 
-      print_r($authors);
       update_user_meta($user->ID, 'followed_authors', $authors);
     }else{
       // Crea el campo para el usuario en caso de no existir
