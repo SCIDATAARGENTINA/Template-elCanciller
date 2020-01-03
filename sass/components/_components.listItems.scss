@@ -22,6 +22,19 @@
         &.-left{
             text-align: left;
         }
+
+        &.-right{
+            text-align: right;
+        }
+
+        &.-author{
+            background-position: 47% 30%;
+            background-size: cover;
+            height: 200px;
+            h3{
+                color: $black;
+            }
+        }
     }
 
     &__hiddenTopics{
