@@ -1638,6 +1638,57 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
  add_action( 'wp_ajax_nopriv_follow_author_category', 'follow_author_category' );
  add_action( 'wp_ajax_follow_author_category', 'follow_author_category' );
 
+ function unfollow_author_category(){
+   $user = wp_get_current_user();
+
+   $itemToFollow = $_POST['itemId'];
+   $itemType = $_POST['itemType'];
+
+   if($itemType == 'category'){
+
+    // Check if user has categories
+    if(get_user_meta($user->ID, 'followed_cats', true)){
+      //Update categories con el nuevo category
+      $categories = get_user_meta($user->ID, 'followed_cats', true);
+      $in_array = array_search($itemToFollow, $categories);
+      if($in_array || $in_array == 0){
+        echo $in_array;
+        //si ya esta cargado realizar esta accion
+        
+      }
+
+      update_user_meta($user->ID, 'followed_cats', $categories);
+
+   }
+
+   if( $itemType == 'author'){
+
+     // Check if user has authors
+    if(get_user_meta($user->ID, 'followed_authors', true)){
+      //Update categories con el nuevo category
+      $authors = get_user_meta($user->ID, 'followed_authors', true);
+      $in_array = array_search( $itemToFollow, $authors);
+      if($in_array || $in_array == 0){
+        echo $in_array;
+        //si ya esta cargado realizar esta accion
+        
+      }else{
+        array_push($authors,  $itemToFollow);
+      }
+      update_user_meta($user->ID, 'followed_authors', $authors);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $authors = [];
+      array_push($authors,  $itemToFollow);
+      add_user_meta($user->ID, 'followed_authors', $authors);
+    }
+
+   }
+ }
+
+ add_action( 'wp_ajax_nopriv_unfollow_author_category', 'unfollow_author_category' );
+ add_action( 'wp_ajax_unfollow_author_category', 'unfollow_author_category' );
+
  // CHECK IF CATEGORY/AUTHOR FOLLOWED FUNCTION
 function checkIfFollowed($itemType, $itemId) {
   $user = wp_get_current_user();
@@ -1710,8 +1761,6 @@ function hidecategory(){
     //Update categories con el nuevo category
     $categories = get_user_meta($user->ID, 'hidden_cats', true);
     $in_array = in_array($itemToHide, $categories);
-    echo print_r($categories);
-    echo 'in_array: ' . $in_array;
     if($in_array){
       $key = array_search($itemToHide, $categories);
       return;
