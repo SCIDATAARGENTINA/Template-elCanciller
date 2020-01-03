@@ -1617,7 +1617,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
-      echo $in_array;
+      echo 'la puta' . $in_array;
       if($in_array || $in_array == 0){
         //si ya esta cargado realizar esta accion
       }else{
