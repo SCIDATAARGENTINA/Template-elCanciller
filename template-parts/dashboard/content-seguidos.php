@@ -23,7 +23,7 @@ $user = wp_get_current_user();
       <?php
 
       $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
-      print_r($followed_cats) 
+      print_r($followed_cats); 
       foreach($followed_cats as $cat_id){
 
         $category = get_category( $cat_id );?>
@@ -38,7 +38,7 @@ $user = wp_get_current_user();
       <?php }
 
         $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
-        print_r($followed_authors) 
+        print_r($followed_authors);
 
 
        foreach($followed_authors as $author_id){
