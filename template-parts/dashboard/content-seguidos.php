@@ -15,8 +15,8 @@ $user = wp_get_current_user();
 <div class="content__container"> 
   <div class="listItems">
     <div class="listItems__header -left">
-      <h3>Seguidos</h3>
-      <p>Aquí se muestran las categorias y autores que estas siguiendo.</p>
+      <h3>Categorías que sigues</h3>
+      <p>Aquí se muestran las categorias que estas siguiendo.</p>
     </div>
     <div class="listItems__hiddenTopics">
 
@@ -35,6 +35,19 @@ $user = wp_get_current_user();
 
           </div><!-- hiddenTopic -->
       <?php }
+      
+      ?>
+    </div><!-- listItems__hiddenTopics -->
+  </div><!-- listItems -->
+
+  <div class="listItems">
+    <div class="listItems__header -left">
+      <h3>Autores que sigues</h3>
+      <p>Aquí se muestran los autores que estas siguiendo.</p>
+    </div>
+    <div class="listItems__hiddenTopics">
+
+      <?php
 
         $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
 
