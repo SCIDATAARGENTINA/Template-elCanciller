@@ -1640,7 +1640,6 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
 
  function unfollow_author_category(){
    $user = wp_get_current_user();
-   echo 'hola';
 
    $itemToFollow = $_POST['itemId'];
    $itemType = $_POST['itemType'];
@@ -1653,23 +1652,20 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $categories = get_user_meta($user->ID, 'followed_cats', true);
       $in_array = array_search($itemToFollow, $categories);
       if($in_array || $in_array == 0){
-        echo 'existe';
         array_splice($categories, $in_array, 1);
       }
 
       update_user_meta($user->ID, 'followed_cats', $categories);
 
    }
+  }
 
    if( $itemType == 'author'){
-
      // Check if user has authors
     if(get_user_meta($user->ID, 'followed_authors', true)){
       //Update categories con el nuevo category
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
-      echo 'authores seguidos: '. $authors;
-      print_r($in_array);
       if($in_array || $in_array == 0){
         array_splice($authors, $in_array, 1);
         print_r($authors);
@@ -1678,7 +1674,6 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       update_user_meta($user->ID, 'followed_authors', $authors);
     }
    }
- }
 }
 
  add_action( 'wp_ajax_nopriv_unfollow_author_category', 'unfollow_author_category' );
