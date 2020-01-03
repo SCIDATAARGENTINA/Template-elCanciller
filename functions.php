@@ -1613,7 +1613,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
    if( $itemType == 'author'){
 
      // Check if user has authors
-    if(get_user_meta($user->ID, 'followed_authors', true)){
+    if(get_user_meta($user->ID, 'followed_authors', false) !== []){
       //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
