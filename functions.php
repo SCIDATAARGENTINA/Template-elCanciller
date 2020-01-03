@@ -1671,11 +1671,12 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
         array_splice($authors, $in_array, 1);
         
       }
-      
+
       update_user_meta($user->ID, 'followed_authors', $authors);
     }
    }
  }
+}
 
  add_action( 'wp_ajax_nopriv_unfollow_author_category', 'unfollow_author_category' );
  add_action( 'wp_ajax_unfollow_author_category', 'unfollow_author_category' );
