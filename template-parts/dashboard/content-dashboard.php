@@ -51,8 +51,10 @@ $user = wp_get_current_user();
 
       $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
 
-      $args = array(
-        'category__in' => $followed_cats,
+      foreach($followed_cats as $cat){
+
+        $args = array(
+        'category__in' => $cat,
         'posts_per_page' => 3
       );
 
@@ -63,6 +65,8 @@ $user = wp_get_current_user();
           endwhile;
       endif;
       wp_reset_postdata();
+
+      }
       
       ?>
 
