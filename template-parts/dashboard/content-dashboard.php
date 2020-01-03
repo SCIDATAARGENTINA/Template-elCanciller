@@ -47,11 +47,17 @@ $user = wp_get_current_user();
       $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
 
       foreach($followed_cats as $cat){
+        $term = get_term( $cat );
+        $cat_color = get_field('color', $term->taxonomy . '_' . $term->term_id);
+        if($cat_color == ''){
+            $cat_color = '#e7d117';
+        }
       ?>
+      
 
     <div class="listItems">
-      <div class="listItems__header">
-        <h3>Lo último de tus categorias preferidas</h3>
+      <div class="listItems__header" style="background-color: <?php echo $cat_color ?>;">
+        <h3><?php echo $term->name; ?></h3>
       </div>
     <div class="listItems__posts">
 
