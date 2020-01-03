@@ -1667,9 +1667,11 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       //Update categories con el nuevo category
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
+      print_r($authors);
+      print_r($in_array);
       if($in_array || $in_array == 0){
         array_splice($authors, $in_array, 1);
-        
+        print_r($authors);
       }
 
       update_user_meta($user->ID, 'followed_authors', $authors);
@@ -1703,8 +1705,6 @@ function checkIfFollowed($itemType, $itemId) {
 
     $authors = get_user_meta($user->ID, 'followed_authors', true);
     $in_array = array_search($itemId, $authors);
-    print_r($authors);
-    print_r($in_array);
     
     if($in_array || $in_array == 0){
       return true;
