@@ -1546,7 +1546,6 @@ exit();
       $favoritos = get_user_meta($user->ID, 'favoritos', true);
       $in_array = array_search($_POST['post_id'], $favoritos);
       if($in_array || $in_array == 0){
-        echo $in_array;
         //array_slice($favoritos, $in_array, 1); // Remueve el favorito si ya estaba
       }else{
         array_push($favoritos, $_POST['post_id']);
@@ -1592,7 +1591,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
     if(get_user_meta($user->ID, 'followed_cats', true) || get_user_meta($user->ID, 'followed_cats', true) == array()){
       //Update categories con el nuevo category
       $categories = get_user_meta($user->ID, 'followed_cats', true);
-      $in_array = $in_array($itemToFollow, $categories);
+      $in_array = in_array($itemToFollow, $categories);
       if($in_array){
         //si ya esta cargado realizar esta accion
         
@@ -1616,7 +1615,6 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = in_array( $itemToFollow, $authors);
-      echo 'la puta' . $in_array;
       if($in_array){
         //si ya esta cargado realizar esta accion
       }else{
@@ -1629,7 +1627,6 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $authors = [];
       array_push($authors,  $itemToFollow);
       add_user_meta($user->ID, 'followed_authors', $authors);
-      echo 'hola else';
     }
 
    }
@@ -1684,9 +1681,6 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
 function checkIfFollowed($itemType, $itemId) {
   $user = wp_get_current_user();
 
-  echo $itemType;
-  echo $itemId;
-
   // Check for categories
   if($itemType == 'category'){
 
@@ -1702,7 +1696,6 @@ function checkIfFollowed($itemType, $itemId) {
 
   // Check for authors
   if($itemType == 'author'){
-    echo '$in_array';
     $authors = get_user_meta($user->ID, 'followed_authors', true);
     $in_array = in_array($itemId, $authors);
     if($in_array){
