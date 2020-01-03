@@ -1706,7 +1706,6 @@ function checkIfFollowed($itemType, $itemId) {
     echo '$in_array';
     $authors = get_user_meta($user->ID, 'followed_authors', true);
     $in_array = in_array($itemId, $authors);
-    echo $in_array;
     if($in_array){
       return true;
     }else{
