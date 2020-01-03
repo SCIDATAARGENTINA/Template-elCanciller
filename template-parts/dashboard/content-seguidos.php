@@ -25,7 +25,10 @@ $user = wp_get_current_user();
       $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
       foreach($followed_cats as $cat_id){
 
-        $category = get_category( $cat_id );?>
+        $category = get_category( $cat_id );
+        print_r($category);
+        ?>
+        
 
           <div class="hiddenTopic">
 
