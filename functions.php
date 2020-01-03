@@ -1618,11 +1618,12 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $authors = get_user_meta($user->ID, 'followed_authors', true);
       $in_array = array_search( $itemToFollow, $authors);
       if($in_array || $in_array == 0){
-        
+        return;
       }else{
         array_push($authors,  $itemToFollow);
-        print_r($authors);
       }
+
+      print_r($authors);
       update_user_meta($user->ID, 'followed_authors', $authors);
     }else{
       // Crea el campo para el usuario en caso de no existir
@@ -1667,9 +1668,8 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $in_array = array_search( $itemToFollow, $authors);
       if($in_array || $in_array == 0){
         array_splice($authors, $in_array, 1);
-        print_r($authors);
       }
-
+      print_r($authors);
       update_user_meta($user->ID, 'followed_authors', $authors);
     }
    }
