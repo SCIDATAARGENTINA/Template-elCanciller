@@ -1616,9 +1616,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
     if(get_user_meta($user->ID, 'followed_authors', true)){
       //Update autor con el nuevo autor
       $authors = get_user_meta($user->ID, 'followed_authors', true);
-      print_r($authors);
       $in_array = array_search( $itemToFollow, $authors);
-      echo $in_array;
       if($in_array || $in_array == 0){
         //si ya esta cargado realizar esta accion
       }else{
@@ -1631,6 +1629,7 @@ add_action( 'wp_enqueue_scripts', 'follow_scripts' );
       $authors = [];
       array_push($authors,  $itemToFollow);
       add_user_meta($user->ID, 'followed_authors', $authors);
+      echo 'hola else';
     }
 
    }
