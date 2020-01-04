@@ -1752,6 +1752,7 @@ ul.tagposts-list li {
 }
 .follow-container{
     margin-left: auto;
+    display: block;
 }
 .archive-title .category .btn{
     margin-left: auto;
@@ -4823,9 +4824,8 @@ AUTHOR PAGE
     right: 20px;
     z-index: 2;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .author-header .author-name::before{
