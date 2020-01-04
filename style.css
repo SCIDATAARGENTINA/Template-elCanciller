@@ -4823,8 +4823,9 @@ AUTHOR PAGE
     right: 20px;
     z-index: 2;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
 }
 
 .author-header .author-name::before{
