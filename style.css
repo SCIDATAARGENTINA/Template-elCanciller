@@ -1752,7 +1752,9 @@ ul.tagposts-list li {
 }
 .follow-container{
     margin-left: auto;
-    display: block;
+}
+.follow-container .btn{
+    margin-left: auto;
 }
 .archive-title .category .btn{
     margin-left: auto;
@@ -4841,7 +4843,7 @@ AUTHOR PAGE
 }
 
 @media (max-width: 768px){
-    .author-header .author-name::before{
+    .author-header .author-name .author-name-container::before{
         display: none;
     }
 }
