@@ -4823,12 +4823,15 @@ AUTHOR PAGE
     top: 20px;
     right: 20px;
     z-index: 2;
+
+}
+.author-header .author-name .author-name-container{
     display: flex;
     justify-content: center;
     align-items: flex-end;
 }
 
-.author-header .author-name::before{
+.author-header .author-name .author-name-container::before{
     content: '';
     width: 62px;
     height: 2px;
