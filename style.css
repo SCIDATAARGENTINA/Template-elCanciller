@@ -1755,6 +1755,11 @@ ul.tagposts-list li {
     justify-content: flex-end;
     margin: 10px 0;
 }
+@media (max-width: 600px){
+    .author-name .follow-container{
+    justify-content: center;
+}
+}
 .follow-container{
     margin-left: auto;
 }
