@@ -1750,12 +1750,15 @@ ul.tagposts-list li {
     align-items: flex-end;
     margin: 10px 0px 20px 0px;
 }
+.author-name .follow-container{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
 .follow-container{
     margin-left: auto;
 }
-.follow-container .btn{
-    margin-left: auto;
-}
+
 .archive-title .category .btn{
     margin-left: auto;
     margin-right: 10px;
