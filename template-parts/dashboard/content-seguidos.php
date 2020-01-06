@@ -51,7 +51,11 @@ $user = wp_get_current_user();
 
       <?php
 
-        $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
+      $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
+      
+      if(!$followed_authors){
+        echo 'no hay ';
+      }
 
        foreach($followed_authors as $author_id){
 
