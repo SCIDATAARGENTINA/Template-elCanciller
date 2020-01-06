@@ -1805,3 +1805,20 @@ function hidecategory(){
   }
 
 }
+
+// LISTADO VER MÁS TARDE
+
+ // check if hidden
+ function checkIfAdded($itemId) {
+  $user = wp_get_current_user();
+
+  $posts = get_user_meta($user->ID, 'watch_later', true);
+  $in_array = in_array($itemId, $categories);
+
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
+
+}
