@@ -42,4 +42,8 @@
             border-color: $primary !important;
         }
     }
+
+    input[disabled]{
+        background-color: #f2f2f2;
+    }
 }
