@@ -48,7 +48,7 @@ $watch_later = get_user_meta( $user->ID, 'watch_later', true );
 
     <div class="listItems__header -left">
       <h3>Ver más tarde</h3>
-      <p>No agregaste ninguna nota para ver más tarde, para agregar una, selecciona el simbolo "+" en la nota que quieras guardar.</p>
+      <p>No agregaste ninguna nota para ver más tarde. Para agregar una, selecciona el simbolo "+" en la nota que quieras guardar.</p>
     </div>
 
   <?php } ?>
