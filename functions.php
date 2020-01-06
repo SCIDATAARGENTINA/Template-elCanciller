@@ -1866,9 +1866,9 @@ function addlater(){
     }
     update_user_meta($user->ID, 'watch_later', $posts);
     if(is_front_page() || is_archive() || is_category() || is_single()){
-      return 'false';
+      return 1;
     }else{
-      return 'true';
+      return 2;
     }
   }
   
