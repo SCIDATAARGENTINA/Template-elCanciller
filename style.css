@@ -5539,3 +5539,7 @@ ADS UPDATE 26/11/2019
 .hide-category.-isHidden i{
     color: #e7d117 !important;
 }
+
+.-isAdded i{
+    color: #e7d117 !important;
+}
