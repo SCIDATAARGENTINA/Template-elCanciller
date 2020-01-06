@@ -545,6 +545,9 @@ input:-internal-autofill-selected {
 .user-bar .trending-bar i:hover {
     color: #e7d117;
 }
+.user-bar .username{
+    display: flex;
+}
 
 .user-bar .current-username{
     margin-right: 10px;
