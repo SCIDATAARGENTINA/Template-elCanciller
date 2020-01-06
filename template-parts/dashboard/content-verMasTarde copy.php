@@ -20,7 +20,7 @@ $watch_later = get_user_meta( $user->ID, 'watch_later', true );
       <h3>Ver más tarde</h3>
       <p>Todos las notas que guardaste para ver más tarde se muestran acá.</p>
     </div>
-    <div class="listItems__posts">
+    <div class="listItems__posts vermastarde">
 
       <?php
 
