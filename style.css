@@ -5252,8 +5252,11 @@ height: 200px !important;
 }
 
 @media (max-width: 768px){
-    .tml-action-login .theme-my-login.container{
-        display: block;
+    .tml-action-login .theme-my-login.container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .tml-action-login .action-side{
