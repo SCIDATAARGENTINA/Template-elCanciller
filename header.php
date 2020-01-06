@@ -114,18 +114,18 @@
 						<span class="fech"><?php echo date_i18n('D j M Y'); ?></span>
 					</div><!-- info-tiempo -->
 				</div><!-- tiempo -->
-				<div class="current-user-avatar">
+				<div class="current-user-avatar -mobileuser">
 					<?php
 
 					if ( is_user_logged_in() ) {
 						$current_user = wp_get_current_user();
 						if ( ($current_user instanceof WP_User) ) {
 								echo get_avatar( $current_user->ID, 26 );
-								?> <a class="username" href="<?php bloginfo('url') ?>/dashboard"><span class="current-username"><?php echo $current_user->display_name; ?></span></a> <a href="<?php bloginfo('url') ?>/dashboard" class="button">Mis preferencias</a> <a href="<?php echo wp_logout_url(); ?>" class="button logout">Salir</a> <?php
+								?> <a class="username" href="<?php bloginfo('url') ?>/dashboard"><span class="current-username"><?php echo $current_user->display_name; ?></span></a> <a href="<?php bloginfo('url') ?>/dashboard" class="button logout">Mis preferencias</a> <a href="<?php echo wp_logout_url(); ?>" class="button logout">Salir</a> <?php
 						}
 					}else{ ?>
-						<a class="button login" href="<?php bloginfo('url') ?>/login">Ingresar</a>
-						<a class="button register" href="<?php bloginfo('url') ?>/registrarse">Registrarse</a>
+						<a class="button logout" href="<?php bloginfo('url') ?>/login">Ingresar</a>
+						<a class="button logout" href="<?php bloginfo('url') ?>/registrarse">Registrarse</a>
 					<?php }
 
 					 ?>
