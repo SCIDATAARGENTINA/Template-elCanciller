@@ -1887,3 +1887,20 @@ function addlater(){
   }
 
 }
+
+// Liked / Favoritos
+
+ // check if added to watch later
+ function checkIfLiked($itemId) {
+  $user = wp_get_current_user();
+
+  $posts = get_user_meta($user->ID, 'favoritos', true);
+  $in_array = in_array($itemId, $posts);
+
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
+
+}
