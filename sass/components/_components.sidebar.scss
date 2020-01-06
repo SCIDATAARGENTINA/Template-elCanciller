@@ -1,4 +1,7 @@
 .sidebar__content{
+    @media(max-width: 980px){
+        padding: 20px;
+    }
     .profile{
         display: flex;
         flex-direction: column;
