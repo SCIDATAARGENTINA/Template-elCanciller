@@ -23,6 +23,10 @@ $user = wp_get_current_user();
       <?php
 
       $followed_cats = get_user_meta( $user->ID, 'followed_cats', true );
+
+      if(!$followed_cats){
+        echo 'No sigues ninguna categoria.';
+      }
       foreach($followed_cats as $cat_id){
 
         $category = get_category( $cat_id );
@@ -54,7 +58,7 @@ $user = wp_get_current_user();
       $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
       
       if(!$followed_authors){
-        echo 'no hay ';
+        echo 'No sigues a ningun autor.';
       }
 
        foreach($followed_authors as $author_id){
