@@ -23,7 +23,10 @@ jQuery(function ($) {
                     success: function (result) {
                         button.removeClass('-loading');
                         button.removeClass('-isAdded');
-                        button.closest('.post-rendered').fadeOut();
+                        console.log(result);
+                        if(result){
+                            button.closest('.post-rendered').fadeOut();
+                        }
                         new Noty({
                             theme: 'mint',
                             text: 'Se elimino <strong>' + postName + '</strong> de tu listado de notas para ver más tarde.',
