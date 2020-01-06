@@ -10,10 +10,12 @@
  */
 
 $user = wp_get_current_user();
+$watch_later = get_user_meta( $user->ID, 'watch_later', true );
 
 ?>
 <div class="content__container"> 
   <div class="listItems">
+    <?php if($watch_later){ ?>
     <div class="listItems__header -left">
       <h3>Ver más tarde</h3>
       <p>Todos las notas que guardaste para ver más tarde se muestran acá.</p>
@@ -22,9 +24,7 @@ $user = wp_get_current_user();
 
       <?php
 
-      $watch_later = get_user_meta( $user->ID, 'watch_later', true );
-      if($watch_later){
-        
+
         $args = array(
           'post_type' => array('post', 'opinion'),
           'post__in' => $watch_later,
@@ -38,11 +38,19 @@ $user = wp_get_current_user();
             endwhile;
         endif;
         wp_reset_postdata();
-
-      }
-      
       ?>
+
+      
+
       
     </div><!-- listItems__hiddenTopics -->
+  <?php }else{ ?>
+
+    <div class="listItems__header -left">
+      <h3>Ver más tarde</h3>
+      <p>No agregaste ninguna nota para ver más tarde, para agregar una, selecciona el simbolo "+" en la nota que quieras guardar.</p>
+    </div>
+
+  <?php } ?>
   </div><!-- listItems -->
 </div><!-- content__container -->
