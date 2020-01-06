@@ -47,7 +47,7 @@ echo '<style>' . '.post-rendered.' . $term->slug . '::before{ background-color:'
 					<?php if ( is_user_logged_in() ){ ?>
 					<div class="user-actions">
 						<span class="hide-category <?php echo checkIfHidden($term->term_id) ? '-isHidden' : '' ?>" data-categoryid="<?php echo $term->term_id ?>" data-categoryname="<?php echo $term->name ?>"><i class="fas fa-eye-slash"></i></span>
-						<span class="add-later <?php echo checkIfAdded(the_ID()) ? '-isAdded' : '' ?>" data-postid="<?php the_ID() ?>" data-postname="<?php the_title() ?>"><i class="fas fa-plus"></i></span>
+						<span class="add-later <?php echo checkIfAdded(get_the_ID()) ? '-isAdded' : '' ?>" data-postid="<?php the_ID() ?>" data-postname="<?php the_title() ?>"><i class="fas fa-plus"></i></span>
 					</div>
 					<?php } ?>
 					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>

@@ -1872,7 +1872,7 @@ function addlater(){
  add_action( 'wp_ajax_nopriv_removelater', 'removelater' );
  add_action( 'wp_ajax_removelater', 'removelater' );
 
- // check if hidden
+ // check if added to watch later
  function checkIfAdded($itemId) {
   $user = wp_get_current_user();
 
