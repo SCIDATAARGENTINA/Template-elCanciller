@@ -469,9 +469,19 @@ h2:before {
         justify-content: flex-start;
         align-items: center;
         margin-top: 20px;
+        flex-wrap: wrap;
     }
     .current-user-avatar.-mobileuser .avatar{
         margin-right: 10px;
+    }
+    .current-user-avatar.-mobileuser .username{
+        width: 100%;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+    .current-user-avatar.-mobileuser .current-username{
+        margin-left: 0px;
+        color: #111;
     }
 }
 
