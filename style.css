@@ -472,6 +472,11 @@ h2:before {
 
     .current-user-avatar.-mobileuser{
         display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .current-user-avatar.-mobileuser .avatar{
+        margin-right: 10px;
     }
 }
 
