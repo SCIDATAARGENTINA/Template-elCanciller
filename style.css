@@ -2102,6 +2102,7 @@ ul.tagposts-list li {
     color: #fff;
     cursor: pointer;
     font-size: 18px;
+    margin-right: 10px;
 }
 
 .post-data .post-title .user-actions i:hover{
