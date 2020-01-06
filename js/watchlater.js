@@ -24,7 +24,7 @@ jQuery(function ($) {
                         button.removeClass('-loading');
                         button.removeClass('-isAdded');
                         console.log(result);
-                        if(result){
+                        if($('.listItems')){
                             button.closest('.post-rendered').fadeOut();
                         }
                         new Noty({
