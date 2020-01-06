@@ -54,3 +54,7 @@
         background-color: #f2f2f2;
     }
 }
+
+#wppb-user-to-edit, label[for="edit_user"]{
+    display: none !important;
+}
