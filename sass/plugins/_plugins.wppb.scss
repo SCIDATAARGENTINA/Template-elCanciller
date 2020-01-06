@@ -3,6 +3,9 @@
         list-style-type: none;
         padding: 0;
         margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
     }
     .wppb-form-field{
         margin: 10px 0;
