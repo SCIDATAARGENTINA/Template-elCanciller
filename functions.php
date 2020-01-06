@@ -1740,8 +1740,6 @@ function hidecategory(){
 
   $itemToHide = $_POST['categoryId'];
 
-  echo print_r(get_user_meta($user->ID, 'hidden_cats', true));
-
   // Check if user has categories
   if(get_user_meta($user->ID, 'hidden_cats', true) || get_user_meta($user->ID, 'hidden_cats', true) == array()){
     //Update categories con el nuevo category
@@ -1797,6 +1795,89 @@ function hidecategory(){
 
   $categories = get_user_meta($user->ID, 'hidden_cats', true);
   $in_array = in_array($itemId, $categories);
+
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
+
+}
+
+// LISTADO VER MÁS TARDE
+
+function watchlater_scripts() {
+
+  wp_register_script( 'watchlater-js', get_stylesheet_directory_uri() . '/js/watchlater.js', array('jquery') );
+
+  wp_localize_script( 'watchlater-js', 'watchlater', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+  ) );
+
+  wp_enqueue_script( 'watchlater-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'watchlater_scripts' );
+
+function addlater(){
+  $user = wp_get_current_user();
+
+  $itemToAdd = $_POST['postId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'watch_later', true) || get_user_meta($user->ID, 'watch_later', true) == array()){
+    //Update categories con el nuevo category
+    $posts = get_user_meta($user->ID, 'watch_later', true);
+    $in_array = in_array($itemToAdd, $posts);
+    if($in_array){
+      $key = array_search($itemToAdd, $posts);
+      return;
+    }else{
+      array_push($posts, $itemToAdd);
+    }
+    update_user_meta($user->ID, 'watch_later', $posts);
+  }else{
+    // Crea el campo para el usuario en caso de no existir
+    $posts = [];
+    array_push($posts, $itemToAdd);
+    add_user_meta($user->ID, 'watch_later', $posts);
+  }
+  
+}
+
+ add_action( 'wp_ajax_nopriv_addlater', 'addlater' );
+ add_action( 'wp_ajax_addlater', 'addlater' );
+
+
+ function removelater(){
+  $user = wp_get_current_user();
+
+  $itemToRemove = $_POST['postId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'watch_later', true) || get_user_meta($user->ID, 'watch_later', true) == array()){
+    //Quita el post del listado ver mas tarde
+    $posts = get_user_meta($user->ID, 'watch_later', true);
+    $in_array = array_search($itemToRemove, $posts);
+    if($in_array || $in_array == 0){
+      array_splice($posts, $in_array, 1);
+    }else{
+      return;
+    }
+    update_user_meta($user->ID, 'watch_later', $posts);
+  }
+  
+}
+
+ add_action( 'wp_ajax_nopriv_removelater', 'removelater' );
+ add_action( 'wp_ajax_removelater', 'removelater' );
+
+ // check if hidden
+ function checkIfAdded($itemId) {
+  $user = wp_get_current_user();
+
+  $posts = get_user_meta($user->ID, 'watch_later', true);
+  $in_array = in_array($itemId, $posts);
 
   if($in_array){
     return true;
