@@ -23,7 +23,7 @@ jQuery(function ($) {
                     success: function (result) {
                         button.removeClass('-loading');
                         button.removeClass('-isAdded');
-                        if ($('.listItems').length){
+                        if ($('.vermastarde').length){
                             button.closest('.post-rendered').fadeOut();
                         }
                         new Noty({
