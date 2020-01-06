@@ -23,7 +23,6 @@ jQuery(function ($) {
                     success: function (result) {
                         button.removeClass('-loading');
                         button.removeClass('-isAdded');
-                        console.log(result);
                         if ($('.listItems').length){
                             button.closest('.post-rendered').fadeOut();
                         }
