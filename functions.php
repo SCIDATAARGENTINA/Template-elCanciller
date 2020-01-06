@@ -1865,6 +1865,11 @@ function addlater(){
       return;
     }
     update_user_meta($user->ID, 'watch_later', $posts);
+    if(is_home() || is_archive() || is_category() || is_front_page() || is_single()){
+      return false
+    }else{
+      return true;
+    }
   }
   
 }
