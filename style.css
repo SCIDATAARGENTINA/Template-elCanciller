@@ -470,6 +470,8 @@ h2:before {
         align-items: center;
         margin-top: 20px;
         flex-wrap: wrap;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .current-user-avatar.-mobileuser .avatar{
         margin-right: 10px;
