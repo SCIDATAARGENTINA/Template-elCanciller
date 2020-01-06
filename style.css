@@ -474,6 +474,7 @@ h2:before {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-top: 20px;
     }
     .current-user-avatar.-mobileuser .avatar{
         margin-right: 10px;
