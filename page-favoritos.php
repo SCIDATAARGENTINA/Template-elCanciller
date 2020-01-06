@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Dashboard - Ver más tarde
+ * Template Name: Dashboard - Favoritos
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
