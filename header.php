@@ -76,7 +76,7 @@
 						$current_user = wp_get_current_user();
 						if ( ($current_user instanceof WP_User) ) {
 								echo get_avatar( $current_user->ID, 26 );
-								?> <a href="<?php bloginfo('url') ?>/dashboard"><span class="current-username"><?php echo $current_user->display_name; ?></span></a> <a href="<?php bloginfo('url') ?>/dashboard" class="button">Mis preferencias</a> <a href="<?php echo wp_logout_url(); ?>" class="button logout">Salir</a> <?php
+								?> <a class="username" href="<?php bloginfo('url') ?>/dashboard"><span class="current-username"><?php echo $current_user->display_name; ?></span></a> <a href="<?php bloginfo('url') ?>/dashboard" class="button">Mis preferencias</a> <a href="<?php echo wp_logout_url(); ?>" class="button logout">Salir</a> <?php
 						}
 					}else{ ?>
 						<a class="button login" href="<?php bloginfo('url') ?>/login">Ingresar</a>
