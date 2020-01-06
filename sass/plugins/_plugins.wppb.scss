@@ -34,4 +34,10 @@
         padding: 10px 5px;
         width: 100%;
     }
+
+    input, select{
+        &:focus, &:active{
+            border-color: $primary !important;
+        }
+    }
 }
