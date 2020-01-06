@@ -86,8 +86,8 @@ $followed_authors = get_user_meta( $user->ID, 'followed_authors', true );
     </div><!-- listItems__hiddenTopics -->
     <?php }else{ ?>
     <div class="listItems__header -left">
-      <h3>Actualmente no sigues ninguna categoría</h3>
-      <p>Para comenzar a seguir una categoría, busca la que más te guste y selecciona "Seguir".</p>
+      <h3>Actualmente no sigues ninguna autor</h3>
+      <p>Para comenzar a seguir un autor, busca el que más te guste y selecciona "Seguir".</p>
     </div><!-- listItems__header -->
     <?php } ?>
     <?php } ?>
