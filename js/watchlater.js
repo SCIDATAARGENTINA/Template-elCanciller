@@ -3,7 +3,7 @@ jQuery(function ($) {
     $('.add-later').click(function(){
         
         let button = $(this);
-        let url = addlater.ajaxurl;
+        let url = watchlater.ajaxurl;
 
         let postId = button.attr('data-postid');
         let postName = button.attr('data-postname');
