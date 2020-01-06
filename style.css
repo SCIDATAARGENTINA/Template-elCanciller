@@ -546,6 +546,10 @@ input:-internal-autofill-selected {
     color: #e7d117;
 }
 
+.user-bar .current-username{
+    margin-right: 10px;
+}
+
 
 /* ---------------------------*/
 
