@@ -233,7 +233,7 @@ $encuesta_grande = get_field('encuesta_grande');
 					<?php echo get_field('sidebar_home_3', 'option'); ?>
 				</div>
 			</div><!-- end widget ads -->
-			<?php get_template_part('template-parts/sections/section', 'videos') ?>
+			<?php //get_template_part('template-parts/sections/section', 'videos') ?>
 		</div><!-- outer-container -->
 
 	</main><!-- #main -->
