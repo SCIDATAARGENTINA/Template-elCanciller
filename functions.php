@@ -1514,33 +1514,10 @@ add_action( 'wp_enqueue_scripts', 'likes_scripts' );
  	die();
  }
 
-/******
- * 
- * DASHBOARD USERS 
- * Comienzo de las funciones de usuario
- * 
-*/
-
-//Redirect on login
-
-// add the code to your theme function.php
-//for logout redirection
-add_action('wp_logout','auto_redirect_after_logout');
-function auto_redirect_after_logout(){
-wp_redirect( home_url() );
-exit();
-}
-//for login redirection
-add_action('wp_login','auto_redirect_after_login');
-function auto_redirect_after_login(){
-wp_redirect( bloginfo('url') . '/dashboard' );
-exit();
-}
-
  function add_user_favoritos(){
     $user = wp_get_current_user();
 
-    $currentVal = $_POST['like_count'];
+    $currentVal = get_field( 'likes', $_POST['post_id'] );
     $currentVal++;
 
     update_field( 'likes', $currentVal, $_POST['post_id'] );
@@ -1567,12 +1544,36 @@ exit();
       add_user_meta($user->ID, 'favoritos', $favoritos);
     }
 
-    return get_user_meta($user->ID, 'favoritos', true);
-
+    die();
 }
 
  add_action( 'wp_ajax_nopriv_add_user_favoritos', 'add_user_favoritos' );
  add_action( 'wp_ajax_add_user_favoritos', 'add_user_favoritos' );
+
+/******
+ * 
+ * DASHBOARD USERS 
+ * Comienzo de las funciones de usuario
+ * 
+*/
+
+//Redirect on login
+
+// add the code to your theme function.php
+//for logout redirection
+add_action('wp_logout','auto_redirect_after_logout');
+function auto_redirect_after_logout(){
+wp_redirect( home_url() );
+exit();
+}
+//for login redirection
+add_action('wp_login','auto_redirect_after_login');
+function auto_redirect_after_login(){
+wp_redirect( bloginfo('url') . '/dashboard' );
+exit();
+}
+
+ 
 
 // AJAX FOLLOW
 

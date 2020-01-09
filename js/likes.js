@@ -66,15 +66,14 @@ let setAllLikes = () => {
 
 };
 
-let updateUserFavs = (likeCount, post_id, url, isLiked, logged_in) => {
+let updateUserFavs = (post_id, url, logged_in) => {
 
     $.ajax({
         url: url,
         type: 'POST',
         data: {
             'action': 'add_user_favoritos',
-            post_id,
-            like_count: likeCount,
+            post_id
         },
         success: function (result) {
 
@@ -82,7 +81,6 @@ let updateUserFavs = (likeCount, post_id, url, isLiked, logged_in) => {
                 setCookie(post_id);
             }
 
-            console.log('updated ok', result);
         },
         error: function (errorThrown) {
             console.log(errorThrown);
@@ -96,15 +94,12 @@ let likePost = () => {
         $('.like').click(function(){
             // Don't follow the link
             event.preventDefault();
-            console.log(likes_params.ajaxurl);
 
             let like = event.target;
             let id = like.getAttribute('data-id');
             let postType = like.getAttribute('data-type');
             getPostData(id, postType).done(data => {
 
-                console.log('updateUserFavs');
-                console.log(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.liked, likes_params.logged_in);
                 updateUserFavs(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.liked, likes_params.logged_in);
 
                 like.classList.add('liked');
