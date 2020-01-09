@@ -68,11 +68,6 @@ let setAllLikes = () => {
 
 let updateUserFavs = (likeCount, post_id, url, isLiked, logged_in) => {
 
-    if (isLiked) {
-        console.log('is liked');
-        return;
-    }
-
     $.ajax({
         url: url,
         type: 'POST',
@@ -109,6 +104,7 @@ let likePost = () => {
             getPostData(id, postType).done(data => {
 
                 console.log('updateUserFavs');
+                console.log(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.liked, likes_params.logged_in);
                 updateUserFavs(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.liked, likes_params.logged_in);
 
                 like.classList.add('liked');
