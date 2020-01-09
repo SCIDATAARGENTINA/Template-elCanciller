@@ -1544,6 +1544,8 @@ exit();
       return;
     }
 
+    echo 'la concha de tu mama';
+
     // Check if user has favoritos
     if(get_user_meta($user->ID, 'favoritos', true) || get_user_meta($user->ID, 'favoritos', true) == array()){
       //Update favoritos con el nuevo fav
