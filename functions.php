@@ -1562,6 +1562,8 @@ exit();
       add_user_meta($user->ID, 'favoritos', $favoritos);
     }
 
+    echo get_user_meta($user->ID, 'favoritos', true);
+
 }
 
  add_action( 'wp_ajax_nopriv_add_user_favoritos', 'add_user_favoritos' );
