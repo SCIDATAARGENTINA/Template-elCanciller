@@ -1904,3 +1904,10 @@ function addlater(){
   }
 
 }
+
+function wpse66093_no_admin_access() {
+    $redirect = home_url( '/' );
+    if ( ! ( current_user_can( 'manage_options' ) || current_user_can( 'edit_posts' ) ) )
+        exit( wp_redirect( $redirect ) );
+}
+add_action( 'admin_init', 'wpse66093_no_admin_access', 100 );
