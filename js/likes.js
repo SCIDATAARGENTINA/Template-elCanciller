@@ -2,6 +2,10 @@ jQuery(document).ready(function ($) {
 
 let setCookie = (id) => {
 
+    if (!validateIfLiked(id)){
+        return;
+    }
+
     let likedPosts = Cookies.get('likedPosts');
     let arrIds = [];
 
@@ -53,7 +57,7 @@ let setAllLikes = () => {
 };
 
 let updateUserFavs = (post_id, url, logged_in, callback) => {
-    console.log('updating..');
+    
     $.ajax({
         url: url,
         type: 'POST',
@@ -62,8 +66,7 @@ let updateUserFavs = (post_id, url, logged_in, callback) => {
             post_id
         },
         success: function (result) {
-            console.log('updated');
-            console.log(result);
+
             if(!logged_in){
                 setCookie(post_id);
             }
