@@ -1545,7 +1545,7 @@ exit();
     }
 
     // Check if user has favoritos
-    if(get_user_meta($user->ID, 'favoritos', true)){
+    if(get_user_meta($user->ID, 'favoritos', true) || get_user_meta($user->ID, 'favoritos', true) == array()){
       //Update favoritos con el nuevo fav
       $favoritos = get_user_meta($user->ID, 'favoritos', true);
       $in_array = array_search($_POST['post_id'], $favoritos);
