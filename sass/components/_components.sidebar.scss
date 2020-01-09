@@ -43,11 +43,14 @@
                         padding: 10px 15px;
                         width: 100%;
                         color: $secondary;
-                        font-size: 18px;
+                        font-size: 16px;
                         transition: 300ms ease;
                         font-family: $secondaryFont;
                         &:hover{
                             transform: translateX(10px);
+                        }
+                        i{
+                            margin-right: 10px;
                         }
                         &.-accent{
                             background: $primary;
