@@ -1553,7 +1553,7 @@ exit();
     if(get_user_meta($user->ID, 'favoritos', true) || get_user_meta($user->ID, 'favoritos', true) == array()){
       //Update favoritos con el nuevo fav
       $favoritos = get_user_meta($user->ID, 'favoritos', true);
-      $in_array = array_search($_POST['post_id'], $favoritos);
+      $in_array = in_array($_POST['post_id'], $favoritos);
       if($in_array){
         //array_slice($favoritos, $in_array, 1); // Remueve el favorito si ya estaba
       }else{

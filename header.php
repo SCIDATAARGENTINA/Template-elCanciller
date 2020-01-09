@@ -173,5 +173,6 @@
  <pre>
 	 <?php 
 	 $user = wp_get_current_user();
+	 echo $user;
 	 print_r(get_user_meta($user->ID, 'favoritos', true)); ?>
  </pre>
