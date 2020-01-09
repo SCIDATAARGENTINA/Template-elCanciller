@@ -209,12 +209,15 @@ jQuery(document).ready(function($) {
     // DASHBOARD STICKY MENU
 
     $(window).scroll(function () {
-        var footerTop = $('.site-footer').offset().top;
-        var scrollTop = $(window).scrollTop(),
-            distance = (footerTop - scrollTop);
-        console.log(scrollTop, footerTop);
-        if ($(this).scrollTop() >= footerTop) {
-            console.log('inserta animación');
+        var top_of_element = $(".site-footer").offset().top;
+        var bottom_of_element = $(".site-footer").offset().top + $(".site-footer").outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+
+        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
+            console.log('se ve');
+        } else {
+            // the element is not visible, do something else
         }
     });
 
