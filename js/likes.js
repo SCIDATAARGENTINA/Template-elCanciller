@@ -52,7 +52,7 @@ let setAllLikes = () => {
     }
 };
 
-let updateUserFavs = (post_id, url, logged_in) => {
+let updateUserFavs = (post_id, url, logged_in, callback) => {
     console.log('updating..');
     $.ajax({
         url: url,
@@ -67,6 +67,8 @@ let updateUserFavs = (post_id, url, logged_in) => {
             if(!logged_in){
                 setCookie(post_id);
             }
+
+            callback();
 
         },
         error: function (errorThrown) {
@@ -85,10 +87,9 @@ let likePost = () => {
             let like = event.target;
             let id = like.getAttribute('data-id');
 
-            updateUserFavs(id, like_params.ajaxurl, like_params.logged_in);
-
-            like.classList.add('liked');
-
+            updateUserFavs(id, like_params.ajaxurl, like_params.logged_in, function(){
+                like.classList.add('liked');
+            });
                 
         });
 };
