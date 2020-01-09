@@ -8,6 +8,12 @@
     top: 85px;
     display: inline-block;
     height: auto;
+    transition: 300ms ease;
+
+    &.-hidden{
+        opacity: 0;
+        transform: scale(0.6);
+    }
     .profile{
         display: flex;
         flex-direction: column;

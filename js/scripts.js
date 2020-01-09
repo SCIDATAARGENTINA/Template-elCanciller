@@ -215,9 +215,13 @@ jQuery(document).ready(function($) {
         var top_of_screen = $(window).scrollTop();
 
         if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
-            console.log('se ve');
+
+            $('.sidebar__content').addClass('-hidden');
+            
         } else {
-            // the element is not visible, do something else
+            
+            $('.sidebar__content').removeClass('-hidden');
+
         }
     });
 
