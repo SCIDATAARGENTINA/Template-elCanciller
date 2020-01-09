@@ -172,7 +172,5 @@
 	<div id="content" class="site-content">
  <pre>
 	 <?php 
-	 $user = wp_get_current_user();
-	 print_r($user);
 	 print_r(get_user_meta($user->ID, 'favoritos', true)); ?>
  </pre>
