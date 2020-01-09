@@ -170,7 +170,3 @@
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
- <pre>
-	 <?php 
-	 print_r(get_user_meta($user->ID, 'favoritos', true)); ?>
- </pre>
