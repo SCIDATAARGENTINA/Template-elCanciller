@@ -62,7 +62,8 @@ let updateUserFavs = (post_id, url, logged_in) => {
             post_id
         },
         success: function (result) {
-
+            console.log('updated');
+            console.log(result);
             if(!logged_in){
                 setCookie(post_id);
             }
