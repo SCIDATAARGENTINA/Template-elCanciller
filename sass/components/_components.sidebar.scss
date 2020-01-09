@@ -2,6 +2,12 @@
     @media(max-width: 980px){
         padding: 20px;
     }
+    position: fixed;
+    width: 250px;
+    position: sticky;
+    top: 85px;
+    display: inline-block;
+    height: auto;
     .profile{
         display: flex;
         flex-direction: column;
