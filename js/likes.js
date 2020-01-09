@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
 let setCookie = (id) => {
     console.log('setting cookie..');
-    if (!validateIfLiked(id)){
+    if (validateIfLiked(id)){
         console.log('post liked already');
         return;
     }
