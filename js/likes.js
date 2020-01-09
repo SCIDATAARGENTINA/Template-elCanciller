@@ -84,7 +84,7 @@ let likePost = () => {
             let like = event.target;
             let id = like.getAttribute('data-id');
 
-            updateUserFavs(id, likes_params.ajaxurl, likes_params.logged_in);
+            updateUserFavs(id, like_params.ajaxurl, like_params.logged_in);
 
             like.classList.add('liked');
 
@@ -93,7 +93,7 @@ let likePost = () => {
 };
 
 likePost();
-if (!likes_params.logged_in){
+if (!like_params.logged_in){
     setAllLikes();
 }
 
