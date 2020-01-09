@@ -210,9 +210,12 @@ jQuery(document).ready(function($) {
 
     $(window).scroll(function () {
         var sideHeight = $('.dashboard__sidebar').height();
-        var sideTop = $('.dashboard__sidebar').scrollTop();
+        var sideTop = $('.dashboard__sidebar').offset().top;
+        var scrollTop = $(window).scrollTop(),
+            distance = (sideTop - scrollTop);
         console.log(sideHeight);
         console.log(sideTop);
+        console.log(distance);
         if ($(this).scrollTop() >= sideHeight) {
             alert('header just passed.');
             // instead of alert you can use to show your ad
