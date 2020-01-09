@@ -209,17 +209,12 @@ jQuery(document).ready(function($) {
     // DASHBOARD STICKY MENU
 
     $(window).scroll(function () {
-        var sideHeight = $('.dashboard__sidebar').height();
-        var sideTop = $('.dashboard__sidebar').offset().top;
+        var footerTop = $('.site-footer').offset().top;
         var scrollTop = $(window).scrollTop(),
-            distance = (sideTop - scrollTop);
-        console.log(sideHeight);
-        console.log(sideTop);
-        console.log(distance);
-        if ($(this).scrollTop() >= sideHeight) {
-            alert('header just passed.');
-            // instead of alert you can use to show your ad
-            // something like $('#footAd').slideup();
+            distance = (footerTop - scrollTop);
+        console.log(scrollTop, footerTop);
+        if ($(this).scrollTop() >= footerTop) {
+            console.log('inserta animación');
         }
     });
 
