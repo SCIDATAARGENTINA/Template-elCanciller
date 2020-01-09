@@ -59,15 +59,15 @@
                         <?php $slide++; ?>
                         <?php if( $slide == 1 ){ ?>
                             <?php if ( is_user_logged_in() ){ ?>
-                                <i class="active fas fa-heart like <?php echo checkIfLiked(get_the_ID()) ? 'liked' : '' ?>" data-id="<?php the_ID() ?>"></i>
+                                <i data-slide="<?php echo $slide; ?>" class="active fas fa-heart like <?php echo checkIfLiked($id) ? 'liked' : '' ?>" data-id="<?php echo $id ?>"></i>
                                 <?php }else{ ?>
-                                <i class="active fas fa-heart like" data-id="<?php the_ID() ?>" ></i>
+                                <i data-slide="<?php echo $slide; ?>" class="active fas fa-heart like" data-id="<?php echo $id ?>" ></i>
                             <?php } ?>
                         <?php }else { ?>
                             <?php if ( is_user_logged_in() ){ ?>
-                                <i class="fas fa-heart like <?php echo checkIfLiked(get_the_ID()) ? 'liked' : '' ?>" data-id="<?php the_ID() ?>"></i>
+                                <i data-slide="<?php echo $slide; ?>" class="fas fa-heart like <?php echo checkIfLiked($id) ? 'liked' : '' ?>" data-id="<?php echo $id ?>"></i>
                                 <?php }else{ ?>
-                                <i class="fas fa-heart like" data-id="<?php the_ID() ?>" ></i>
+                                <i data-slide="<?php echo $slide; ?>" class="fas fa-heart like" data-id="<?php echo $id ?>" ></i>
                             <?php } ?>
                         <?php } ?>
                     <?php } ?>
