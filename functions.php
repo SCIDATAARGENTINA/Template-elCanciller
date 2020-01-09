@@ -1839,7 +1839,7 @@ function like_scripts() {
 
 	wp_localize_script( 'like-js', 'like_params', array(
     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-    'logged_in' => is_user_logged_in();
+    'logged_in' => is_user_logged_in(),
     ) );
  
  	wp_enqueue_script( 'like-js' );
