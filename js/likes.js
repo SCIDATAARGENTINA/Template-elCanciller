@@ -107,6 +107,7 @@ let updateLikeData = (likeCount, id, url, logged_in, liked) => {
 let updateUserFavs = (post_id, url, isLiked) => {
 
     if (isLiked) {
+        console.log('likedliked');
         return;
     }
 
