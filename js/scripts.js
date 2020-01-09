@@ -213,7 +213,7 @@ jQuery(document).ready(function($) {
         var sideTop = $('.dashboard__sidebar').scrollTop();
         console.log(sideHeight);
         console.log(sideTop);
-        if ($(this).scrollTop() >= aTop) {
+        if ($(this).scrollTop() >= sideHeight) {
             alert('header just passed.');
             // instead of alert you can use to show your ad
             // something like $('#footAd').slideup();
