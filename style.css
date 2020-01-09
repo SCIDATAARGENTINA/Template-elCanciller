@@ -2072,9 +2072,6 @@ ul.tagposts-list li {
     font-family: "Bree serif";
     font-size: 15px;
 }
-.post-rendered.show-author .rendered-img .render-author a:hover{
-    opacity: 0.8;
-}
 
 .post-rendered .hovered {
     background-color: rgba(0, 0, 0, 0.3);

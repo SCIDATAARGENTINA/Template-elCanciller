@@ -29,10 +29,11 @@ $user = wp_get_current_user();
     <div class="sidebar__links">
         <nav>
             <ul>
-                <li><a href="<?php bloginfo('url') ?>/dashboard/ver-mas-tarde">Ver más tarde</a></li>
-                <li><a href="<?php bloginfo('url') ?>/dashboard/seguidos">Seguidos</a></li>
-                <li><a href="<?php bloginfo('url') ?>/dashboard/favoritos">Favoritos</a></li>
-                <li><a href="<?php bloginfo('url') ?>/dashboard/temas-ocultos">Temas Ocultos</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/ver-mas-tarde"><i class="fas fa-plus"></i> Ver más tarde</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/seguidos"><i class="fas fa-user-plus"></i> Seguidos</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/favoritos"><i class="fas fa-heart"></i> Favoritos</a></li>
+                <li><a href="<?php bloginfo('url') ?>/dashboard/temas-ocultos"><i class="fas fa-eye-slash"></i> Temas Ocultos</a></li>
                 <li><a class="-accent" href="#">Cerrar sesión</a></li>
             </ul>
         </nav>
