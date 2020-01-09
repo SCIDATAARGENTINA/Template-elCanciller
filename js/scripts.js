@@ -204,3 +204,17 @@ jQuery(document).ready(function($) {
     jQuery('#floatBtn').on('click',function(){window.location.href = URLdomain;});
 
 });
+
+// DASHBOARD STICKY MENU
+
+$(window).scroll(function () {
+    var sideHeight = $('.dashboard__sidebar').height();
+    var sideTop = $('.dashboard__sidebar').scrollTop();
+    console.log(sideHeight);
+    console.log(sideTop);
+    if ($(this).scrollTop() >= aTop) {
+        alert('header just passed.');
+        // instead of alert you can use to show your ad
+        // something like $('#footAd').slideup();
+    }
+});
