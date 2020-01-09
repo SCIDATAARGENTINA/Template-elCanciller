@@ -214,7 +214,7 @@ jQuery(document).ready(function($) {
         var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         var top_of_screen = $(window).scrollTop();
         console.log(top_of_element);
-        if(top_of_element > 800){
+        if(top_of_element < 800){
             return;
         }else{
             if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
