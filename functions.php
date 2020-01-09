@@ -1833,19 +1833,19 @@ function addlater(){
  // AJAX LIKES
 
 
-function likes_scripts() {
+function like_scripts() {
   
-	wp_register_script( 'likes-js', get_stylesheet_directory_uri() . '/js/likes.js', array('jquery') );
+	wp_register_script( 'like-js', get_stylesheet_directory_uri() . '/js/like.js', array('jquery') );
 
-	wp_localize_script( 'likes-js', 'likes_params', array(
+	wp_localize_script( 'like-js', 'like_params', array(
     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
     'logged_in' => is_user_logged_in();
     ) );
  
- 	wp_enqueue_script( 'likes-js' );
+ 	wp_enqueue_script( 'like-js' );
 }
  
-add_action( 'wp_enqueue_scripts', 'likes_scripts' );
+add_action( 'wp_enqueue_scripts', 'like_scripts' );
 
  function add_user_favoritos(){
    if(is_user_logged_in()){
