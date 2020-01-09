@@ -209,7 +209,7 @@ jQuery(document).ready(function($) {
     // DASHBOARD STICKY MENU
 
     $(window).scroll(function () {
-        var top_of_element = $(".site-footer").offset().top + 200;
+        var top_of_element = $(".site-footer").offset().top - 200;
         var bottom_of_element = $(".site-footer").offset().top + $(".site-footer").outerHeight();
         var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         var top_of_screen = $(window).scrollTop();
