@@ -214,18 +214,18 @@ jQuery(document).ready(function($) {
         var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         var top_of_screen = $(window).scrollTop();
 
-        if(top_of_element < 300){
+        if(top_of_element > 300){
             return;
-        }
+        }else{
+            if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
 
-        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
+                $('.sidebar__content').addClass('-hidden');
 
-            $('.sidebar__content').addClass('-hidden');
-            
-        } else {
+            } else {
 
-            $('.sidebar__content').removeClass('-hidden');
+                $('.sidebar__content').removeClass('-hidden');
 
+            }
         }
     });
 
