@@ -118,10 +118,10 @@ let updateUserFavs = (post_id, url, isLiked) => {
             post_id
         },
         success: function (result) {
-            //console.log(result);
+            console.log('updated ok', result);
         },
         error: function (errorThrown) {
-            //console.log(errorThrown);
+            console.log(errorThrown);
         }
     });
 
