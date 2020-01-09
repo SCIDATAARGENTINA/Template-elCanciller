@@ -8,11 +8,11 @@
     top: 85px;
     display: inline-block;
     height: auto;
-    transition: 300ms ease;
+    transition: 500ms ease;
 
     &.-hidden{
         opacity: 0;
-        transform: scale(0.6);
+        transform: scale(0.8);
     }
     .profile{
         display: flex;
