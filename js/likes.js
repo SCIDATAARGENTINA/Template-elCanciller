@@ -1,17 +1,5 @@
 jQuery(document).ready(function ($) {
 
-let getPostData = (id, type) => {
-
-    if (type == "post" || type == null) {
-        type = "posts";
-    }
-
-    const url = `http://142.93.24.13/wp-json/wp/v2/${type}/${id}`;
-
-    return $.get(url);
-
-};
-
 let setCookie = (id) => {
 
     let likedPosts = Cookies.get('likedPosts');
@@ -62,12 +50,10 @@ let setAllLikes = () => {
             }
         });
     }
-
-
 };
 
 let updateUserFavs = (post_id, url, logged_in) => {
-
+    console.log('updating..');
     $.ajax({
         url: url,
         type: 'POST',
@@ -97,13 +83,12 @@ let likePost = () => {
 
             let like = event.target;
             let id = like.getAttribute('data-id');
-            let postType = like.getAttribute('data-type');
-            getPostData(id, postType).done(data => {
 
-                updateUserFavs(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.liked, likes_params.logged_in);
+            updateUserFavs(id, likes_params.ajaxurl, likes_params.logged_in);
 
-                like.classList.add('liked');
-            });
+            like.classList.add('liked');
+
+                
         });
 };
 
