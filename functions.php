@@ -1498,8 +1498,8 @@ function likes_scripts() {
 add_action( 'wp_enqueue_scripts', 'likes_scripts' );
 
 
- add_action( 'wp_ajax_nopriv_ajax_call_count_likes', 'ajax_call_count_likes' );
- add_action( 'wp_ajax_ajax_call_count_likes', 'ajax_call_count_likes' );
+ //add_action( 'wp_ajax_nopriv_ajax_call_count_likes', 'ajax_call_count_likes' );
+ //add_action( 'wp_ajax_ajax_call_count_likes', 'ajax_call_count_likes' );
 
  function ajax_call_count_likes() {
 

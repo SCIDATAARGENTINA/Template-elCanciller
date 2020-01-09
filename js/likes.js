@@ -101,6 +101,7 @@ let likePost = () => {
         $('.like').click(function(){
             // Don't follow the link
             event.preventDefault();
+            console.log(likes_params.ajaxurl);
 
             let like = event.target;
             let id = like.getAttribute('data-id');
