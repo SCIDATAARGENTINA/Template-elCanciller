@@ -45,6 +45,7 @@
                         color: $secondary;
                         font-size: 18px;
                         transition: 300ms ease;
+                        font-family: $secondaryFont;
                         &:hover{
                             transform: translateX(10px);
                         }
