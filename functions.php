@@ -1540,11 +1540,14 @@ exit();
  function add_user_favoritos(){
     $user = wp_get_current_user();
 
+    $currentVal = $_POST['like_count'];
+    $currentVal++;
+
+    update_field( 'likes', $currentVal, $_POST['post_id'] );
+
     if(!is_user_logged_in()){
       return;
     }
-
-    echo 'la concha de tu mama';
 
     // Check if user has favoritos
     if(get_user_meta($user->ID, 'favoritos', true) || get_user_meta($user->ID, 'favoritos', true) == array()){

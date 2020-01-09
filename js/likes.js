@@ -66,48 +66,10 @@ let setAllLikes = () => {
 
 };
 
-let updateLikeData = (likeCount, id, url, logged_in, liked) => {
-    if (!logged_in){
-        console.log('is cache time');
-        if (validateIfLiked(id)) {
-            console.log('ya esta likeado en cache');
-
-            return;
-        }
-    }else{
-        console.log('is php time');
-        if(liked){
-            console.log('ya esta likeado');
-            return;
-        }
-    }
-    
-
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: {
-                action: 'ajax_call_count_likes',
-                post_id: id,
-                like_count: likeCount,
-            },
-            success: function (result) {
-                console.log('se sumo el like al post');
-                if (!logged_in) {
-                    setCookie(id);
-                }
-            },
-            error: function (errorThrown) {
-                //console.log(errorThrown);
-            }
-        });
-
-};
-
-let updateUserFavs = (post_id, url, isLiked) => {
+let updateUserFavs = (likeCount, post_id, url, isLiked, logged_in) => {
 
     if (isLiked) {
-        console.log('likedliked');
+        console.log('is liked');
         return;
     }
 
@@ -116,9 +78,15 @@ let updateUserFavs = (post_id, url, isLiked) => {
         type: 'POST',
         data: {
             'action': 'add_user_favoritos',
-            post_id
+            post_id,
+            like_count: likeCount,
         },
         success: function (result) {
+
+            if(!logged_in){
+                setCookie(post_id);
+            }
+
             console.log('updated ok', result);
         },
         error: function (errorThrown) {
@@ -139,12 +107,8 @@ let likePost = () => {
             let postType = like.getAttribute('data-type');
             getPostData(id, postType).done(data => {
 
-                updateLikeData(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.logged_in, likes_params.liked);
-
-                if (likes_params.logged_in){
-                    console.log('updateUserFavs');
-                    updateUserFavs(id, likes_params.ajaxurl, likes_params.liked);
-                }
+                console.log('updateUserFavs');
+                updateUserFavs(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.liked, likes_params.logged_in);
 
                 like.classList.add('liked');
             });
