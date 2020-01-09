@@ -214,6 +214,10 @@ jQuery(document).ready(function($) {
         var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
         var top_of_screen = $(window).scrollTop();
 
+        if(top_of_element > 300){
+            return
+        }
+
         if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
 
             $('.sidebar__content').addClass('-hidden');
