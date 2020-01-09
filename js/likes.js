@@ -1,8 +1,9 @@
 jQuery(document).ready(function ($) {
 
 let setCookie = (id) => {
-
+    console.log('setting cookie..');
     if (!validateIfLiked(id)){
+        console.log('post liked already');
         return;
     }
 
@@ -11,13 +12,14 @@ let setCookie = (id) => {
 
     if (likedPosts) {
 
+        console.log('update current cookie array');
         arrIds = JSON.parse(likedPosts);
         arrIds.push(id);
         likedPosts = JSON.stringify(arrIds);
         Cookies.set('likedPosts', likedPosts, { expires: Infinity });
 
     } else {
-
+        console.log('create cookie array');
         arrIds = [id];
         likedPosts = JSON.stringify(arrIds);
         Cookies.set('likedPosts', likedPosts, { expires: Infinity });
@@ -68,6 +70,7 @@ let updateUserFavs = (post_id, url, logged_in, callback) => {
         success: function (result) {
 
             if(!logged_in){
+                console.log('logged in:', logged_in);
                 setCookie(post_id);
             }
 
