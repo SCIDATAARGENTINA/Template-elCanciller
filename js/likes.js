@@ -66,12 +66,17 @@ let setAllLikes = () => {
 
 };
 
-let updateLikeData = (likeCount, id, url) => {
-
-    if (validateIfLiked(id)) {
-        console.log('Ya diste like a esa publicación');
-        return;
+let updateLikeData = (likeCount, id, url, logged_in, liked) => {
+    if (!logged_in){
+        if (validateIfLiked(id)) {
+            return;
+        }
+    }else{
+        if(liked){
+            return;
+        }
     }
+    
 
         $.ajax({
             url: url,
@@ -83,7 +88,9 @@ let updateLikeData = (likeCount, id, url) => {
             },
             success: function (result) {
                 //console.log(result);
-                setCookie(id);
+                if (!logged_in) {
+                    setCookie(id);
+                }
             },
             error: function (errorThrown) {
                 //console.log(errorThrown);
@@ -92,10 +99,9 @@ let updateLikeData = (likeCount, id, url) => {
 
 };
 
-let updateUserFavs = (post_id, url) => {
+let updateUserFavs = (post_id, url, isLiked) => {
 
-    if (validateIfLiked(post_id)) {
-        console.log('Ya diste like a esa publicación');
+    if (isLiked) {
         return;
     }
 
@@ -126,15 +132,20 @@ let likePost = () => {
             let id = like.getAttribute('data-id');
             let postType = like.getAttribute('data-type');
             getPostData(id, postType).done(data => {
+                updateLikeData(parseInt(data.acf.likes), id, likes_params.ajaxurl, likes_params.logged_in, likes_params.liked);
 
-                updateLikeData(parseInt(data.acf.likes), id, likes_params.ajaxurl);
-                updateUserFavs(id, likes_params.ajaxurl);
+                if (likes_params.logged_in){
+                    updateUserFavs(id, likes_params.ajaxurl, likes_params.liked);
+                }
+
                 like.classList.add('liked');
             });
         });
 };
 
 likePost();
-setAllLikes();
+if (!likes_params.logged_in){
+    setAllLikes();
+}
 
 });

@@ -1481,11 +1481,15 @@ if( function_exists('acf_add_options_page') ) {
 
 
 function likes_scripts() {
+  $user = wp_get_current_user();
+
   
 	wp_register_script( 'likes-js', get_stylesheet_directory_uri() . '/js/likes.js', array('jquery') );
 
 	wp_localize_script( 'likes-js', 'likes_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+    'logged_in' => is_user_logged_in(),
+    'liked' => is_user_logged_in() ? checkIfLiked($user->ID) : '',
 	) );
  
  	wp_enqueue_script( 'likes-js' );
