@@ -1562,7 +1562,7 @@ exit();
       add_user_meta($user->ID, 'favoritos', $favoritos);
     }
 
-    echo get_user_meta($user->ID, 'favoritos', true);
+    return get_user_meta($user->ID, 'favoritos', true);
 
 }
 
