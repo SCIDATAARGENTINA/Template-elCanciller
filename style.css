@@ -2059,6 +2059,12 @@ ul.tagposts-list li {
     color: #fff;
     opacity: 1;
     font-family: 'Bree Serif', serif;
+    z-index: 999;
+}
+.post-rendered.show-author .rendered-img .render-author a{
+    width: 100%;
+    height: 100%;
+    color: #fff;
 }
 
 .post-rendered .hovered {
