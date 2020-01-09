@@ -34,7 +34,7 @@ $user = wp_get_current_user();
                 <li><a href="<?php bloginfo('url') ?>/dashboard/seguidos"><i class="fas fa-user-plus"></i> Seguidos</a></li>
                 <li><a href="<?php bloginfo('url') ?>/dashboard/favoritos"><i class="fas fa-heart"></i> Favoritos</a></li>
                 <li><a href="<?php bloginfo('url') ?>/dashboard/temas-ocultos"><i class="fas fa-eye-slash"></i> Temas Ocultos</a></li>
-                <li><a class="-accent" href="#"><i class="fas fa-sign-out-alt"></i><?php echo wp_logout_url(); ?> Cerrar sesión</a></li>
+                <li><a class="-accent" href="<?php echo wp_logout_url(); ?>"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
             </ul>
         </nav>
     </div>
