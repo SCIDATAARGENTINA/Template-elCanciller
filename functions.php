@@ -1835,7 +1835,7 @@ function addlater(){
 
 function like_scripts() {
   
-	wp_register_script( 'like-js', get_stylesheet_directory_uri() . '/js/like.js', array('jquery') );
+	wp_register_script( 'like-js', get_stylesheet_directory_uri() . '/js/likes.js', array('jquery') );
 
 	wp_localize_script( 'like-js', 'like_params', array(
     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
