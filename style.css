@@ -304,8 +304,8 @@ h2:before {
 .header-menu li a {
     color: #b29f93;
     transition: 0.3s;
-    font-size: 15px;
-    margin: 0 5px;
+    font-size: 13px;
+    margin-right: 3px;
 }
 
 .header-menu li a:hover {
