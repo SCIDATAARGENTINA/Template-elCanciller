@@ -26,7 +26,9 @@ function custom_scripts() {
   wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/slick/slick.css' );
   wp_enqueue_style( 'mf-css', get_stylesheet_directory_uri() . '/js/magnific/magnific-popup.css' );
   wp_enqueue_style( 'noty-css', get_stylesheet_directory_uri() . '/js/noty/noty.css' );
-
+  if(is_user_logged_in()){
+      wp_enqueue_style( 'dashboard-css', get_stylesheet_directory_uri() . '/dashboard.min.css' );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
@@ -1039,6 +1041,25 @@ function mostrar_posts($atts){
       'offset' => $a['offset'],
       'post__not_in' => array($excluded)
   );
+
+  if(is_user_logged_in()){
+    $user = wp_get_current_user();
+    $args = array(
+      'post_type' => array('post', 'opinion'),
+      'posts_per_page' => $a['cantidad'],
+      'offset' => $a['offset'],
+      'post__not_in' => array($excluded),
+      'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field'    => 'term_id',
+            'terms'    => get_user_meta($user->ID, 'hidden_cats', true),
+            'operator' => 'NOT IN',
+        ),
+    ),
+  );
+    
+  }
   
   $base_query = new WP_Query( $args ); 
 
@@ -1422,7 +1443,21 @@ function only_show_author_posts_in_author_archive( $query ) {
 }
 add_action( 'pre_get_posts', 'only_show_author_posts_in_author_archive', 1 );
 
-// ACF ADD OPTIONS PAGE
+
+// Redirect users after register/login
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url();
+}
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
+
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+//Hide admin bar for non admin
+function remove_admin_bar() {
+  if (!current_user_can('administrator') && !is_admin()) {
+    show_admin_bar(false);
+  }
+}
 
 if( function_exists('acf_add_options_page') ) {
 	
@@ -1442,6 +1477,176 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+
+/******
+ * 
+ * DASHBOARD USERS 
+ * Comienzo de las funciones de usuario
+ * 
+*/
+
+//Redirect on login
+
+// add the code to your theme function.php
+//for logout redirection
+add_action('wp_logout','auto_redirect_after_logout');
+function auto_redirect_after_logout(){
+wp_redirect( home_url() );
+exit();
+}
+//for login redirection
+add_action('wp_login','auto_redirect_after_login');
+function auto_redirect_after_login(){
+wp_redirect( bloginfo('url') . '/dashboard' );
+exit();
+}
+
+ 
+
+// AJAX FOLLOW
+
+function follow_scripts() {
+
+  wp_register_script( 'follow-js', get_stylesheet_directory_uri() . '/js/follow.js', array('jquery') );
+
+  wp_localize_script( 'follow-js', 'follow', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+  ) );
+
+  wp_enqueue_script( 'follow-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'follow_scripts' );
+
+ // FOLLOW AUTHOR / CATEGORY ACTION
+ function follow_author_category(){
+   $user = wp_get_current_user();
+
+   $itemToFollow = $_POST['itemId'];
+   $itemType = $_POST['itemType'];
+
+   if($itemType == 'category'){
+
+    // Check if user has categories
+    if(get_user_meta($user->ID, 'followed_cats', true) || get_user_meta($user->ID, 'followed_cats', true) == array()){
+      //Update categories con el nuevo category
+      $categories = get_user_meta($user->ID, 'followed_cats', true);
+      $in_array = in_array($itemToFollow, $categories);
+      if($in_array){
+        //si ya esta cargado realizar esta accion
+        
+      }else{
+        array_push($categories, $itemToFollow);
+      }
+      update_user_meta($user->ID, 'followed_cats', $categories);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $categories = [];
+      array_push($categories, $itemToFollow);
+      add_user_meta($user->ID, 'followed_cats', $categories);
+    }
+
+   }
+
+   if( $itemType == 'author'){
+
+     // Check if user has authors
+    if(get_user_meta($user->ID, 'followed_authors', true) || get_user_meta($user->ID, 'followed_authors', true) == array()){
+      //Update autor con el nuevo autor
+      $authors = get_user_meta($user->ID, 'followed_authors', true);
+      $in_array = in_array( $itemToFollow, $authors);
+      if($in_array){
+        //si ya esta cargado realizar esta accion
+      }else{
+        array_push($authors,  $itemToFollow);
+      }
+
+      update_user_meta($user->ID, 'followed_authors', $authors);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $authors = [];
+      array_push($authors,  $itemToFollow);
+      add_user_meta($user->ID, 'followed_authors', $authors);
+    }
+
+   }
+ }
+
+ add_action( 'wp_ajax_nopriv_follow_author_category', 'follow_author_category' );
+ add_action( 'wp_ajax_follow_author_category', 'follow_author_category' );
+
+ function unfollow_author_category(){
+   $user = wp_get_current_user();
+
+   $itemToFollow = $_POST['itemId'];
+   $itemType = $_POST['itemType'];
+
+   if($itemType == 'category'){
+
+    // Check if user has categories
+    if(get_user_meta($user->ID, 'followed_cats', true)){
+      //Update categories con el nuevo category
+      $categories = get_user_meta($user->ID, 'followed_cats', true);
+      $in_array = array_search($itemToFollow, $categories);
+      if($in_array || $in_array == 0){
+        array_splice($categories, $in_array, 1);
+      }
+
+      update_user_meta($user->ID, 'followed_cats', $categories);
+
+   }
+  }
+
+   if( $itemType == 'author'){
+     // Check if user has authors
+    if(get_user_meta($user->ID, 'followed_authors', true)){
+      //Update categories con el nuevo autor
+      $authors = get_user_meta($user->ID, 'followed_authors', true);
+      $in_array = array_search( $itemToFollow, $authors);
+      if($in_array || $in_array == 0){
+        array_splice($authors, $in_array, 1);
+      }
+
+      update_user_meta($user->ID, 'followed_authors', $authors);
+
+    }
+   }
+
+}
+
+ add_action( 'wp_ajax_nopriv_unfollow_author_category', 'unfollow_author_category' );
+ add_action( 'wp_ajax_unfollow_author_category', 'unfollow_author_category' );
+
+ // CHECK IF CATEGORY/AUTHOR FOLLOWED FUNCTION
+function checkIfFollowed($itemType, $itemId) {
+  $user = wp_get_current_user();
+
+  // Check for categories
+  if($itemType == 'category'){
+
+    $categories = get_user_meta($user->ID, 'followed_cats', true);
+    $in_array = in_array($itemId, $categories);
+
+    if($in_array){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  // Check for authors
+  if($itemType == 'author'){
+    $authors = get_user_meta($user->ID, 'followed_authors', true);
+    $in_array = in_array($itemId, $authors);
+    if($in_array){
+      return true;
+    }else{
+      return false;
+    }
+  }
+}
+
+
 //Intercept category loop 
 
 add_action( 'pre_get_posts', function ( $q ) 
@@ -1453,3 +1658,251 @@ add_action( 'pre_get_posts', function ( $q )
         $q->set( 'posts_per_page', '7' ); 
     }
 });
+
+
+// HIDE CATEGORY
+
+function hidecategory_scripts() {
+
+  wp_register_script( 'hidecategory-js', get_stylesheet_directory_uri() . '/js/hidecategory.js', array('jquery') );
+
+  wp_localize_script( 'hidecategory-js', 'hidecategory', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+  ) );
+
+  wp_enqueue_script( 'hidecategory-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'hidecategory_scripts' );
+
+function hidecategory(){
+  $user = wp_get_current_user();
+
+  $itemToHide = $_POST['categoryId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'hidden_cats', true) || get_user_meta($user->ID, 'hidden_cats', true) == array()){
+    //Update categories con el nuevo category
+    $categories = get_user_meta($user->ID, 'hidden_cats', true);
+    $in_array = in_array($itemToHide, $categories);
+    if($in_array){
+      $key = array_search($itemToHide, $categories);
+      return;
+    }else{
+      array_push($categories, $itemToHide);
+    }
+    update_user_meta($user->ID, 'hidden_cats', $categories);
+  }else{
+    // Crea el campo para el usuario en caso de no existir
+    $categories = [];
+    array_push($categories, $itemToHide);
+    add_user_meta($user->ID, 'hidden_cats', $categories);
+  }
+  
+  //print_r(get_user_meta($user->ID, 'hidden_cats', true);
+}
+
+ add_action( 'wp_ajax_nopriv_hidecategory', 'hidecategory' );
+ add_action( 'wp_ajax_hidecategory', 'hidecategory' );
+
+
+ function unhidecategory(){
+  $user = wp_get_current_user();
+
+  $itemToUnhide = $_POST['categoryId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'hidden_cats', true) || get_user_meta($user->ID, 'hidden_cats', true) == array()){
+    //Update categories con el nuevo category
+    $categories = get_user_meta($user->ID, 'hidden_cats', true);
+    $in_array = array_search($itemToUnhide, $categories);
+    if($in_array || $in_array == 0){
+      array_splice($categories, $in_array, 1);
+    }else{
+      return;
+    }
+    update_user_meta($user->ID, 'hidden_cats', $categories);
+  }
+  
+}
+
+ add_action( 'wp_ajax_nopriv_unhidecategory', 'unhidecategory' );
+ add_action( 'wp_ajax_unhidecategory', 'unhidecategory' );
+
+ // check if hidden
+ function checkIfHidden($itemId) {
+  $user = wp_get_current_user();
+
+  $categories = get_user_meta($user->ID, 'hidden_cats', true);
+  $in_array = in_array($itemId, $categories);
+
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
+
+}
+
+// LISTADO VER MÁS TARDE
+
+function watchlater_scripts() {
+
+  wp_register_script( 'watchlater-js', get_stylesheet_directory_uri() . '/js/watchlater.js', array('jquery') );
+
+  wp_localize_script( 'watchlater-js', 'watchlater', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+  ) );
+
+  wp_enqueue_script( 'watchlater-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'watchlater_scripts' );
+
+function addlater(){
+  $user = wp_get_current_user();
+
+  $itemToAdd = $_POST['postId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'watch_later', true) || get_user_meta($user->ID, 'watch_later', true) == array()){
+    //Update categories con el nuevo category
+    $posts = get_user_meta($user->ID, 'watch_later', true);
+    $in_array = in_array($itemToAdd, $posts);
+    if($in_array){
+      $key = array_search($itemToAdd, $posts);
+      return;
+    }else{
+      array_push($posts, $itemToAdd);
+    }
+    update_user_meta($user->ID, 'watch_later', $posts);
+  }else{
+    // Crea el campo para el usuario en caso de no existir
+    $posts = [];
+    array_push($posts, $itemToAdd);
+    add_user_meta($user->ID, 'watch_later', $posts);
+  }
+  
+}
+
+ add_action( 'wp_ajax_nopriv_addlater', 'addlater' );
+ add_action( 'wp_ajax_addlater', 'addlater' );
+
+
+ function removelater(){
+  $user = wp_get_current_user();
+
+  $itemToRemove = $_POST['postId'];
+
+  // Check if user has categories
+  if(get_user_meta($user->ID, 'watch_later', true) || get_user_meta($user->ID, 'watch_later', true) == array()){
+    //Quita el post del listado ver mas tarde
+    $posts = get_user_meta($user->ID, 'watch_later', true);
+    $in_array = array_search($itemToRemove, $posts);
+    if($in_array || $in_array == 0){
+      array_splice($posts, $in_array, 1);
+    }else{
+      return;
+    }
+    update_user_meta($user->ID, 'watch_later', $posts);
+
+  }
+  
+}
+
+ add_action( 'wp_ajax_nopriv_removelater', 'removelater' );
+ add_action( 'wp_ajax_removelater', 'removelater' );
+
+ // check if added to watch later
+ function checkIfAdded($itemId) {
+  $user = wp_get_current_user();
+
+  $posts = get_user_meta($user->ID, 'watch_later', true);
+  $in_array = in_array($itemId, $posts);
+
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
+
+}
+
+// Liked / Favoritos
+
+ // AJAX LIKES
+
+
+function like_scripts() {
+  
+	wp_register_script( 'like-js', get_stylesheet_directory_uri() . '/js/likes.js', array('jquery') );
+
+	wp_localize_script( 'like-js', 'like_params', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+    'logged_in' => is_user_logged_in(),
+    ) );
+ 
+ 	wp_enqueue_script( 'like-js' );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'like_scripts' );
+
+ function add_user_favoritos(){
+   if(is_user_logged_in()){
+    $user = wp_get_current_user();
+   }
+
+    $currentVal = get_field( 'likes', $_POST['post_id'] );
+    $currentVal++;
+
+    update_field( 'likes', $currentVal, $_POST['post_id'] );
+
+    if(!is_user_logged_in()){
+      return;
+    }
+
+    // Check if user has favoritos
+    if(get_user_meta($user->ID, 'favoritos', true) || get_user_meta($user->ID, 'favoritos', true) == array()){
+      //Update favoritos con el nuevo fav
+      $favoritos = get_user_meta($user->ID, 'favoritos', true);
+      $in_array = in_array($_POST['post_id'], $favoritos);
+      if($in_array){
+        //array_slice($favoritos, $in_array, 1); // Remueve el favorito si ya estaba
+      }else{
+        array_push($favoritos, $_POST['post_id']);
+      }
+      update_user_meta($user->ID, 'favoritos', $favoritos);
+    }else{
+      // Crea el campo para el usuario en caso de no existir
+      $favoritos = [];
+      array_push($favoritos, $_POST['post_id']);
+      add_user_meta($user->ID, 'favoritos', $favoritos);
+    }
+
+}
+
+ add_action( 'wp_ajax_nopriv_add_user_favoritos', 'add_user_favoritos' );
+ add_action( 'wp_ajax_add_user_favoritos', 'add_user_favoritos' );
+
+
+ // check if added to watch later
+ function checkIfLiked($itemId) {
+  $user = wp_get_current_user();
+
+  $posts = get_user_meta($user->ID, 'favoritos', true);
+  $in_array = in_array($itemId, $posts);
+
+  if($in_array){
+    return true;
+  }else{
+    return false;
+  }
+
+}
+
+function wpse66093_no_admin_access() {
+    $redirect = home_url( '/' );
+    if ( ! ( current_user_can( 'manage_options' ) || current_user_can( 'edit_posts' ) ) && !defined('DOING_AJAX') )
+        exit( wp_redirect( $redirect ) );
+}
+add_action( 'admin_init', 'wpse66093_no_admin_access', 100 );

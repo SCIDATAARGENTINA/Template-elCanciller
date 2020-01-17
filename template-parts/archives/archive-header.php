@@ -73,6 +73,15 @@ if ($count <= 0){
             <div class="archive-title" style="background: <?php echo $cat_color ?>">
                <div class="category">            
                   <h1><?php echo $term->name ?></h1>
+                  <div class="follow-container">
+                     <?php if( is_user_logged_in() && is_category() ){ ?>
+                        <?php if( checkIfFollowed('category', $categories[0]->term_id)){  // Si es true es que sigue la categoria?>
+                           <button data-type="category" data-id="<?php echo $categories[0]->term_id ?>" class="btn follow -isFollowed">Dejar de seguir</button>
+                        <?php }else{ //Si es false no sigue la categoria?>
+                           <button data-type="category" data-id="<?php echo $categories[0]->term_id ?>" class="btn follow">Seguir</button>
+                        <?php } ?>
+                     <?php } ?> 
+                  </div>
                </div>
                <div class="title">
                   <img src="<?php bloginfo('url') ?>/wp-content/uploads/2019/07/fire-blanco.svg" alt="">

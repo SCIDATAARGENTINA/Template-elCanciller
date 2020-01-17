@@ -1,0 +1,17 @@
+.dashboard{
+    max-width: $containerMaxWidth;
+    padding-top: 30px;
+    margin: 30px auto;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border-top: 4px solid #e7d117;
+    @media(max-width: 980px){
+        grid-template-columns: 1fr;
+        border-top: 0px;
+    }
+
+    .dashboard__sidebar{
+        position: relative;
+    }
+}

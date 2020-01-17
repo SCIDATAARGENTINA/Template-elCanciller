@@ -1,0 +1,60 @@
+.wppb-user-forms{
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+        @media(max-width: 990px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media(max-width: 400px){
+            grid-template-columns: 1fr;
+        }
+    }
+    .wppb-form-field{
+        margin: 10px 0;
+        label{
+            display: block;
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        select{
+            padding: 5px 15px;
+            border: 0px solid #ccc;
+            outline: 0 !important;
+            border-bottom: 1px solid #ccc !important;
+            font-size: 18px;
+            font-weight: 300;
+            padding: 10px 5px;
+            width: 100%;
+            transition: 300ms ease;
+        }
+    }
+    input{
+        border: 0px !important;
+        outline: 0 !important;
+        border-bottom: 1px solid #ccc !important;
+        font-size: 18px;
+        font-weight: 300;
+        padding: 10px 5px;
+        width: 100%;
+        transition: 300ms ease;
+    }
+
+    input, select{
+        &:focus, &:active{
+            border-color: $primary !important;
+        }
+    }
+
+    input[disabled]{
+        background-color: #f2f2f2;
+    }
+}
+
+.select2.select2-container.select2-container--default, .wppb-user-to-edit, label[for="edit_user"]{
+    display: none !important;
+}

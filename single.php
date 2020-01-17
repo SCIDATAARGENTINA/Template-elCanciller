@@ -35,7 +35,7 @@ get_header();
 
 			endwhile; // End of the loop.
 			?>
-
+			
 			</div><!-- content -->
 
 		</div><!-- inner container -->

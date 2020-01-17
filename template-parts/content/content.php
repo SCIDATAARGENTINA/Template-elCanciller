@@ -36,7 +36,11 @@ echo '<style>' . '.post-rendered.' . $term->slug . '::before{ background-color:'
 					<i class="fab fa-twitter" data-text="<?php the_title(); ?>" data-link="<?php the_permalink(); ?>"></i>
 					<i class="fab fa-facebook-f" data-title="<?php the_title(); ?>" data-img="<?php echo $featured_img_url ?>" data-text="<?php echo get_the_excerpt(); ?>" data-link="<?php the_permalink(); ?>"></i>
 					<a href="<?php the_permalink(); ?>"><i class="fas fa-sign-out-alt"></i></a>
-					<i class="fas fa-heart like" data-id="<?php the_ID() ?>" data-count="<?php echo get_field('likes') ?>"></i>
+					<?php if ( is_user_logged_in() ){ ?>
+					<i class="fas fa-heart like <?php echo checkIfLiked(get_the_ID()) ? 'liked' : '' ?>" data-id="<?php the_ID() ?>"></i>
+					<?php }else{ ?>
+					<i class="fas fa-heart like" data-id="<?php the_ID() ?>" ></i>
+					<?php } ?>
 				</div><!-- action-links -->
 				<div class="slider-container">
 					<div id="slider-<?php the_ID(); ?>" class="slider"></div>
@@ -44,6 +48,12 @@ echo '<style>' . '.post-rendered.' . $term->slug . '::before{ background-color:'
 			</div><!-- actions-container -->
 			<div class="post-data">
 				<div class="post-title">
+					<?php if ( is_user_logged_in() ){ ?>
+					<div class="user-actions">
+						<span class="hide-category <?php echo checkIfHidden($term->term_id) ? '-isHidden' : '' ?>" data-categoryid="<?php echo $term->term_id ?>" data-categoryname="<?php echo $term->name ?>"><i class="fas fa-eye-slash"></i></span>
+						<span class="add-later <?php echo checkIfAdded(get_the_ID()) ? '-isAdded' : '' ?>" data-postid="<?php the_ID() ?>" data-postname="<?php the_title() ?>"><i class="fas fa-plus"></i></span>
+					</div>
+					<?php } ?>
 					<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 					<span class="time-ago"><?php echo time_ago() ?></span>
 				</div>
@@ -53,7 +63,7 @@ echo '<style>' . '.post-rendered.' . $term->slug . '::before{ background-color:'
 			</div>
 		</div><!-- hovered -->
 		<div class="render-author" style="background-color: <?php echo $cat_color ?>">
-			<span>Por: <?php echo get_the_author_meta( 'display_name' ) ?></span>
+			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">Por: <?php echo get_the_author_meta( 'display_name' ) ?></a>
 		</div><!-- render author -->
 	</div><!-- rendered-img -->
 	<?php get_template_part('template-parts/comments/comments', 'nosharer') ?>

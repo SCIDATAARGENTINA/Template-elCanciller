@@ -203,4 +203,29 @@ jQuery(document).ready(function($) {
 
     jQuery('#floatBtn').on('click',function(){window.location.href = URLdomain;});
 
+
+
+
+    // DASHBOARD STICKY MENU
+
+    $(window).scroll(function () {
+        var top_of_element = $(".site-footer").offset().top - 200;
+        var bottom_of_element = $(".site-footer").offset().top + $(".site-footer").outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+        if(top_of_element < 800){
+            return;
+        }else{
+            if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)) {
+
+                $('.sidebar__content').addClass('-hidden');
+
+            } else {
+
+                $('.sidebar__content').removeClass('-hidden');
+
+            }
+        }
+    });
+
 });
