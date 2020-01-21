@@ -46,8 +46,14 @@ a {
     text-decoration: none !important;
 }
 
-a:visited{
-    color: #111;
+.post-content a{
+    color: #0073aa;
+    text-decoration: underline;
+}
+
+
+.post-content a:visited{
+    color: #0073aa;
 }
 
 blockquote {
@@ -5579,4 +5585,11 @@ ADS UPDATE 26/11/2019
 .-isAdded i{
     color: #e7d117 !important;
 }
+/* FIX WP CAPTION*/
 
+.wp-caption{
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
