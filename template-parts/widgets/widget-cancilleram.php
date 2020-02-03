@@ -11,7 +11,7 @@
 
 ?>
 
-<div class="cancilleram desktop container">
+<div class="cancilleram desktop container" style="display:none !important;">
     <div class="carr-nav desktop"></div>
     <div class="carrousel">
      <?php

@@ -70,7 +70,7 @@ $encuesta_grande = get_field('encuesta_grande');
 					?></div> <?php 
 				}
 				?>
-				<div class="cancilleram mobile container onlymobile" style="display:none !important;">
+				<div class="cancilleram mobile container onlymobile">
 					<div class="carr-nav mobile"></div>
 					<div class="carrousel">
 					<?php
