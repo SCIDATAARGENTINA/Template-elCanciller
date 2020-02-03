@@ -81,7 +81,7 @@ $encuesta_grande = get_field('encuesta_grande');
 					'order' => 'ASC',
 				);
 
-				// $trending_post = new WP_Query($args);
+				$trending_post = new WP_Query($args);
 				?>
 
 				<?php if ($trending_post->have_posts()) : ?>
