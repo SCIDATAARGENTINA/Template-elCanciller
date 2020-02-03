@@ -72,7 +72,7 @@ $encuesta_grande = get_field('encuesta_grande');
 				?>
 				<!-- <div class="cancilleram mobile container onlymobile">
 					<div class="carr-nav mobile"></div>
-					<div class="carrousel">
+					<div class="carrousel">-->
 					<?php
 				/* $args = array(
 					'post_type' => 'cancilleram',
@@ -82,7 +82,7 @@ $encuesta_grande = get_field('encuesta_grande');
 				);
 
 				$trending_post = new WP_Query($args); */
-				?>-->
+				<!-- ?>-->
 
 				<?php if ($trending_post->have_posts()) : ?>
 
