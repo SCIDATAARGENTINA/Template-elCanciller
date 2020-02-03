@@ -70,19 +70,19 @@ $encuesta_grande = get_field('encuesta_grande');
 					?></div> <?php 
 				}
 				?>
-				<div class="cancilleram mobile container onlymobile">
+				<!-- <div class="cancilleram mobile container onlymobile">
 					<div class="carr-nav mobile"></div>
 					<div class="carrousel">
 					<?php
-				$args = array(
+				/* $args = array(
 					'post_type' => 'cancilleram',
 					'posts_per_page' => 10,
 					'orderby' => 'date',
 					'order' => 'ASC',
 				);
 
-				$trending_post = new WP_Query($args);
-				?>
+				$trending_post = new WP_Query($args);*/
+				?>-->
 
 				<?php if ($trending_post->have_posts()) : ?>
 
