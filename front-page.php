@@ -82,7 +82,7 @@ $encuesta_grande = get_field('encuesta_grande');
 				);
 
 				$trending_post = new WP_Query($args); */
-				<!-- ?>-->
+				?>
 
 				<?php if ($trending_post->have_posts()) : ?>
 
