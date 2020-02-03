@@ -12,8 +12,8 @@
 ?>
 
 <div class="cancilleram desktop container">
-    <div class="carr-nav desktop" style="display:none !important;"></div>
-    <div class="carrousel" style="display:none !important;">
+    <div class="carr-nav desktop"></div>
+    <div class="carrousel">
      <?php
    $args = array(
       'post_type' => 'cancilleram',
