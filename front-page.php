@@ -71,8 +71,8 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 				<div class="cancilleram mobile container onlymobile">
-					<div class="carr-nav mobile"></div>
-					<div class="carrousel">
+					<div class="carr-nav mobile" style="display:none !important;"></div>
+					<div class="carrousel" style="display:none !important;">
 					<?php
 				$args = array(
 					'post_type' => 'cancilleram',
