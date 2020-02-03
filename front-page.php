@@ -71,6 +71,7 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 				<div class="cancilleram mobile container onlymobile">
+				<img class="am-logo" src="https://elcanciller.com/wp-content/uploads/2019/06/cancilleramlogo.svg">
 					<div class="carr-nav mobile" style="display:none !important;"></div>
 					<div class="carrousel" style="display:none !important;">
 					<?php

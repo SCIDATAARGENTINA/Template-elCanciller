@@ -4989,6 +4989,7 @@ AUTHOR PAGE
     z-index: 99999999999;
     overflow: hidden;
     padding: 40px;
+    display: none !important;
 }
 @media (max-width: 500px){
     .historias-container{
