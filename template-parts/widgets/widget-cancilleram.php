@@ -12,7 +12,7 @@
 ?>
 
 <div class="cancilleram desktop container">
-    <img class="am-logo" src="https://elcanciller.com/wp-content/uploads/2019/06/cancilleramlogo.svg">
+    <!--<img class="am-logo" src="https://elcanciller.com/wp-content/uploads/2019/06/cancilleramlogo.svg">-->
     <div class="carr-nav desktop" ></div>
     <div class="carrousel" >
      <?php
