@@ -13,8 +13,8 @@
 
 <div class="cancilleram desktop container">
     <img class="am-logo" src="https://elcanciller.com/wp-content/uploads/2019/06/cancilleramlogo.svg">
-    <div class="carr-nav desktop" style="display:none !important;"></div>
-    <div class="carrousel" style="display:none !important;">
+    <div class="carr-nav desktop" ></div>
+    <div class="carrousel" >
      <?php
    $args = array(
       'post_type' => 'cancilleram',
