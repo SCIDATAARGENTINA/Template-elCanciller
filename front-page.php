@@ -42,11 +42,11 @@ minuto = n.getMinutes();
 segundo = n.getSeconds();
 
 fechaactual = Date.parse(y + "-" + m + "-" + d + " " + h + ":" + minuto + ":" + segundo);
-fechainicio = Date.parse('2020-02-26 13:00:00');
-fechafin = Date.parse('2020-02-26 21:00:00');
+fechainicio = Date.parse('2020-02-26 19:00:00');
+fechafin = Date.parse('2020-02-26 20:00:00');
 if (fechaactual > fechainicio && fechafin > fechaactual)
 {
-jQuery('#new').append('<img class=\"onlydesktop\" src=\"http://142.93.24.13/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"http://142.93.24.13/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\">');
+jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;padding-top: 2%;\" src=\"http://142.93.24.13/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"http://142.93.24.13/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\" style=\"margin: 0 auto;padding-top: 2%;\">');
 }
 });
 				</script>
