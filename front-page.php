@@ -46,11 +46,9 @@ fechainicio = Date.parse('2020-02-26 13:00:00');
 fechafin = Date.parse('2020-02-26 21:00:00');
 if (fechaactual > fechainicio && fechafin > fechaactual)
 {
-<div class='onlydesktop'><img src='http://142.93.24.13/wp-content/uploads/2020/02/apertura-desktop.jpg'></div>
-<div class='onlymobile'><img src='http://142.93.24.13/wp-content/uploads/2020/02/apertura-mobile.jpg' class='onlymobile'></div>
+jQuery.('#new').append('<img class=\"onlydesktop\" src=\"http://142.93.24.13/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"http://142.93.24.13/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\">');
 }
-alert(fechaactual);
-console.log('asd');
+<div id="new"></div>
 });
 				</script>
 				<?php echo get_field('vertical_home_1', 'option') ?>
