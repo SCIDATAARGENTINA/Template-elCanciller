@@ -31,6 +31,28 @@ $encuesta_grande = get_field('encuesta_grande');
 			<div class="content">
 				<?php get_template_part('template-parts/sections/section', 'live') ?>
 				<?php get_template_part('template-parts/sections/section', 'ultimomomento') ?>
+				<script>
+jQuery( document ).ready(function() {
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+h = n.getHours();
+minuto = n.getMinutes();
+segundo = n.getSeconds();
+
+fechaactual = Date.parse(y + "-" + m + "-" + d + " " + h + ":" + minuto + ":" + segundo);
+fechainicio = Date.parse('2020-02-26 13:00:00');
+fechafin = Date.parse('2020-02-26 21:00:00');
+if (fechaactual > fechainicio && fechafin > fechaactual)
+{
+<div class='onlydesktop'><img src='http://142.93.24.13/wp-content/uploads/2020/02/apertura-desktop.jpg'></div>
+<div class='onlymobile'><img src='http://142.93.24.13/wp-content/uploads/2020/02/apertura-mobile.jpg' class='onlymobile'></div>
+}
+alert(fechaactual);
+console.log('asd');
+});
+				</script>
 				<?php echo get_field('vertical_home_1', 'option') ?>
 				<?php get_template_part('template-parts/home/trending', 'front') ?>
 				<?php echo get_field('vertical_home_2', 'option') ?>
