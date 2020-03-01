@@ -44,10 +44,10 @@ segundo = n.getSeconds();
 fechaactual = Date.parse(y + "-" + m + "-" + d + " " + h + ":" + minuto + ":" + segundo);
 fechainicio = Date.parse('2020-03-01 00:00:00');
 fechafin = Date.parse('2020-03-02 00:00:00');
-if (fechaactual > fechainicio && fechafin > fechaactual)
-{
+//if (fechaactual > fechainicio && fechafin > fechaactual)
+//{
 jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;padding-top: 2%;\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\" style=\"margin: 0 auto;padding-top: 2%;\">');
-}
+//}
 });
 				</script>
 				<div id="new"></div>
