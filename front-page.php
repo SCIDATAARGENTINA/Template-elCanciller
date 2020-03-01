@@ -52,7 +52,7 @@ jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;padding
 				</script>
 				<?php echo get_field('vertical_home_1', 'option') ?>
 				<?php get_template_part('template-parts/home/trending', 'front') ?>
-				<div id="new"></div>
+				<div id="new" style="margin-bottom: 4%;"></div>
 				<?php echo get_field('vertical_home_2', 'option') ?>
 				<div class="col-3" data-quantity="3" data-offset="0">
 				
