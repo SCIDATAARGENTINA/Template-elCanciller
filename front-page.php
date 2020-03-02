@@ -46,7 +46,7 @@ fechainicio = Date.parse('2020-03-01 00:00:00');
 fechafin = Date.parse('2020-03-02 00:00:00');
 //if (fechaactual > fechainicio && fechafin > fechaactual)
 //{
-jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;width:100%;\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\" style=\"margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;\">');
+// jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;width:100%;\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\" style=\"margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;\">');
 //}
 });
 				</script>
