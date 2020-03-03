@@ -2003,6 +2003,9 @@ ul.tagposts-list li {
     z-index: 2;
 }
 
+.post-recomendado > .titulo > a > h3 {
+font-size: 18px !important;
+}
 
 /* ---------------------------*/
 
