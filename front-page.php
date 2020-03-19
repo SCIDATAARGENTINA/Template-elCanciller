@@ -51,8 +51,8 @@ $encuesta_grande = get_field('encuesta_grande');
 				}
 				?>
 				<a href="https://elcanciller.com/tag/coronavirus/">
-					<img alt="Estado del coronavirus" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlydesktop">
-					<img alt="Estado del coronavirus" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlymobile">
+					<img alt="Estado del coronavirus" style="margin: 0 auto;width:100%;" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlydesktop">
+					<img alt="Estado del coronavirus" style="margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-mobile.png" class="onlymobile">
 				</a>
 				</div>
 				<div class="col-3 order-2">
