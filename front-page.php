@@ -175,11 +175,12 @@ $encuesta_grande = get_field('encuesta_grande');
 					<!--End mc_embed_signup-->
 
 				</div><!-- cancilleram mobile -->
-
-				<a href="https://elcanciller.com/tag/coronavirus/">
-					<img alt="Estado del coronavirus" style="margin: 0 auto;width:100%;" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlydesktop">
-					<img alt="Estado del coronavirus" style="margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-mobile.png" class="onlymobile">
-				</a>
+				<div>
+					<a href="https://elcanciller.com/tag/coronavirus/">
+						<img alt="Estado del coronavirus" style="margin: 0 auto;width:100%;" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlydesktop">
+						<img alt="Estado del coronavirus" style="margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-mobile.png" class="onlymobile">
+					</a>
+				</div>
 
 				<?php get_template_part('template-parts/sections/section', 'opinion') ?>
 			</div><!-- content -->
