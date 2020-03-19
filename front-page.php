@@ -31,24 +31,11 @@ $encuesta_grande = get_field('encuesta_grande');
 			<div class="content">
 				<?php get_template_part('template-parts/sections/section', 'live') ?>
 				<?php get_template_part('template-parts/sections/section', 'ultimomomento') ?>
-				<script>
-jQuery( document ).ready(function() {
-n =  new Date();
-y = n.getFullYear();
-m = n.getMonth() + 1;
-d = n.getDate();
-h = n.getHours();
-minuto = n.getMinutes();
-segundo = n.getSeconds();
-
-fechaactual = Date.parse(y + "-" + m + "-" + d + " " + h + ":" + minuto + ":" + segundo);
-fechainicio = Date.parse('2020-03-01 00:00:00');
-fechafin = Date.parse('2020-03-02 00:00:00');
-//if (fechaactual > fechainicio && fechafin > fechaactual)
-//{
-// jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;width:100%;\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\" style=\"margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;\">');
-//}
-});
+				<script>			
+				//if (fechaactual > fechainicio && fechafin > fechaactual)
+				//{
+				// jQuery('#new').append('<img class=\"onlydesktop\" style=\"margin: 0 auto;width:100%;\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-desktop.jpg\"><img class=\"onlymobile\" src=\"https://elcanciller.com/wp-content/uploads/2020/02/apertura-mobile.jpg\" class=\"onlymobile\" style=\"margin: 0 auto;padding-top: 2%;margin-bottom: 10%;width: 100%;\">');
+				//}
 				</script>
 				<?php echo get_field('vertical_home_1', 'option') ?>
 				<?php get_template_part('template-parts/home/trending', 'front') ?>
@@ -63,6 +50,10 @@ fechafin = Date.parse('2020-03-02 00:00:00');
 					echo do_shortcode('[posts cantidad="3" offset="0"]');
 				}
 				?>
+				<a href="https://elcanciller.com/tag/coronavirus/">
+					<img alt="Estado del coronavirus" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlydesktop">
+					<img alt="Estado del coronavirus" src="https://elcanciller.com/wp-content/uploads/2020/03/coronavirus-desktop.png" class="onlymobile">
+				</a>
 				</div>
 				<div class="col-3 order-2">
 					<div class="ad-grilla">
