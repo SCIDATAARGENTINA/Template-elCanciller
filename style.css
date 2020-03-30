@@ -2177,6 +2177,7 @@ font-size: 18px !important;
     font-size: 12px;
     font-family: 'Bree Serif', serif;
     text-transform: uppercase;
+    display:none !important;
 } 
  
 .post-rendered.trending::after {
@@ -3407,6 +3408,7 @@ font-size: 18px !important;
 
 .post-meta .time-ago {
     color: #e7d117;
+    display:none !important;
 }
 
 article .post-content {
@@ -4018,11 +4020,13 @@ article .post-content .has-content-area {
     color: #c4afa1;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
+    display:none !important;
 }
 
 @media (max-width: 768px){
     .search-post .search-content span.time-ago{
         border-bottom: 0px;
+        display:none !important;
     }
 }
 
