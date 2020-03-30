@@ -38,7 +38,9 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; b
 		</div><!-- post-author -->
 		<?php } ?>
 		<div class="post-meta">
-			<?php $default_local_date = ucwords(utf8_encode(get_the_time(' d \d\e F \d\e Y | H:i'))); 
+			<?php 
+			//$default_local_date = ucwords(utf8_encode(get_the_time(' d \d\e F \d\e Y | H:i'))); 
+			$default_local_date = ucwords(utf8_encode(get_the_time(' d \d\e F \d\e Y '))); 
 			$date_connectors_capital = array('De', 'Del');
 			$date_connectors_lower = array('de', 'del');
 			$local_date = str_replace($date_connectors_capital, $date_connectors_lower, $default_local_date);
