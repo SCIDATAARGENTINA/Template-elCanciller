@@ -29,14 +29,14 @@ echo '<style> .' . $term->slug . ':before'. '{ background: ' . $cat_color . '; b
 		</div>
 	</div><!-- post-imagen -->
 	<div class="post-content">
-		<?php // if(get_the_author_meta('ID') != 81 && get_field('show_author') == 'si'){ ?>
+		<?php if(get_the_author_meta('ID') != 81 && get_field('show_author') == 'si'){ ?>
 		<div class="post-author" >
 			<a style="background-color: <?php echo $cat_color; ?>" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )) ?>">
 			<?php echo get_avatar( get_the_author_meta('ID'), 26 ); ?>
 			<span><?php echo get_the_author(); ?></span>
 			</a>
 		</div><!-- post-author -->
-		<?php //} ?>
+		<?php } ?>
 		<div class="post-meta">
 			<?php 
 			//$default_local_date = ucwords(utf8_encode(get_the_time(' d \d\e F \d\e Y | H:i'))); 
