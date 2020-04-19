@@ -942,6 +942,7 @@ input:-internal-autofill-selected {
     position: absolute;
     left: 0px;
     top: -23px;
+    display:none !important;
 }
 
 @media(max-width: 768px){
@@ -2050,7 +2051,7 @@ font-size: 18px !important;
 }
 
 .post-rendered .rendered-img .render-author {
-    display: none;
+    display: none !important;
 }
 
 .post-rendered.show-author .rendered-img .render-author {
