@@ -16,9 +16,9 @@
 <div class="instagram-widget container">
         <div class="autores-profile">
             <div class="autores-pic">
-                <a href="<?php bloginfo('url') ?>/author/luciofmoores/"><img src="<?php bloginfo('url') ?>/wp-content/uploads/2020/01/Autores-Lateral1.png" alt="Lucio Fernandez Moores"></a>
+                <a href="<?php bloginfo('url') ?>/author/jesicabossi/"><img src="<?php bloginfo('url') ?>/wp-content/uploads/2020/01/jesica-bossi-lateral.png" alt="Jesica Bossi"></a>
                 <div class="autores-data">
-                    <h4><a href="<?php bloginfo('url') ?>/author/luciofmoores/">Lucio F. Moores</a></h4>
+                    <h4><a href="<?php bloginfo('url') ?>/author/jesicabossi/">Jesica Bossi</a></h4>
                     
                 </div>
             </div>
