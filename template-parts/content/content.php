@@ -63,7 +63,7 @@ echo '<style>' . '.post-rendered.' . $term->slug . '::before{ background-color:'
 			</div>
 		</div><!-- hovered -->
 		<div class="render-author" style="background-color: <?php echo $cat_color ?>">
-			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">Por <?php echo get_the_author_meta( 'display_name' ) ?></a>
+			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">Por  <?php echo get_the_author_meta( 'display_name' ) ?></a>
 		</div><!-- render author -->
 	</div><!-- rendered-img -->
 	<?php get_template_part('template-parts/comments/comments', 'nosharer') ?>
