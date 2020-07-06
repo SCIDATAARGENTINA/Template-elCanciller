@@ -2051,7 +2051,7 @@ font-size: 18px !important;
 }
 
 .post-rendered .rendered-img .render-author {
-    display: none !important;
+    /*display: none !important;*/
 }
 
 .post-rendered.show-author .rendered-img .render-author {
