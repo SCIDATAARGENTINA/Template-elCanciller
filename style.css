@@ -942,7 +942,6 @@ input:-internal-autofill-selected {
     position: absolute;
     left: 0px;
     top: -23px;
-    display:none !important;
 }
 
 @media(max-width: 768px){
